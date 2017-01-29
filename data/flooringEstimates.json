@@ -1,0 +1,36 @@
+[
+  {
+    "_type": "flooringEstimate",
+    "_id":1,
+    "estimatePartAbout": {
+      "client": "Acme Hall",
+      "created": "2016-10-04",
+      "address": "800 University Drive",
+      "city": "Maryville",
+      "state": "MO",
+      "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 2000
+    },
+    "costPerSquareFoot": 3.50,
+    "bidPerSquareFoot": 6.00
+  },
+  {
+    "_type": "flooringEstimate",
+    "_id":2,
+    "estimatePartAbout": {
+      "client": "Barks Puppy Palace",
+      "created": "2016-10-04",
+      "address": "800 University Drive",
+      "city": "Maryville",
+      "state": "MO",
+      "zipcode": 64468
+    },
+    "estimateSquareFootage": {
+      "sqft": 2000
+    },
+    "costPerSquareFoot": 2.00,
+    "bidPerSquareFoot": 4.00
+  }
+]

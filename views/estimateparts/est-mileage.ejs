@@ -1,0 +1,38 @@
+<h3>Mileage</h3>
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Num Vehicles</th>
+      <th>Miles/Drive</th>
+      <th>$/Mile</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var total = 0; for (var i = 0; i < estimate.mileageEntries.length; i++) { e =estimate.mileageEntries[i]; %>
+      <tr>
+        <td>
+          <%=  e.description %>
+        </td>
+        <td>
+          <%=  e.numberOfVehicles %>
+        </td>
+        <td>
+          <%=  e.milesPerDrive %>
+        </td>
+        <td>
+          <%=  e.dollarsPerMile %>
+        </td>
+        <td>
+          <%=  e.numberOfVehicles * e.milesPerDrive *e.dollarsPerMile %>
+        </td>
+      </tr>
+      <% total += (e.numberOfVehicles * e.milesPerDrive * e.dollarsPerMile); %>
+        <% } %>
+  </tbody>
+</table>
+<h4>
+  $
+  <%=  total %>
+</h4><br/>

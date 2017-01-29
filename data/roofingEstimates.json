@@ -1,0 +1,166 @@
+[
+  {
+    "_id": 1,
+    "_type": "roofingEstimate",
+    "client": "Bank",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {},
+    "roofing": {
+      "roofType": "Metal",
+      "processType": "Roof Coatings",
+      "coatingType": "Urethane",
+      "coatingSelection": 1,
+      "coatingCoverageSqFt": 100,
+      "usesBasecoat": true,
+      "basecoatSelection": 1,
+      "basecoatCoverageSqFt": 100,
+      "usesPrimer": true,
+      "primerSelection": 1,
+      "primerCoverageSqFt": 100,
+      "usesTopcoat": true,
+      "topcoatSelection": 1,
+      "topcoatCoverageSqFt": 100,
+      "subtotal": 1523
+    },
+    "waterproofing": {},
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100,
+      "subtotal": 1111
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 1,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 1,
+        "roomCost": 80
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "truck",
+        "numberOfVehicles": 1,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "pickups",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "Misc 1",
+        "cost": 150
+      },
+      {
+        "description": "Misc 2",
+        "cost": 200
+      }
+    ],
+    "costPerSquareFoot": 3.50,
+    "bidPerSquareFoot": 6.00
+  },
+  {
+    "_type": "roofingEstimate",
+    "_id": 2,
+    "client": "Bank",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {},
+    "roofing": {
+      "roofType": "Metal",
+      "processType": "Roof Coatings",
+      "coatingType": "Urethane",
+      "coatingSelection": 1,
+      "coatingCoverageSqFt": 100,
+      "usesBasecoat": true,
+      "basecoatSelection": 1,
+      "basecoatCoverageSqFt": 100,
+      "usesPrimer": true,
+      "primerSelection": 1,
+      "primerCoverageSqFt": 100,
+      "usesTopcoat": true,
+      "topcoatSelection": 1,
+      "topcoatCoverageSqFt": 100,
+      "subtotal": 1523
+    },
+    "waterproofing": {},
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100,
+      "subtotal": 1111
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 1,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 1,
+        "roomCost": 80
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "truck",
+        "numberOfVehicles": 1,
+        "milesPerDrive": 120
+      },
+      {
+        "description": "pickups",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 120
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "Misc 1",
+        "cost": 150
+      },
+      {
+        "description": "Misc 2",
+        "cost": 200
+      }
+    ],
+    "costPerSquareFoot": 3.50,
+    "bidPerSquareFoot": 6.00
+  }
+]

@@ -1,0 +1,23 @@
+<br/>
+<br/>
+<h2>Confirm deletion of roofing coating</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  roofingCoating._id %>
+</p>
+<p>
+	<%=  roofingCoating.name %>
+</p>
+<p>
+	<%=  roofingCoating.price %> per
+		<%=  roofingCoating.unit %>
+</p>
+<br/>
+<form method="get" action="/roofingCoating">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/roofingCoating/delete/<%= roofingCoating._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>

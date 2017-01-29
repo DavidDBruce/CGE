@@ -1,0 +1,12 @@
+<div class="col-xs-6">
+  <div class="form-group">
+    <label for="description">Miscellaneous</label>
+    <input type="text" class="form-control" id="description" name="description" value="<%= e.description %>" placeholder="Description" required>
+  </div>
+</div>
+<div class="col-xs-6">
+  <div class="form-group">
+    <label for="cost">Cost</label>
+    <input type="number" class="form-control" id="cost" name="cost" value="<%= e.cost %>" min=0 max=500000 required>
+  </div>
+</div>

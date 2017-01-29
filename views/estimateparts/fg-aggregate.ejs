@@ -1,0 +1,36 @@
+<hr>
+<h2>Aggregate Costs</h2>
+<hr>
+<div class="form-group">
+    <label for="usesAggregate">Uses Aggregate?</label>
+    <input type="checkbox" class="form-control" id="usesAggregate" name="usesAggregate" <%= estimate.usesAggregate ? 'checked' : ' ' %> />
+</div>
+<div class="form-group">
+    <label for="aggregateTypeSelection">Aggregate Type</label>
+    <div class="funkyradio">
+        <div class="funkyradio-primary">
+            <input type="radio" name="radio" id="Sand" <%= estimate.aggregateTypeSelection=='Sand' ? checked : ' ' %>" />
+            <label for="Sand">Sand</label>
+        </div>
+        <div class="funkyradio-success">
+            <input type="radio" name="radio" id="Quartz" <%= estimate.aggregateTypeSelection=='Quartz' ? checked : ' ' %>" />
+            <label for="Quartz">Quartz</label>
+        </div>
+        <div class="funkyradio-warning">
+            <input type="radio" name="radio" id="Flake" <%= estimate.aggregateTypeSelection=='Flake' ? checked : ' ' %>" />
+            <label for="Flake">Flake</label>
+        </div>
+        <div class="funkyradio-danger">
+            <input type="radio" name="radio" id="Glass" <%= estimate.aggregateTypeSelection=='Glass' ? checked : ' ' %>" />
+            <label for="Glass">Glass Beads</label>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="aggregateMaterialSelection">Aggregate Material</label>
+    <select class="form-control" name="aggregateMaterialSelection" value="<%= estimate.aggregate.aggregateMaterialSelection %>">
+    <%  var data = aggregateMaterials.query; for( var i=0; i<data.length; i++){ %>
+    <option value="<%= data[i]._id %>"> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
