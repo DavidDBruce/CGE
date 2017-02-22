@@ -9,17 +9,17 @@
     <div class="panel-body">
       ID:
       <%=  estimate._id %><br>
-        <% include ..\estimateparts\est-about %>
-          <% include ..\estimateparts\est-footage %>
-            <% include ..\estimateparts\est-flooring %>
-              <% include ..\estimateparts\est-roofing %>
-                <% include ..\estimateparts\est-waterproofing %>
-                  <% include ..\estimateparts\est-aggregate %>
-                    <% include ..\estimateparts\est-labor %>
-                      <% include ..\estimateparts\est-mileage %>
-                        <% include ..\estimateparts\est-misc %>
-                          <% include ..\estimateparts\est-comment %>
-                            <% include ..\estimateparts\est-result %> <br/>
+        <% include ../estimateparts/est-about %>
+          <% include ../estimateparts/est-footage %>
+            <% include ../estimateparts/est-flooring %>
+              <% include ../estimateparts/est-roofing %>
+                <% include ../estimateparts/est-waterproofing %>
+                  <% include ../estimateparts/est-aggregate %>
+                    <% include ../estimateparts/est-labor %>
+                      <% include ../estimateparts/est-mileage %>
+                        <% include ../estimateparts/est-misc %>
+                          <% include ../estimateparts/est-comment %>
+                            <% include ../estimateparts/est-result %> <br/>
                               <a href="/estimate/delete/<%= estimate._id  %>" class="btn btn-danger"> Delete </a>
                               <a href="/estimate/details/<%= estimate._id %>" class="btn btn-info"> Details </a>
                               <a href="/estimate/edit/<%= estimate._id %>" class="btn btn-warning">  Edit </a>
