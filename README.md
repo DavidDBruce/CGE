@@ -1,5 +1,12 @@
 # Job Cost
 
+#Prerequisites
+Following utilities should be installed to run this application
+1.)MongoDB
+2.)Node.js V6.0+
+3.)Npm (no need of separate installatin as it comes with node) 
+
+
 A job cost estimator using:
 
 - Node.js platform
@@ -10,6 +17,8 @@ A job cost estimator using:
 - Lodash for JavaScript object iteration and manipulation 
 - jQuery library for DOM manipulation
 - BootStrap framework for responsive clients
+
+
 
 # Template
 
