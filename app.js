@@ -312,6 +312,8 @@ server.listen(port, function () {
 });
 */
 app.listen(app.get('port'), () => {
+  console.log('For a better experience, always PULL new code before any modifications.');
+  console.log('Pull, SMALL change, test, commit.');
   console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
   console.log('  Press CTRL-C to stop\n');
 });

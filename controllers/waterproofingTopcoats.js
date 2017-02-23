@@ -7,7 +7,7 @@ var Model = require('../models/waterproofingTopcoat.js');
 const notfoundstring = 'No such waterproofing topcoat';
 
 // See app.js to find default view folder (e.g.,"views")
-// see app.js to find  default URI for this controller (e.g., "waterproofingPrimer")
+// see app.js to find  default URI for this controller (e.g., "waterproofingTopcoat")
 // Specify the handler for each required combination of URI and HTTP verb 
 // HTML5 forms can only have GET and POST methods (use POST for DEvarE)
 

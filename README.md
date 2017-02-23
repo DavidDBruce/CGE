@@ -1,13 +1,6 @@
-# Job Cost
+# CG Estimator
 
-#Prerequisites
-Following utilities should be installed to run this application
-1.)MongoDB
-2.)Node.js V6.0+
-3.)Npm (no need of separate installatin as it comes with node) 
-
-
-A job cost estimator using:
+A job-costing application for CG Coatings 
 
 - Node.js platform
 - Express web framework
@@ -18,13 +11,44 @@ A job cost estimator using:
 - jQuery library for DOM manipulation
 - BootStrap framework for responsive clients
 
+Developed as part of the profession-based learning cirriculum at:
+
+Northwest Missouri State University 
+School of Computer Science and Information Systems
+Dr. Carol Spradling, Director
+Maryville, MO
+
+# Contributors
+
+Client
+- Curt Carpenter
+
+Faculty
+- Denise Case
+- Jerry Qin
+- Michael Rogers
+- Diana Linville
+
+Assistants
+- Sec 02 Rathnakar Ettidi, course assistant
+- Sec 03 Sandip Subedi, course assistant
+- Sec 04 Vamsi Ravva, course assistant
+
+Developers, Designers, and Software Engineers
+- Fall 2016 44-563 Web Apps Sections 3,4,5, 6
+- Spring 2017 44-563 Web Apps Sections 2,3,4
+- Spring 2017 44-144 Web Apps Section 1
 
 
-# Template
+# Prerequisites
 
-Application based on the Hackathon-Starter project
+Following must be installed to run this application
 
-- https://github.com/sahat/hackathon-starter
+1. MongoDB
+2. Node.js V6.0+
+
+
+
 
 # Modular design 
 
@@ -43,13 +67,6 @@ Each type of estimate shares common features
 - Includes miscellaneous costs
 
 # Collaborative effort
-
-The application will be collaboratively built by 
-Spring 2017 web app software engineers 
-at Northwest Missouri State University.
-
-Section 02 will build jc2
-Section 04 will build jc4
 
 We are building on work produced by the Fall 2016 Web Apps developers.
 
@@ -101,15 +118,15 @@ OR run faster, safer yarn (same as npm install) / yarn upgrade to update all dep
 
 # Start up Mongodb
 
-Run mongod to start MongoDB.  (Hit CTRL-C to stop.)
+Right-click on the project folder and open Git Bash. Run mongod to start MongoDB.  (When done working the application, you can hit CTRL-C to stop.)
 
 ```
-> mongod 
+$ mongod 
 ```
 
 # Run the app
 
-Run nodemon app to start the server.  (Hit CTRL-C to stop.)
+In Windows, right-click on the project folder and "Open Command Window Here as Administrator". At the prompt, type nodemon app to start the server.  (CTRL-C to stop.)
 
 ```
 > nodemon app.js
@@ -129,11 +146,26 @@ To type commands from within VS Code, from the VS Code menu, select View / Integ
 - Install Extension: tslint
 - Under VS Code menu "File" option, check "Autosave"
 
-# For questions contact
+# PULL FIRST 
 
-Dr. Denise Case, Instructor (dcase@nwmissouri.edu)
-Sec 02 Rathnakar Ettidi, course assistant
-Sec 04 Vamsi Ravva, course assistant
+For a better experiences, never make changes to stale code.
+
+Before making any changes, pull new code. 
+
+Make small changes and commit. 
+
+If away from the code for awhile, always pull new code. 
+
+The repo will change OFTEN and A LOT. :) 
+
+![Git Pull](http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-git-pull-11.png)
+
+# References
+
+Hackathon-Starter project
+
+- https://github.com/sahat/hackathon-starter
+
 
 
 
