@@ -21,20 +21,24 @@ Maryville, MO
 # Contributors
 
 Client
+
 - Curt Carpenter
 
 Faculty
+
 - Denise Case
 - Jerry Qin
 - Michael Rogers
 - Diana Linville
 
 Assistants
+
 - Sec 02 Rathnakar Ettidi, course assistant
 - Sec 03 Sandip Subedi, course assistant
 - Sec 04 Vamsi Ravva, course assistant
 
 Developers, Designers, and Software Engineers
+
 - Fall 2016 44-563 Web Apps Sections 3,4,5, 6
 - Spring 2017 44-563 Web Apps Sections 2,3,4
 - Spring 2017 44-144 Web Apps Section 1
@@ -47,7 +51,14 @@ Following must be installed to run this application
 1. MongoDB
 2. Node.js V6.0+
 
+# Get started
 
+Clone this repo to your local machine. 
+
+If Windows, 
+
+- Right-click on C:\44563 or C:\44144.
+- Git clone https://bitbucket.org/nw_webapps_2017_spring/cge 
 
 
 # Modular design 
