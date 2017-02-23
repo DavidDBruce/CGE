@@ -195,7 +195,9 @@ console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats")
 app.use('/', require('./controllers/index.js'));
 app.use('/about', require('./controllers/about.js'));
 app.use('/aggregate', require('./controllers/aggregateMaterials.js'));
-app.use('/estimate', require('./controllers/estimate.js'));
+app.use('/estimateFlooring', require('./controllers/estimateFlooring.js'));
+app.use('/estimateRoofing', require('./controllers/estimateRoofing.js'));
+app.use('/estimateWaterproofing', require('./controllers/estimateWaterproofing.js'));
 app.use('/flooringCoating', require('./controllers/flooringCoatings.js'));
 app.use('/mileageRate', require('./controllers/mileageRate.js'));
 app.use('/prospect', require('./controllers/prospects.js'));
