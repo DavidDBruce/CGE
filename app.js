@@ -80,10 +80,12 @@ app.use(sass({
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressValidator());
+//app.use(expressValidator());
 app.use(express.static(__dirname + '/assets/'));  // works for views in root view folder
 app.use(expressLayouts);
 
+
+/* ============= LATER ==================
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -95,6 +97,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 app.use(flash());
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
@@ -123,6 +127,10 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+
+ ================= END LATER ================ */
+
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 // Set up SEED DATA  .................................................
