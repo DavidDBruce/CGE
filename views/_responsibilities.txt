@@ -1,0 +1,41 @@
+
+ Responsiblity for Views
+
+================================
+Section 02
+================================
+about
+contact
+estimate
+estimateparts
+flooring_coatings
+footage
+home
+index
+prospects
+
+404.ejs
+footer.ejs
+header.ejs
+index.ejs
+layout.ejs
+new-entry.ejs
+================================
+Section 03
+================================
+account
+api
+roofing_basecoats
+roofing_coatings
+roofing_primers
+roofing_topcoats
+user
+================================
+Section 04
+================================
+aggregate
+mileage_rate
+waterproofing_basecoats
+waterproofing_primers
+waterproofing_topcoats
+================================

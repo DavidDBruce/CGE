@@ -1,0 +1,34 @@
+
+ Responsiblity for seed data
+ 
+ NOTE: 
+ 
+ Roofing estimates and
+ waterproofing estimates
+ should be provided in proper 
+ .json format to the 
+ Section 02 t team responsible for 
+ estimates.json.
+ 
+
+================================
+Section 02
+================================
+estimates.json
+flooringCoatings.yml
+================================
+Section 03
+================================
+roofingBasecoats.yml
+roofingCoatings.yml
+roofingPrimers.json
+roofingTopcoats.yml
+================================
+Section 04
+================================
+aggregateMaterials.yml
+mileageRates.json
+waterproofingBasecoats.yml
+waterproofingPrimers.json
+waterproofingTopcoats.yml
+================================
