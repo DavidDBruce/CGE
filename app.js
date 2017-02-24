@@ -199,7 +199,13 @@ console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats")
 
 // Request to this URI will be handled by this CONTROLLER..........
 app.use('/', require('./controllers/index.js'));
-app.use('/about', require('./controllers/about.js'));
+app.use('/about_2016_fall_03', require('./controllers/about_2016_fall_03.js'));
+app.use('/about_2016_fall_04', require('./controllers/about_2016_fall_04.js'));
+app.use('/about_2016_fall_05', require('./controllers/about_2016_fall_05.js'));
+app.use('/about_2016_fall_06', require('./controllers/about_2016_fall_06.js'));
+app.use('/about_2017_spring_02', require('./controllers/about_2017_spring_02.js'));
+app.use('/about_2017_spring_03', require('./controllers/about_2017_spring_03.js'));
+app.use('/about_2017_spring_04', require('./controllers/about_2017_spring_04.js'));
 app.use('/aggregate', require('./controllers/aggregateMaterials.js'));
 app.use('/flooringCoating', require('./controllers/flooringCoatings.js'));
 app.use('/flooringEstimate', require('./controllers/flooringEstimate.js'));
