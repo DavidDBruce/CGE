@@ -4,7 +4,7 @@
 ================================
 Section 02
 ================================
-estimate.js
+flooringEstimate.js
 flooringCoating.js
 ================================
 Section 03
@@ -21,6 +21,7 @@ Section 04
 aggregateMaterial.js
 mileageRate.js
 waterproofingBasecoat.js
+waterproofingEstimate.js
 waterproofingPrimer.js
 waterproofingTopcoat.js
 ================================

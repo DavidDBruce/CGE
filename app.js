@@ -137,8 +137,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 
 // Read in the sample data files
 var aggregateMaterials = require('./data/aggregateMaterials.yml');
-var estimates = require('./data/estimates.json');
 var flooringCoatings = require('./data/flooringCoatings.yml');
+var flooringEstimates = require('./data/flooringEstimates.json');
 var mileageRates = require('./data/mileageRates.json');
 var roofingBasecoats = require('./data/roofingBasecoats.yml');
 var roofingCoatings = require('./data/roofingCoatings.yml');
@@ -146,13 +146,14 @@ var roofingEstimates = require('./data/roofingEstimates.json');
 var roofingPrimers = require('./data/roofingPrimers.json');
 var roofingTopcoats = require('./data/roofingTopcoats.yml');
 var waterproofingBasecoats = require('./data/waterproofingBasecoats.yml');
+var waterproofingEstimates = require('./data/waterproofingEstimates.json');
 var waterproofingPrimers = require('./data/waterproofingPrimers.json');
 var waterproofingTopcoats = require('./data/waterproofingTopcoats.yml');
 
 // insert the sample data into our data store
 db.insert(aggregateMaterials);
-db.insert(estimates);
 db.insert(flooringCoatings);
+db.insert(flooringEstimates);
 db.insert(mileageRates);
 db.insert(roofingBasecoats);
 db.insert(roofingCoatings);
@@ -160,32 +161,37 @@ db.insert(roofingEstimates);
 db.insert(roofingPrimers);
 db.insert(roofingTopcoats);
 db.insert(waterproofingBasecoats);
+db.insert(waterproofingEstimates);
 db.insert(waterproofingPrimers);
 db.insert(waterproofingTopcoats);
 
 // intialize app.locals (these objects will be available to our controllers)
 app.locals.aggregateMaterials = db.find(aggregateMaterials);
-app.locals.estimates = db.find(estimates);
 app.locals.flooringCoatings = db.find(flooringCoatings);
+app.locals.flooringEstimates = db.find(flooringEstimates);
 app.locals.mileageRates = db.find(mileageRates);
 app.locals.roofingBasecoats = db.find(roofingBasecoats);
 app.locals.roofingCoatings = db.find(roofingCoatings);
+app.locals.roofingEstimates = db.find(roofingEstimates);
 app.locals.roofingPrimers = db.find(roofingPrimers);
 app.locals.roofingTopcoats = db.find(roofingTopcoats);
 app.locals.waterproofingBasecoats = db.find(waterproofingBasecoats);
+app.locals.waterproofingEstimates = db.find(waterproofingEstimates);
 app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
 app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
 // verify our sample data was imported correctly
 console.log(Object.keys(aggregateMaterials).length+ " aggregateMaterials");
-console.log(Object.keys(estimates).length+ " estimates");
 console.log(Object.keys(flooringCoatings).length+ " flooringCoatings");
+console.log(Object.keys(flooringEstimates).length+ " flooringEstimates");
 console.log(Object.keys(mileageRates).length+ " mileageRates");
 console.log(Object.keys(roofingBasecoats).length+ " roofingBasecoats");
 console.log(Object.keys(roofingCoatings).length+ " roofingCoatings");
+console.log(Object.keys(roofingEstimates).length+ " roofingEstimates");
 console.log(Object.keys(roofingPrimers).length+ " roofingPrimers");
 console.log(Object.keys(roofingTopcoats).length+ " roofingTopcoats");
 console.log(Object.keys(waterproofingBasecoats).length+ " waterproofingBasecoats");
+console.log(Object.keys(waterproofingEstimates).length+ " waterproofingEstimates");
 console.log(Object.keys(waterproofingPrimers).length+ " waterproofingPrimers");
 console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats");
 
@@ -195,17 +201,17 @@ console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats")
 app.use('/', require('./controllers/index.js'));
 app.use('/about', require('./controllers/about.js'));
 app.use('/aggregate', require('./controllers/aggregateMaterials.js'));
-app.use('/estimateFlooring', require('./controllers/estimateFlooring.js'));
-app.use('/estimateRoofing', require('./controllers/estimateRoofing.js'));
-app.use('/estimateWaterproofing', require('./controllers/estimateWaterproofing.js'));
 app.use('/flooringCoating', require('./controllers/flooringCoatings.js'));
+app.use('/flooringEstimate', require('./controllers/flooringEstimate.js'));
 app.use('/mileageRate', require('./controllers/mileageRate.js'));
 app.use('/prospect', require('./controllers/prospects.js'));
 app.use('/roofingBasecoat', require('./controllers/roofingBasecoats.js'));
 app.use('/roofingCoating', require('./controllers/roofingCoatings.js'));
+app.use('/roofingEstimate', require('./controllers/roofingEstimate.js'));
 app.use('/roofingPrimer', require('./controllers/roofingPrimers.js'));
 app.use('/roofingTopcoat', require('./controllers/roofingTopcoats.js'));
 app.use('/waterproofingBasecoat', require('./controllers/waterproofingBasecoats.js'));
+app.use('/waterproofingEstimate', require('./controllers/waterproofingEstimate.js'));
 app.use('/waterproofingPrimer', require('./controllers/waterproofingPrimers.js'));
 app.use('/waterproofingTopcoat', require('./controllers/waterproofingTopcoats.js'));
 

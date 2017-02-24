@@ -10,9 +10,8 @@ const WaterproofingBasecoat = require("./waterproofingBasecoat.js");
 const WaterproofingPrimer = require("./waterproofingPrimer.js");
 const WaterproofingTopcoat = require("./waterproofingTopcoat.js");
 
-var RoofingEstimateSchema = new Schema({
+const FlooringEstimateSchema = new Schema({
   _id: { type: Number, required: true },
-  "estimateType": { type: String, required: true, default: "Flooring", enum: ["Flooring", "Roofing", "Waterproofing"] },
   "client": { type: String, required: true },
   "address": { type: String, required: false },
   "city": { type: String, required: true },
@@ -27,31 +26,29 @@ var RoofingEstimateSchema = new Schema({
     "squarefootage": { $mult: ['$widthFeet', '$lengthFeet' ] }
   }],
   "flooring": {
-    floorSystemType: { type: String, required: true, default: "Epoxy", enum: ["Epoxy", "Decorative Expoxy", "Urethane"] },
-    usesUrethane: { type: Boolean, required: true, default: false },
-    urethaneProductSelection: [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-    urethaneCoverageSqFt: { type: Number, required: true },
-    usesEpoxy: { type: Boolean, required: true, default: false },
-    expoxyProductSelection: [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-    expoxyCoverageSqFt: { type: Number, required: true },
-    subtotal: { type: Number, required: true, default: 0 }
+    "floorSystemType": { type: String, required: true, default: "Epoxy", enum: ["Epoxy", "Decorative Epoxy", "Urethane"] },
+    "usesUrethane": { type: Boolean, required: true, default: false },
+    "urethaneProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
+    "urethaneCoverageSqFt": { type: Number, required: true },
+    "usesEpoxy": { type: Boolean, required: true, default: false },
+    "epoxyProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
+    "epoxyCoverageSqFt": { type: Number, required: false }
   },
   "roofing": {
     roofType: { type: String, required: true, default: "Metal", enum: ["Metal", "Mod Bit", "Single Ply"] },
-    processType: { type: String, required: true, default: "Roof Coatings", enum: ["Roof Coatings", "Polyurethane Foam & Coatings"] },
+    processType: { type: String, required: true, default: "Roof Coatings", enum: ["Roof Coatings", "Polyurethane Foam and Coatings"] },
     coatingType: { type: String, required: true, default: "Urethane", enum: ["Urethane", "Silicone", "Acrylic"] },
     coatingSelection: [{ type: Schema.Types.ObjectId, ref: RoofingCoating, required: false }],
-    coatingCoverageSqFt: { type: Number, required: true },
+    coatingCoverageSqFt: { type: Number, required: false },
     usesBasecoat: { type: Boolean, required: true, default: false },
     basecoatSelection: [{ type: Schema.Types.ObjectId, ref: RoofingBasecoat, required: false }],
-    basecoatCoverageSqFt: { type: Number, required: true },
+    basecoatCoverageSqFt: { type: Number, required: false },
     usesPrimer: { type: Boolean, required: true, default: false },
     primerSelection: [{ type: Schema.Types.ObjectId, ref: RoofingPrimer, required: false }],
-    primerCoverageSqFt: { type: Number, required: true },
+    primerCoverageSqFt: { type: Number, required: false },
     usesTopcoat: { type: Boolean, required: true, default: false },
     topcoatSelection: [{ type: Schema.Types.ObjectId, ref: RoofingTopcoat, required: false }],
-    topcoatCoverageSqFt: { type: Number, required: true },
-    subtotal: { type: Number, required: true, default: 0 }
+    topcoatCoverageSqFt: { type: Number, required: false }
   },
   "waterproofing": {
      productType: { type: String, required: true, default: "Urethane", enum: ["Urethane", "Cementicious Overlay"] },
@@ -72,15 +69,13 @@ var RoofingEstimateSchema = new Schema({
      primerCoverageSqFt: { type: Number, required: true },
      usesTopcoat: { type: Boolean, required: true, default: false },
      topcoatSelection: [{ type: Schema.Types.ObjectId, ref: WaterproofingTopcoat, required: false }],
-     topcoatCoverageSqFt: { type: Number, required: true },
-     subtotal: { type: Number, required: true, default: 0 }
+     topcoatCoverageSqFt: { type: Number, required: true }
   },
   "aggregate": { 
     isUsed: { type: Boolean, required: true, default: false },
     aggregateTypeSelection: { type: String, required: true, default: "Sand",  enum: ["Sand", "Quartz", "Flake", "Glass Beads"]  },
     aggregateMaterialSelection: [{ type: Number, ref: AggregateMaterial, required: false}],
-    coverageSqFt:  { type: Number, required: true},
-    subtotal: { type: Number, required: true, default: 0 }
+    coverageSqFt:  { type: Number, required: true}
   },
   "laborEntries": [{
     description: { type: String, required: true },
@@ -92,36 +87,35 @@ var RoofingEstimateSchema = new Schema({
   }],
   "mileageEntries": [{
     description: { type: String, required: true },
-    numberOfVehicles: { type: Number, required: true, default: 1 },
+    numberOfVehicles: { type: Number, required: true, default:1 },
     milesPerDrive: { type: Number, required: true, default: 100 },
     dollarsPerMile: { type: Number, required: true, default: 0.50 }
-
   }],
   "miscellaneousEntries": [{ 
     description: { type: String, required: true },
     cost: { type: Number, required: true, default: 0 }
   }],
+  "comment": { type: String },
   "margin": { type: Number, default: 0.50 },
   "lastUpdated": { type: Date, default: Date.now },
   "sqft": {$sum: ['areas.squarefootage']}
 })
 
-
-RoofingEstimateSchema.virtual('created').get(function () {
-  return this._id.getTimestamp()
+FlooringEstimateSchema.virtual("created").get(function () {
+  return this._id.getTimestamp();
 })
 
-RoofingEstimateSchema.virtual("totalCost").get(function () {
+FlooringEstimateSchema.virtual("totalCost").get(function () {
   return 2000;
 })
 
-RoofingEstimateSchema.virtual("costPerSquareFoot").get(function () {
+FlooringEstimateSchema.virtual("costPerSquareFoot").get(function () {
   return totalCost/sqft;
 })
 
-RoofingEstimateSchema.virtual("bidPerSquareFoot").get(function () {
+FlooringEstimateSchema.virtual("bidPerSquareFoot").get(function () {
   return costPerSquareFoot*(1.0+margin);
 })
 
-var roofingEstimate = mongoose.model('RoofingEstimate', RoofingEstimateSchema)
-module.exports = roofingEstimate
+var flooringEstimate = mongoose.model("FlooringEstimate", FlooringEstimateSchema)
+module.exports = flooringEstimate

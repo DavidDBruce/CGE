@@ -5,14 +5,14 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var express = require('express');
 var api = express.Router();
-var Model = require('../models/estimate.js');  
+var Model = require('../models/flooringEstimate.js');  
 const notfoundstring = 'estimates';
 
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
 api.get("/", function (request, response) {
-  response.render("estimate/index.ejs");
+  response.render("flooringEstimate/index.ejs");
 });
 
 api.get('/findall', function(req, res){
@@ -34,7 +34,7 @@ api.get('/findone/:id', function(req, res){
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
-    res.render("estimate/create",
+    res.render("flooringEstimate/create",
         { title: "WP Primers", layout: "layout.ejs" });
 });
 
@@ -46,7 +46,7 @@ api.get('/delete/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('estimate/delete.ejs',
+    return res.render('flooringEstimate/delete.ejs',
         {
             title: "Estimates",
             layout: "layout.ejs",
@@ -62,7 +62,7 @@ api.get('/details/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('estimate/details.ejs',
+    return res.render('flooringEstimate/details.ejs',
         {
             title: "Estimates",
             layout: "layout.ejs",
@@ -79,7 +79,7 @@ api.get('/edit/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('estimate/edit.ejs',
+    return res.render('flooringEstimate/edit.ejs',
         {
             title: "Estimates",
             layout: "layout.ejs",
@@ -103,7 +103,7 @@ api.post('/save', function(req, res) {
     item.zipcode = req.body.zipcode;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/estimate');
+    return res.redirect('/flooringEstimate');
 });
 
 // POST update
@@ -122,7 +122,7 @@ api.post('/save/:id', function(req, res) {
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
-    return res.redirect('/estimate');
+    return res.redirect('/flooringEstimate');
 });
 
 // DELETE id (uses HTML5 form method POST)
@@ -134,7 +134,7 @@ api.post('/delete/:id', function(req, res, next) {
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
-    return res.redirect('/estimate');
+    return res.redirect('/flooringEstimate');
 });
 
 module.exports = api;

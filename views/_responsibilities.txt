@@ -6,9 +6,9 @@ Section 02
 ================================
 about
 contact
-estimate
 estimateparts
 flooring_coatings
+flooringEstimate
 footage
 home
 index
@@ -29,6 +29,7 @@ roofing_basecoats
 roofing_coatings
 roofing_primers
 roofing_topcoats
+roofingEstimate
 user
 ================================
 Section 04
@@ -38,4 +39,5 @@ mileage_rate
 waterproofing_basecoats
 waterproofing_primers
 waterproofing_topcoats
+waterproofingEstimate
 ================================

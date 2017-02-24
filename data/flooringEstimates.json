@@ -1,36 +1,78 @@
 [
   {
-    "_type": "flooringEstimate",
-    "_id":1,
-    "estimatePartAbout": {
-      "client": "Acme Hall",
-      "created": "2016-10-04",
-      "address": "800 University Drive",
-      "city": "Maryville",
-      "state": "MO",
-      "zipcode": 64468
+    "_id": 1,
+    "client": "Acme Hall Flooring Job",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {
+      "floorSystemType": "Decorative Epoxy",
+      "usesUrethane": true,
+      "urethaneProductSelection": 4,
+      "urethaneCoverageSqFt": 107,
+      "usesEpoxy": true,
+      "epoxyProductSelection": 8,
+      "epoxyCoverageSqFt": 117
     },
-    "estimateSquareFootage": {
-      "sqft": 2000
+    "roofing": {},
+    "waterproofing": {},
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100
     },
-    "costPerSquareFoot": 3.50,
-    "bidPerSquareFoot": 6.00
-  },
-  {
-    "_type": "flooringEstimate",
-    "_id":2,
-    "estimatePartAbout": {
-      "client": "Barks Puppy Palace",
-      "created": "2016-10-04",
-      "address": "800 University Drive",
-      "city": "Maryville",
-      "state": "MO",
-      "zipcode": 64468
-    },
-    "estimateSquareFootage": {
-      "sqft": 2000
-    },
-    "costPerSquareFoot": 2.00,
-    "bidPerSquareFoot": 4.00
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 1,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 1,
+        "roomCost": 80
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "truck",
+        "numberOfVehicles": 1,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "pickups",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "Misc 1",
+        "cost": 150
+      },
+      {
+        "description": "Misc 2",
+        "cost": 200
+      }
+    ],
+    "comment": "First estimate!",
+    "margin": 0.60
   }
 ]

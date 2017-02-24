@@ -10,9 +10,8 @@ const WaterproofingBasecoat = require("./waterproofingBasecoat.js");
 const WaterproofingPrimer = require("./waterproofingPrimer.js");
 const WaterproofingTopcoat = require("./waterproofingTopcoat.js");
 
-const EstimateSchema = new Schema({
+const WaterproofingEstimateSchema = new Schema({
   _id: { type: Number, required: true },
-  "estimateType": { type: String, required: true, default: "Flooring", enum: ["Flooring", "Roofing", "Waterproofing"] },
   "client": { type: String, required: true },
   "address": { type: String, required: false },
   "city": { type: String, required: true },
@@ -102,21 +101,21 @@ const EstimateSchema = new Schema({
   "sqft": {$sum: ['areas.squarefootage']}
 })
 
-EstimateSchema.virtual("created").get(function () {
+WaterproofingEstimateSchema.virtual("created").get(function () {
   return this._id.getTimestamp();
 })
 
-EstimateSchema.virtual("totalCost").get(function () {
+WaterproofingEstimateSchema.virtual("totalCost").get(function () {
   return 2000;
 })
 
-EstimateSchema.virtual("costPerSquareFoot").get(function () {
+WaterproofingEstimateSchema.virtual("costPerSquareFoot").get(function () {
   return totalCost/sqft;
 })
 
-EstimateSchema.virtual("bidPerSquareFoot").get(function () {
+WaterproofingEstimateSchema.virtual("bidPerSquareFoot").get(function () {
   return costPerSquareFoot*(1.0+margin);
 })
 
-var estimate = mongoose.model("Estimate", EstimateSchema)
-module.exports = estimate
+var waterproofingEstimate = mongoose.model("WaterproofingEstimate", WaterproofingEstimateSchema)
+module.exports = waterproofingEstimate

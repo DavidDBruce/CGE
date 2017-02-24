@@ -1,26 +1,26 @@
 
  Responsiblity for seed data
- 
- NOTE: 
- 
- Roofing estimates and
- waterproofing estimates
- should be provided in proper 
- .json format to the 
- Section 02 t team responsible for 
- estimates.json.
- 
+
+ This data is read into the app 
+ each time we restart the app
+ during development.
+
+ When everything is working 
+ correctly, we can delete the seed
+ data processes and store real
+ client data in MongoDB.
 
 ================================
 Section 02
 ================================
-estimates.json
+flooringEstimates.json
 flooringCoatings.yml
 ================================
 Section 03
 ================================
 roofingBasecoats.yml
 roofingCoatings.yml
+roofingEstimates.json
 roofingPrimers.json
 roofingTopcoats.yml
 ================================
@@ -29,6 +29,7 @@ Section 04
 aggregateMaterials.yml
 mileageRates.json
 waterproofingBasecoats.yml
+waterProofingEstimates.json
 waterproofingPrimers.json
 waterproofingTopcoats.yml
 ================================

@@ -1,166 +1,97 @@
 [
   {
     "_id": 1,
-    "_type": "roofingEstimate",
-    "client": "Bank",
+    "client": "Utility Roof Job",
+    "created": "2016-10-04",
     "address": "800 University Drive",
     "city": "Maryville",
     "state": "MO",
     "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
     "areas": [
       {
         "description": "A1",
-        "widthFeet": 10,
+        "widthFeet": 7,
         "lengthFeet": 100
       },
       {
         "description": "A2",
-        "widthFeet": 10,
+        "widthFeet": 8,
         "lengthFeet": 100
       }
     ],
     "flooring": {},
     "roofing": {
-      "roofType": "Metal",
-      "processType": "Roof Coatings",
-      "coatingType": "Urethane",
-      "coatingSelection": 1,
-      "coatingCoverageSqFt": 100,
+      "roofType": "Mod Bit",
+      "processType": "Polyurethane Foam and Coatings",
+      "coatingType": "Silicone",
+      "coatingSelection": 2,
+      "coatingCoverageSqFt": 102,
       "usesBasecoat": true,
-      "basecoatSelection": 1,
-      "basecoatCoverageSqFt": 100,
+      "basecoatSelection": 2,
+      "basecoatCoverageSqFt": 117,
       "usesPrimer": true,
-      "primerSelection": 1,
-      "primerCoverageSqFt": 100,
+      "primerSelection": 2,
+      "primerCoverageSqFt": 97,
       "usesTopcoat": true,
-      "topcoatSelection": 1,
-      "topcoatCoverageSqFt": 100,
-      "subtotal": 1523
+      "topcoatSelection": 6,
+      "topcoatCoverageSqFt": 107
     },
     "waterproofing": {},
     "aggregate": {
       "isUsed": true,
       "aggregateTypeSelection": "Sand",
       "aggregateMaterialSelection": 1,
-      "coverageSqFt": 100,
-      "subtotal": 1111
+      "coverageSqFt": 100
     },
     "laborEntries": [
       {
         "description": "Primary",
-        "count": 1,
+        "count": 2,
         "hoursPerPerson": 16,
         "dollarsPerHour": 30,
-        "nightsPerPerson": 1,
+        "nightsPerPerson": 3,
         "roomCost": 80
+      },
+      {
+        "description": "Asst",
+        "count": 3,
+        "hoursPerPerson": 24,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 3,
+        "roomCost": 120
       }
     ],
     "mileageEntries": [
       {
-        "description": "truck",
-        "numberOfVehicles": 1,
-        "milesPerDrive": 120,
+        "description": "Big Truck",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 177,
         "dollarsPerMile": 0.50
       },
       {
-        "description": "pickups",
+        "description": "Sm Truck",
         "numberOfVehicles": 2,
-        "milesPerDrive": 120,
+        "milesPerDrive": 177,
         "dollarsPerMile": 0.50
       }
     ],
     "miscellaneousEntries": [
       {
-        "description": "Misc 1",
-        "cost": 150
+        "description": "Equip",
+        "cost": 100
       },
       {
-        "description": "Misc 2",
+        "description": "Stuff",
         "cost": 200
-      }
-    ],
-    "costPerSquareFoot": 3.50,
-    "bidPerSquareFoot": 6.00
-  },
-  {
-    "_type": "roofingEstimate",
-    "_id": 2,
-    "client": "Bank",
-    "address": "800 University Drive",
-    "city": "Maryville",
-    "state": "MO",
-    "zipcode": 64468,
-    "areas": [
-      {
-        "description": "A1",
-        "widthFeet": 10,
-        "lengthFeet": 100
       },
       {
-        "description": "A2",
-        "widthFeet": 10,
-        "lengthFeet": 100
+        "description": "More",
+        "cost": 50
       }
     ],
-    "flooring": {},
-    "roofing": {
-      "roofType": "Metal",
-      "processType": "Roof Coatings",
-      "coatingType": "Urethane",
-      "coatingSelection": 1,
-      "coatingCoverageSqFt": 100,
-      "usesBasecoat": true,
-      "basecoatSelection": 1,
-      "basecoatCoverageSqFt": 100,
-      "usesPrimer": true,
-      "primerSelection": 1,
-      "primerCoverageSqFt": 100,
-      "usesTopcoat": true,
-      "topcoatSelection": 1,
-      "topcoatCoverageSqFt": 100,
-      "subtotal": 1523
-    },
-    "waterproofing": {},
-    "aggregate": {
-      "isUsed": true,
-      "aggregateTypeSelection": "Sand",
-      "aggregateMaterialSelection": 1,
-      "coverageSqFt": 100,
-      "subtotal": 1111
-    },
-    "laborEntries": [
-      {
-        "description": "Primary",
-        "count": 1,
-        "hoursPerPerson": 16,
-        "dollarsPerHour": 30,
-        "nightsPerPerson": 1,
-        "roomCost": 80
-      }
-    ],
-    "mileageEntries": [
-      {
-        "description": "truck",
-        "numberOfVehicles": 1,
-        "milesPerDrive": 120
-      },
-      {
-        "description": "pickups",
-        "numberOfVehicles": 2,
-        "milesPerDrive": 120
-      }
-    ],
-    "miscellaneousEntries": [
-      {
-        "description": "Misc 1",
-        "cost": 150
-      },
-      {
-        "description": "Misc 2",
-        "cost": 200
-      }
-    ],
-    "costPerSquareFoot": 3.50,
-    "bidPerSquareFoot": 6.00
+    "comment": "Great customer!",
+    "margin": 0.50
   }
 ]
