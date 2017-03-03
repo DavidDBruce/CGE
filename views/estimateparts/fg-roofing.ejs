@@ -33,85 +33,8 @@
   </div>
 </div>
 
-<div class="form-group">
-  <label for="coatingType">Coating Type</label>
-  <div class="funkyradio">
-    <div class="funkyradio-primary">
-      <input type="radio" name="Urethane" id="Urethane" <%= (estimate.roofing.coatingType =='Urethane') ? 'checked' : ' ' %> />
-      <label for="Urethane">Urethane</label>
-    </div>
-    <div class="funkyradio-success">
-      <input type="radio" name="Silicone" id="Silicone" <%= (estimate.roofing.coatingType =='Silicone') ? 'checked' : ' ' %> />
-      <label for="Silicone">Silicone</label>
-    </div>
-    <div class="funkyradio-warning">
-      <input type="radio" name="Acrylic" id="Acrylic" <%= (estimate.roofing.coatingType =='Acrylic') ? 'checked' : ' ' %> />
-      <label for="Acrylic">Acrylic</label>
-    </div>
-  </div>
-</div>
 
-<div class="form-group">
-  <label for="coatingSelection">Coating Selection</label>
-  <select class="form-control" name="coatingSelection">
-    <%  var data = roofingCoatings.query; for( var i=0; i<data.length; i++){ %>
-      <option value="<%= data[i]._id %>"<%= (estimate.roofing.coatingSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
-    <% } %>
-</select>
-</div>
-<div class="form-group">
-  <label for="coatingCoverageSqFt">Coating Coverage (SqFt)</label>
-  <input type="number" class="form-control" id="coatingCoverageSqFt" name="coatingCoverageSqFt" value="<%= estimate.roofing.coatingCoverageSqFt %>" min=0 max=200 >
-</div>
-
-<div class="form-group">
-  <label for="usesBasecoat">Uses Basecoat?</label>
-  <input type="checkbox" class="form-control" id="usesBasecoat" name="usesBasecoat" <%= estimate.roofing.usesBasecoat ? 'checked' : ' ' %> />
-</div>
-<div class="form-group">
-  <label for="basecoatSelection">Roofing Basecoat Selection</label>
-  <select class="form-control" name="basecoatSelection">
-    <%  var data = roofingBasecoats.query; for( var i=0; i<data.length; i++){ %>
-      <option value="<%= data[i]._id %>"<%= (estimate.roofing.basecoatSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
-    <% } %>
-</select>
-</div>
-<div class="form-group">
-  <label for="basecoatCoverageSqFt">Basecoat Coverage (SqFt)</label>
-  <input type="number" class="form-control" id="basecoatCoverageSqFt" name="basecoatCoverageSqFt" value="<%= estimate.roofing.basecoatCoverageSqFt %>" min=0 max=200 >
-</div>
-
-
-<div class="form-group">
-  <label for="usesPrimer">Uses Primer?</label>
-  <input type="checkbox" class="form-control" id="usesPrimer" name="usesPrimer" <%= estimate.roofing.usesPrimer ? 'checked' : ' ' %> />
-</div>
-<div class="form-group">
-  <label for="primerSelection">Primer Selection</label>
-  <select class="form-control" name="primerSelection">
-    <%  var data = roofingPrimers.query; for( var i=0; i<data.length; i++){ %>
-       <option value="<%= data[i]._id %>"<%= (estimate.roofing.primerSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
-    <% } %>
-</select>
-</div>
-<div class="form-group">
-  <label for="primerCoverageSqFt">Primer Coverage (SqFt)</label>
-  <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.roofing.primerCoverageSqFt %>" min=0 max=200 >
-</div>
-
-<div class="form-group">
-  <label for="usesTopcoat">Uses Topcoat?</label>
-  <input type="checkbox" class="form-control" id="usesTopcoat" name="usesTopcoat" <%= estimate.roofing.usesTopcoat ? 'checked' : ' ' %> />
-</div>
-<div class="form-group">
-  <label for="topcoatSelection">Topcoat Selection</label>
-  <select class="form-control" name="topcoatSelection">
-    <%  var data = roofingTopcoats.query; for( var i=0; i<data.length; i++){ %>
-       <option value="<%= data[i]._id %>"<%= (estimate.roofing.topcoatSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
-    <% } %>
-</select>
-</div>
-<div class="form-group">
-  <label for="topcoatCoverageSqFt">Topcoat Coverage (SqFt)</label>
-  <input type="number" class="form-control" id="topcoatCoverageSqFt" name="topcoatCoverageSqFt" value="<%= estimate.roofing.topcoatCoverageSqFt %>" min=0 max=200 >
-</div>
+  <% include ../estimateparts/fg-roofing1 %>
+  <% include ../estimateparts/fg-roofing2 %>
+  <% include ../estimateparts/fg-roofing3 %>
+  <% include ../estimateparts/fg-roofing4 %>
