@@ -91,7 +91,7 @@ api.get('/edit/:id', function(req, res) {
 
 // POST new
 api.post('/save', function(req, res) {
-    console.log("Handling POST " + req);
+    console.log("Handling POST " + req.app.locals);
     var data = req.app.locals.estimates.query;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
