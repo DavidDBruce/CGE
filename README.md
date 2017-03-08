@@ -179,19 +179,3 @@ The repo will change OFTEN and A LOT. :)
 Hackathon-Starter project
 
 - https://github.com/sahat/hackathon-starter
-
-
-# Configure heroku alias in your local git
-
-This just needs to be done once
-
-```
-$ git remote add heroku https://git.heroku.com/cge-spring2017.git 
-```
-
-# Team leads - deploy to Heroku (DO NOT EXECUTE THIS RIGHT NOW)
-
-DO NOT EXECUTE THIS RIGHT NOW
-```
-$ git push heroku master 
-```
