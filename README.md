@@ -147,8 +147,7 @@ In Windows, right-click on the project folder and "Open Command Window Here as A
 > nodemon app.js
 ```
 
-Point your browser to `http://localhost:8082` (for Sec 02)
-Point your browser to `http://localhost:8084` (for Sec 04)
+Point your browser to `http://localhost:8082` 
 
 # Building and editing the code
 
