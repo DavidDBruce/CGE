@@ -131,6 +131,7 @@ OR run faster, safer yarn install. Yarn performs the same functions as npm. Inst
 
 # Start up Mongodb
 
+Do create folder in C dirve as: C:\data\db
 Right-click on the project folder and open Git Bash. Run mongod to start MongoDB.  (When done working the application, you can hit CTRL-C to stop.)
 
 ```
@@ -194,5 +195,3 @@ DO NOT EXECUTE THIS RIGHT NOW
 ```
 $ git push heroku master 
 ```
-
-
