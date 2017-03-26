@@ -31,7 +31,7 @@ api.get('/findone/:id', function(req, res){
 });
 
 // GET create
-api.get("/create",ensureAuthenticated.ensureAuthenticated, function(req, res) {
+api.get("/create",ensureAuthenticated.ensureLoggedIn, function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooringEstimate/create",
         { title: "WP Primers", layout: "layout.ejs" });

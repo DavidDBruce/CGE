@@ -1,5 +1,5 @@
 module.exports = {
-    ensureAuthenticated: function(req,res,next){
+    ensureLoggedIn: function(req,res,next){
         if(req.isAuthenticated()){
             return next() ;
         }else{
