@@ -1,12 +1,17 @@
 
 <!-- https://raw.githubusercontent.com/yhnavein/express-starter/master/views/account/login.ejs -->
 
-
 <div class="custom-container" ng-controller="UserLoginCtrl">
   <div class="page-header">
     <h3>Sign in</h3>
   </div>
-  <form novalidate method="POST" action="/login" name="loginForm">
+
+   <%if(messages.failure){%>
+    <div class="alert alert-danger">
+        <%=messages.failure%>
+    </div>
+  <%}%>
+    <form novalidate method="POST" action="/login" name="loginForm">
     <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
 
     <div class="row">

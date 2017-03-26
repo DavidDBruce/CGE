@@ -3,10 +3,7 @@ module.exports = {
         if(req.isAuthenticated()){
             return next() ;
         }else{
-
-
-            req.flash('failure',{msg:"Please login to create an estimate"});
-
+            req.flash('failure','Please login before creating an estimate.');
             res.render('account/login',{status:"Please login.",errors:""});
         }
     }

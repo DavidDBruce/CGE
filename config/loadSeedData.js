@@ -9,6 +9,7 @@ module.exports = {
         db.loadDatabase();
 
         // Read in the sample data files
+        // has to be global to make sure we can access from verify.js
         global.aggregateMaterials = require('../data/aggregateMaterials.yml');
         global.flooringCoatings = require('../data/flooringCoatings.yml');
         global.flooringEstimates = require('../data/flooringEstimates.json');

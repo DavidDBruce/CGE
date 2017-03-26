@@ -99,6 +99,7 @@ app.use(passport.session());
 
 
 app.use(flash());
+
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
     next();
@@ -126,9 +127,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
-
-
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
