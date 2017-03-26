@@ -32,7 +32,7 @@ api.get('/findone/:id', function(req, res){
 
 
 // GET create
-api.get("/create", function(req, res) {
+api.get("/create",ensureAuthenticated.ensureAuthenticated, function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("waterproofingEstimate/create",
         { title: "WP Primers", layout: "layout.ejs" });

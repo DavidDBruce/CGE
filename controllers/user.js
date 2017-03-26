@@ -36,12 +36,14 @@ exports.postLogin = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) { return next(err); }
     if (!user) {
+      console.log(info);
       req.flash('errors', info);
       return res.redirect('/login');
     }
     req.logIn(user, (err) => {
       if (err) { return next(err); }
-      req.flash('success', { msg: 'Success! You are logged in.' });
+     // req.flash('success', { msg: 'Success! You are logged in.' });
+      console.log(err);
       res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
@@ -95,6 +97,7 @@ exports.postSignup = (req, res, next) => {
     if (err) { return next(err); }
     if (existingUser) {
       req.flash('errors', { msg: 'Account with that email address already exists.' });
+      console.log("User already exists.");
       return res.redirect('/signup');
     }
     user.save((err) => {

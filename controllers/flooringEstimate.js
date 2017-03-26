@@ -11,7 +11,7 @@ const notfoundstring = 'estimates';
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
-api.get("/", function (request, response) {
+api.get("/", function (request,response) {
   response.render("flooringEstimate/index.ejs");
 });
 
@@ -30,9 +30,8 @@ api.get('/findone/:id', function(req, res){
     res.send(JSON.stringify(item));
 });
 
-
 // GET create
-api.get("/create", function(req, res) {
+api.get("/create",ensureAuthenticated.ensureAuthenticated, function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooringEstimate/create",
         { title: "WP Primers", layout: "layout.ejs" });

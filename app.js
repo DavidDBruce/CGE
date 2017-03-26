@@ -30,6 +30,9 @@ const upload = multer({ dest: path.join(__dirname, 'uploads') });
 // Load environment variables from .env file, where API keys and passwords are configured.
 dotenv.load({ path: '.env.example' });
 
+// global controller
+global.ensureAuthenticated = require('./controllers/ensureAuthenticated');
+
 // Controllers (route handlers).
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
@@ -80,12 +83,13 @@ app.use(sass({
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(expressValidator());
+app.use(expressValidator());
 app.use(express.static(__dirname + '/assets/'));  // works for views in root view folder
 app.use(expressLayouts);
 
 
 /* ============= LATER ==================
+ ================= END LATER ================ */
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -129,7 +133,7 @@ app.use((req, res, next) => {
 });
 
 
- ================= END LATER ================ */
+
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
