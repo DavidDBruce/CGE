@@ -16,6 +16,13 @@
         <%=messages.success%>
     </div>
   <%}%>
+      <%if(messages.errors){%>
+      <% for (var x=0;x<messages.errors.length;x++) {%>
+      <div class="alert alert-danger">
+        <%= messages.errors[x].msg %>
+        </div>
+      <%}%>
+   <%}%>
     <form novalidate method="POST" action="/login" name="loginForm">
     <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
 

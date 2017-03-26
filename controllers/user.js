@@ -25,7 +25,6 @@ exports.postLogin = (req, res, next) => {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password cannot be blank').notEmpty();
   req.sanitize('email').normalizeEmail({ remove_dots: false });
-
   const errors = req.validationErrors();
 
   if (errors) {
@@ -42,7 +41,7 @@ exports.postLogin = (req, res, next) => {
     }
     req.logIn(user, (err) => {
       if (err) { return next(err); }
-     // req.flash('success', { msg: 'Success! You are logged in.' });
+     req.flash('success','Success! You are logged in.');
       console.log(err);
       res.redirect(req.session.returnTo || '/');
     });
