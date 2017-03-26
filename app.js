@@ -9,7 +9,6 @@ const bodyParser = require("body-parser");
 const YAML = require('require-yaml');
 const port = 8082;
 const engines = require('consolidate')
-
 const compression = require('compression');
 const session = require('express-session');
 const chalk = require('chalk');
@@ -31,7 +30,8 @@ const upload = multer({ dest: path.join(__dirname, 'uploads') });
 dotenv.load({ path: '.env.example' });
 
 // global controller
-global.ensureAuthenticated = require('./controllers/ensureAuthenticated');
+global.ensureAuthenticated = require('./config/ensureAuthenticated');
+global.verify = require('./config/verify');
 
 // Controllers (route handlers).
 const homeController = require('./controllers/home');
@@ -140,19 +140,19 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 // Set up SEED DATA  .................................................
 
 // Read in the sample data files
-var aggregateMaterials = require('./data/aggregateMaterials.yml');
-var flooringCoatings = require('./data/flooringCoatings.yml');
-var flooringEstimates = require('./data/flooringEstimates.json');
-var mileageRates = require('./data/mileageRates.json');
-var roofingBasecoats = require('./data/roofingBasecoats.yml');
-var roofingCoatings = require('./data/roofingCoatings.yml');
-var roofingEstimates = require('./data/roofingEstimates.json');
-var roofingPrimers = require('./data/roofingPrimers.json');
-var roofingTopcoats = require('./data/roofingTopcoats.yml');
-var waterproofingBasecoats = require('./data/waterproofingBasecoats.yml');
-var waterproofingEstimates = require('./data/waterproofingEstimates.json');
-var waterproofingPrimers = require('./data/waterproofingPrimers.json');
-var waterproofingTopcoats = require('./data/waterproofingTopcoats.yml');
+global.aggregateMaterials = require('./data/aggregateMaterials.yml');
+global.flooringCoatings = require('./data/flooringCoatings.yml');
+global.flooringEstimates = require('./data/flooringEstimates.json');
+global.mileageRates = require('./data/mileageRates.json');
+global.roofingBasecoats = require('./data/roofingBasecoats.yml');
+global.roofingCoatings = require('./data/roofingCoatings.yml');
+global.roofingEstimates = require('./data/roofingEstimates.json');
+global.roofingPrimers = require('./data/roofingPrimers.json');
+global.roofingTopcoats = require('./data/roofingTopcoats.yml');
+global.waterproofingBasecoats = require('./data/waterproofingBasecoats.yml');
+global.waterproofingEstimates = require('./data/waterproofingEstimates.json');
+global.waterproofingPrimers = require('./data/waterproofingPrimers.json');
+global.waterproofingTopcoats = require('./data/waterproofingTopcoats.yml');
 
 // insert the sample data into our data store
 db.insert(aggregateMaterials);
@@ -185,19 +185,8 @@ app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
 app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
 // verify our sample data was imported correctly
-console.log(Object.keys(aggregateMaterials).length+ " aggregateMaterials");
-console.log(Object.keys(flooringCoatings).length+ " flooringCoatings");
-console.log(Object.keys(flooringEstimates).length+ " flooringEstimates");
-console.log(Object.keys(mileageRates).length+ " mileageRates");
-console.log(Object.keys(roofingBasecoats).length+ " roofingBasecoats");
-console.log(Object.keys(roofingCoatings).length+ " roofingCoatings");
-console.log(Object.keys(roofingEstimates).length+ " roofingEstimates");
-console.log(Object.keys(roofingPrimers).length+ " roofingPrimers");
-console.log(Object.keys(roofingTopcoats).length+ " roofingTopcoats");
-console.log(Object.keys(waterproofingBasecoats).length+ " waterproofingBasecoats");
-console.log(Object.keys(waterproofingEstimates).length+ " waterproofingEstimates");
-console.log(Object.keys(waterproofingPrimers).length+ " waterproofingPrimers");
-console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats");
+verify.sampleDataImport();
+
 
 // Set up ROUTING .................................................
 
