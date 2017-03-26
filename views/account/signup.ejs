@@ -8,6 +8,14 @@
   <blockquote>
     Let's create your new account! Please note the new password must be at least 4 characters.
   </blockquote>
+  <%if(messages.errors){%>
+   <% for (var x=0;x<messages.errors.length;x++) {%>
+      <div class="alert alert-danger">
+        <%= messages.errors[x].msg %>
+        </div>
+      <%}%>
+   <%}%>
+
   <form name="signupForm" method="POST" class="form-horizontal" action="/signup" novalidate>
     <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
     <div class="form-group">
@@ -34,17 +42,6 @@
         <button type="submit" class="btn btn-success" ng-disabled="signupForm.$invalid || psw != psw1">
           <i class="fa fa-user-plus"></i> Signup
         </button>
-        
-        <!--
-        <div class="alert-container" ng-show="psw != psw1 && psw1">
-          <hr>
-          <div class="alert alert-danger">Passwords do not match!</div>
-        </div>
-        <div class="alert-container" ng-show="signupForm.password.$error.minlength">
-          <hr>
-          <div class="alert alert-danger">Password has to be at least 4 characters long!</div>
-        </div>
-        -->
       </div>
     </div>
   </form>
