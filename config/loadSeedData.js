@@ -54,6 +54,12 @@ module.exports = {
         app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
+        //users
+        const userController = require('../controllers/user');
+        var users = require('../data/users.json');
+        users.data.forEach(function(user){
+            userController.newUser(user)    
+        });
     }
 }
 

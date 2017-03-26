@@ -4,6 +4,31 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const User = require('../models/User');
 
+
+/**
+ * Registering new user
+ */
+
+exports.newUser = function(new_user){
+
+console.log(new_user);
+  var user = new User(new_user);
+
+  User.findOne({ email: new_user.email }, (err, existingUser) => {
+    //if (err) { return next(err); }
+    if (existingUser) {
+      
+      console.log("User with email: "+ new_user.email+" has already seeded.");
+      //return res.redirect('/signup');
+    }
+    else {
+      user.save();
+      console.log("User with email: "+ new_user.email+" has seeded now.")
+    }
+  });
+}
+
+
 /**
  * GET /login
  * Login page.
