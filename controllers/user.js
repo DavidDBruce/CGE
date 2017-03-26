@@ -17,14 +17,15 @@ console.log(new_user);
   User.findOne({ email: new_user.email }, (err, existingUser) => {
     //if (err) { return next(err); }
     if (existingUser) {
-      
-      console.log("User with email: "+ new_user.email+" has already seeded.");
-      //return res.redirect('/signup');
+      User.remove({email: existingUser.email}, function(err, removed){
+          if(err)
+            console.log(err)
+      })
     }
-    else {
-      user.save();
-      console.log("User with email: "+ new_user.email+" has seeded now.")
-    }
+    
+    user.save();
+    console.log("User with email: "+ new_user.email+" has seeded now.")
+    
   });
 }
 
