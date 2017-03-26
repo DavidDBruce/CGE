@@ -43,9 +43,6 @@ const contactController = require('./controllers/contact');
 // API keys and Passport configuration.
 const passportConfig = require('./config/passport');
 
-// =========================================================
-
-
 // Connect to MongoDB.
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
