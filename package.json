@@ -52,6 +52,7 @@
     "nedb": "latest",
     "node-foursquare": "^0.3.0",
     "node-linkedin": "^0.5.4",
+    "node-sass": "^4.5.0",
     "node-sass-middleware": "^0.10.0",
     "nodemailer": "^2.6.4",
     "passport": "0.3.2",
@@ -98,7 +99,7 @@
     }
   },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "mocha --reporter spec ./test/controllers/*.js ./test/models/*.js"
   }
 }
