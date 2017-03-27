@@ -133,6 +133,13 @@ OR run faster, safer yarn install. Yarn performs the same functions as npm. Inst
 
 Do create folder in C dirve as: C:\data\db
 
+1.Click the windows icon in the lower left of your screen
+2.Right-click "computer" and click properties
+3.In the nav on the left side of the page click on "Advanced system settings"
+4.Click Environment Variables
+5.Under the user section click PATH so that the section is highlighted and click edit
+6.In variable value go all the way to the end of the text and add ";C:\Program Files\MongoDB\Server\3.4\bin" to it
+
 Right-click on the project folder and open Git Bash. Run mongod to start MongoDB.  (When done working the application, you can hit CTRL-C to stop.)
 
 ```
