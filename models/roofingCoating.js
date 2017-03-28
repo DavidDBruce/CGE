@@ -1,3 +1,5 @@
+// P3-2
+// Alekhya Devi Manne, Elizabeth Billings
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
