@@ -1,3 +1,8 @@
+//DevTeam ID (P3-8)
+//Dev1 : Swaroop Gembali [S528802]
+//Dev2 : Tarun Kumar Potlapalli [S528757]
+
+
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
