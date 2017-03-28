@@ -4,6 +4,8 @@
    needed for BootStrap menu
    ========================================================================== */
   body {
+      background-color: greenyellow;
+      font-style: italic;
       padding-top: 50px;
       padding-bottom: 20px;
     }
@@ -85,7 +87,7 @@
 .funkyradio input[type="checkbox"]:empty ~ label {
   position: relative;
   line-height: 2.5em;
-  text-indent: 3.25em;
+  text-indent: 2.25em;
   margin-top: 2em;
   cursor: pointer;
   -webkit-user-select: none;
