@@ -1,5 +1,8 @@
 // P3-2
 // Alekhya Devi Manne, Elizabeth Billings
+// Dev Team P3-6
+// Neeraja Garigipati s528801
+// Vaishnavi Kalvakota s528803
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
