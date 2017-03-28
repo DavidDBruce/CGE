@@ -4,8 +4,6 @@
    needed for BootStrap menu
    ========================================================================== */
   body {
-      background-color: greenyellow;
-      font-style: italic;
       padding-top: 50px;
       padding-bottom: 20px;
     }
