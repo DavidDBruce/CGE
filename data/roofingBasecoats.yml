@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-#P3-12; Benjamin Wolff, Nagnath Gokuldas Prabhu
-=======
-#devteam ID (P3-7) Amarendar Reddy Reddygari (s528760), Connor Besancenez (s519984) are going to work on Roofing basecoats.
->>>>>>> ce79da4b892df3ace5f7865857a18a99946f4419
-
 ---
 - _id: 1
   name: 7419 HB - perma-gard HB
@@ -17,5 +11,7 @@
   unit: gal
   displayorder: 20
   price: 38.50
-# 7419 HB - perma-gard HB    $40.70/gal
-# 70620 - permathane II      $38.50/gal
+#7419 HB - perma-gard HB    $40.70/gal
+#70620 - permathane II      $38.50/gal
+#P3-12; Benjamin Wolff, Nagnath Gokuldas Prabhu
+#devteam ID (P3-7) Amarendar Reddy Reddygari (s528760), Connor Besancenez (s519984) are going to work on Roofing basecoats.
