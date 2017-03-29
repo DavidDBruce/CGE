@@ -17,7 +17,7 @@ const lusca = require('lusca');
 const dotenv = require('dotenv');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('express-flash');
-const mongoose = require('mongoose');
+global.mongoose = require('mongoose');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
@@ -85,7 +85,7 @@ app.use(passport.session());
 
 
 app.use(flash());
-
+/*
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
     next();
@@ -95,6 +95,9 @@ app.use((req, res, next) => {
 });
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
+app.use(lusca.hsts({ maxAge: 31536000 }));
+*/
+
 app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
