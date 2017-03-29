@@ -1,7 +1,5 @@
-
-//p4-11 Avinash Vasadi, Darshan Yadav Venkatesh.
-
-Schema = mongoose.Schema
+var mongoose = require('mongoose')
+  , Schema = mongoose.Schema
 
 var WaterproofingTopcoatSchema = new Schema({
     name:  { type: String, required: true },
@@ -12,4 +10,4 @@ var WaterproofingTopcoatSchema = new Schema({
 
 var waterproofingTopcoat = mongoose.model('WaterproofingTopcoat', WaterproofingTopcoatSchema)
 module.exports = waterproofingTopcoat
-
+//p4-11 Avinash Vasadi, Darshan Yadav Venkatesh.
