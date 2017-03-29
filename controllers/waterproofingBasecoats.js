@@ -1,6 +1,6 @@
 //Dev Team-p4-6
-//Jyothsna Pala-S528755
-//Bhavishya Arelli-S528743
+//Jyothsna Pala
+//Bhavishya Arelli
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
