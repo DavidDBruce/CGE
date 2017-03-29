@@ -1,6 +1,7 @@
 var express = require('express');
 var api = express.Router();
 
+
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "about")
 // Specify the handler for each required combination of URI and HTTP verb 
@@ -228,6 +229,11 @@ api.get('/t15/b', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('about_2017_spring_03/t15/r/index.ejs',
         { title: "Vamsi Ravva", layout: "layout.ejs" });
+});
+api.get('/t15/c', function(req, res) {
+    console.log("Handling GET " + req);
+    return res.render('about_2017_spring_02/t15/r/index.ejs',
+        { title: "Sandip Subedi", layout: "layout.ejs" });
 });
 
 module.exports = api;

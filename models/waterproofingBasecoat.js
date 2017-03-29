@@ -1,3 +1,6 @@
+//Dev Team-p4-6
+//Jyothsna Pala
+//Bhavishya Arelli
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
