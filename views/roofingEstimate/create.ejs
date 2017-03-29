@@ -27,18 +27,16 @@ for (var i=0; i<roofingEstimates.query.length; i++) {
 
 				<% include ../estimateparts/fg-about %>
 					<% include ../estimateparts/fg-footage %>
-						<% include ../estimateparts/fg-flooring %>
-							<% include ../estimateparts/fg-roofing %>
-								<% include ../estimateparts/fg-waterproofing %>
-									<% include ../estimateparts/fg-aggregate %>
-										<% include ../estimateparts/fg-labor %>
-											<% include ../estimateparts/fg-mileage %>
-												<% include ../estimateparts/fg-misc %>
-													<% include ../estimateparts/fg-comment %>
+						<% include ../estimateparts/fg-roofing %>
+								<% include ../estimateparts/fg-aggregate %>
+									<% include ../estimateparts/fg-labor %>
+										<% include ../estimateparts/fg-mileage %>
+											<% include ../estimateparts/fg-misc %>
+												<% include ../estimateparts/fg-comment %>
 										
-														<div class="form-group">
-															<input type="submit" value="Post new entry" class="btn btn-primary" />
-														</div>
+													<div class="form-group">
+														<input type="submit" value="Post new entry" class="btn btn-primary" />
+													</div>
 			</form>
 			<br/>
 			<form method="get" action="/roofingEstimate">
