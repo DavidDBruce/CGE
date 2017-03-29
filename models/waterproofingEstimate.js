@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 // P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri
-=======
 //P4-5 
 // Saidevi Uppalapati , Raviteja Chintala
 
->>>>>>> 9bdaaf7ba70c6ee06a028be14872718931626ef0
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const AggregateMaterial = require("./aggregateMaterial.js");
