@@ -1,8 +1,7 @@
 
 //p4-11 Avinash Vasadi, Darshan Yadav Venkatesh.
 
-
-   Schema = mongoose.Schema
+Schema = mongoose.Schema
 
 var WaterproofingTopcoatSchema = new Schema({
     name:  { type: String, required: true },
