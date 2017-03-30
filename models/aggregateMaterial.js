@@ -10,7 +10,8 @@ var AggregateMaterialSchema = new Schema({
     defaultCoverageSqFt: { type: Number, required: true, default: 200 },
     unit: { type: String, required: true, default: '100lb bag' },
     displayorder: { type: String, required: true, default: 99 },
-    price: { type: Number, required: true, default: 20 }
+    price: { type: Number, required: true, default: 20 },
+    IsDeleted: { type: Boolean, required: true, default: false }
 })
 
 var aggregateMaterial = mongoose.model('AggregateMaterial', AggregateMaterialSchema)
