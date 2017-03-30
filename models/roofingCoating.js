@@ -9,6 +9,7 @@ var RoofingCoatingSchema = new Schema({
     unit:  { type: String, required: true },
     displayorder:  { type: String, required: true },
     price:  { type: Number, required: true }
+    
 })
 
 var roofingCoating = mongoose.model('RoofingCoating', RoofingCoatingSchema)
