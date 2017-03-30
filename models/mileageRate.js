@@ -1,3 +1,4 @@
+//P4-12 Kenneth Mott and Wendy Eloe
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 

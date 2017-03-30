@@ -1,3 +1,13 @@
+
+//DevTeam ID (P3-8)
+//Dev1 : Swaroop Gembali [S528802]
+//Dev2 : Tarun Kumar Potlapalli [S528757]
+
+
+
+//P3-4
+//Reshma Shaik, Anil seshukumar Akula
+
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -139,21 +149,21 @@ controllers/roofingTopcoats.js
 
 2 Respond with JSON:
 
-http://127.0.0.1:8081/roofingTopcoat/findall [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/findone/1 [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/findall [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/findone/1 [WORKING]
 
 5 Respond with CRUD Views:
 
-http://127.0.0.1:8081/roofingTopcoat [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/create [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/delete/1 [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/details/1 [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/edit/1 [WORKING]
+http://127.0.0.1:8082/roofingTopcoat [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/create [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/details/1 [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
-http://127.0.0.1:8081/roofingTopcoat/save [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/save/1 [WORKING]
-http://127.0.0.1:8081/roofingTopcoat/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingTopcoat/save [Not WORKING]
+http://127.0.0.1:8082/roofingTopcoat/save/1 [Not WORKING]
+http://127.0.0.1:8082/roofingTopcoat/delete/1 [Not WORKING]
 */
 
