@@ -1,3 +1,7 @@
+// P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri
+// P4-5 
+// Saidevi Uppalapati , Raviteja Chintala
+// p4-10 | Aswini Vadlamudi, Haritha Kurla 
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -32,7 +36,7 @@ api.get('/findone/:id', function(req, res){
 
 
 // GET create
-api.get("/create", function(req, res) {
+api.get("/create",ensureAuthenticated.ensureLoggedIn, function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("waterproofingEstimate/create",
         { title: "WP Primers", layout: "layout.ejs" });

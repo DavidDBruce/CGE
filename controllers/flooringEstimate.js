@@ -1,3 +1,5 @@
+//P2-3
+//Challa Sreeja Reddy,Koushik Lakkaraju
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -11,7 +13,7 @@ const notfoundstring = 'estimates';
 // see app.js for the root request this controller handles
 
 // GET to this controller root URI
-api.get("/", function (request, response) {
+api.get("/", function (request,response) {
   response.render("flooringEstimate/index.ejs");
 });
 
@@ -30,9 +32,8 @@ api.get('/findone/:id', function(req, res){
     res.send(JSON.stringify(item));
 });
 
-
 // GET create
-api.get("/create", function(req, res) {
+api.get("/create",ensureAuthenticated.ensureLoggedIn, function(req, res) {
     console.log('Handling GET /create' + req);
     res.render("flooringEstimate/create",
         { title: "WP Primers", layout: "layout.ejs" });
@@ -91,7 +92,7 @@ api.get('/edit/:id', function(req, res) {
 
 // POST new
 api.post('/save', function(req, res) {
-    console.log("Handling POST " + req);
+    console.log("Handling POST " + req.app.locals);
     var data = req.app.locals.estimates.query;
     var item = new Model;
     console.log("NEW ID " + req.body._id);

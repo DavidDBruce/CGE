@@ -9,7 +9,6 @@ const bodyParser = require("body-parser");
 const YAML = require('require-yaml');
 const port = 8082;
 const engines = require('consolidate')
-
 const compression = require('compression');
 const session = require('express-session');
 const chalk = require('chalk');
@@ -18,35 +17,23 @@ const lusca = require('lusca');
 const dotenv = require('dotenv');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('express-flash');
-const mongoose = require('mongoose');
-const passport = require('passport');
+global.mongoose = require('mongoose');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
+global.passport = require('passport');
 
-const upload = multer({ dest: path.join(__dirname, 'uploads') });
+global.upload = multer({ dest: path.join(__dirname, 'uploads') });
 
 // Load environment variables from .env file, where API keys and passwords are configured.
 dotenv.load({ path: '.env.example' });
 
-// Controllers (route handlers).
-const homeController = require('./controllers/home');
-const userController = require('./controllers/user');
-const apiController = require('./controllers/api');
-const contactController = require('./controllers/contact');
-
-// API keys and Passport configuration.
-const passportConfig = require('./config/passport');
-
-// =========================================================
-
-// set up a temporary (in memory) database
-const Datastore = require('nedb');
-//var dbtoexpress = require("db-to-express-rest");
-
-var db = new Datastore();
-db.loadDatabase();
+// global config files
+global.ensureAuthenticated = require('./config/ensureAuthenticated');
+global.verify = require('./config/verify');
+global.loadSeedData = require('./config/loadSeedData');
+global.routes = require('./config/routes');
 
 // Connect to MongoDB.
 mongoose.Promise = global.Promise;
@@ -59,7 +46,7 @@ mongoose.connection.on('error', () => {
 // =========================================================
 
 // create express app 
-const app = express();
+global.app = express();
 app.set('port', process.env.PORT || port);
 
 // set the root view folder & specify the view engine 
@@ -80,12 +67,10 @@ app.use(sass({
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(expressValidator());
+app.use(expressValidator());
 app.use(express.static(__dirname + '/assets/'));  // works for views in root view folder
 app.use(expressLayouts);
 
-
-/* ============= LATER ==================
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -100,6 +85,7 @@ app.use(passport.session());
 
 
 app.use(flash());
+/*
 app.use((req, res, next) => {
   if (req.path === '/api/upload') {
     next();
@@ -109,6 +95,9 @@ app.use((req, res, next) => {
 });
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
+app.use(lusca.hsts({ maxAge: 31536000 }));
+*/
+
 app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
@@ -128,193 +117,26 @@ app.use((req, res, next) => {
   next();
 });
 
-
- ================= END LATER ================ */
-
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 // Set up SEED DATA  .................................................
 
-// Read in the sample data files
-var aggregateMaterials = require('./data/aggregateMaterials.yml');
-var flooringCoatings = require('./data/flooringCoatings.yml');
-var flooringEstimates = require('./data/flooringEstimates.json');
-var mileageRates = require('./data/mileageRates.json');
-var roofingBasecoats = require('./data/roofingBasecoats.yml');
-var roofingCoatings = require('./data/roofingCoatings.yml');
-var roofingEstimates = require('./data/roofingEstimates.json');
-var roofingPrimers = require('./data/roofingPrimers.json');
-var roofingTopcoats = require('./data/roofingTopcoats.yml');
-var waterproofingBasecoats = require('./data/waterproofingBasecoats.yml');
-var waterproofingEstimates = require('./data/waterproofingEstimates.json');
-var waterproofingPrimers = require('./data/waterproofingPrimers.json');
-var waterproofingTopcoats = require('./data/waterproofingTopcoats.yml');
-
-// insert the sample data into our data store
-db.insert(aggregateMaterials);
-db.insert(flooringCoatings);
-db.insert(flooringEstimates);
-db.insert(mileageRates);
-db.insert(roofingBasecoats);
-db.insert(roofingCoatings);
-db.insert(roofingEstimates);
-db.insert(roofingPrimers);
-db.insert(roofingTopcoats);
-db.insert(waterproofingBasecoats);
-db.insert(waterproofingEstimates);
-db.insert(waterproofingPrimers);
-db.insert(waterproofingTopcoats);
-
-// intialize app.locals (these objects will be available to our controllers)
-app.locals.aggregateMaterials = db.find(aggregateMaterials);
-app.locals.flooringCoatings = db.find(flooringCoatings);
-app.locals.flooringEstimates = db.find(flooringEstimates);
-app.locals.mileageRates = db.find(mileageRates);
-app.locals.roofingBasecoats = db.find(roofingBasecoats);
-app.locals.roofingCoatings = db.find(roofingCoatings);
-app.locals.roofingEstimates = db.find(roofingEstimates);
-app.locals.roofingPrimers = db.find(roofingPrimers);
-app.locals.roofingTopcoats = db.find(roofingTopcoats);
-app.locals.waterproofingBasecoats = db.find(waterproofingBasecoats);
-app.locals.waterproofingEstimates = db.find(waterproofingEstimates);
-app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
-app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
-
+loadSeedData.load();
 // verify our sample data was imported correctly
-console.log(Object.keys(aggregateMaterials).length+ " aggregateMaterials");
-console.log(Object.keys(flooringCoatings).length+ " flooringCoatings");
-console.log(Object.keys(flooringEstimates).length+ " flooringEstimates");
-console.log(Object.keys(mileageRates).length+ " mileageRates");
-console.log(Object.keys(roofingBasecoats).length+ " roofingBasecoats");
-console.log(Object.keys(roofingCoatings).length+ " roofingCoatings");
-console.log(Object.keys(roofingEstimates).length+ " roofingEstimates");
-console.log(Object.keys(roofingPrimers).length+ " roofingPrimers");
-console.log(Object.keys(roofingTopcoats).length+ " roofingTopcoats");
-console.log(Object.keys(waterproofingBasecoats).length+ " waterproofingBasecoats");
-console.log(Object.keys(waterproofingEstimates).length+ " waterproofingEstimates");
-console.log(Object.keys(waterproofingPrimers).length+ " waterproofingPrimers");
-console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats");
+verify.sampleDataImport();
 
 // Set up ROUTING .................................................
 
 // Request to this URI will be handled by this CONTROLLER..........
-app.use('/', require('./controllers/index.js'));
-app.use('/about_2016_fall_03', require('./controllers/about_2016_fall_03.js'));
-app.use('/about_2016_fall_04', require('./controllers/about_2016_fall_04.js'));
-app.use('/about_2016_fall_05', require('./controllers/about_2016_fall_05.js'));
-app.use('/about_2016_fall_06', require('./controllers/about_2016_fall_06.js'));
-app.use('/about_2017_spring_02', require('./controllers/about_2017_spring_02.js'));
-app.use('/about_2017_spring_03', require('./controllers/about_2017_spring_03.js'));
-app.use('/about_2017_spring_04', require('./controllers/about_2017_spring_04.js'));
-app.use('/aggregate', require('./controllers/aggregateMaterials.js'));
-app.use('/flooringCoating', require('./controllers/flooringCoatings.js'));
-app.use('/flooringEstimate', require('./controllers/flooringEstimate.js'));
-app.use('/mileageRate', require('./controllers/mileageRate.js'));
-app.use('/prospect', require('./controllers/prospects.js'));
-app.use('/roofingBasecoat', require('./controllers/roofingBasecoats.js'));
-app.use('/roofingCoating', require('./controllers/roofingCoatings.js'));
-app.use('/roofingEstimate', require('./controllers/roofingEstimate.js'));
-app.use('/roofingPrimer', require('./controllers/roofingPrimers.js'));
-app.use('/roofingTopcoat', require('./controllers/roofingTopcoats.js'));
-app.use('/waterproofingBasecoat', require('./controllers/waterproofingBasecoats.js'));
-app.use('/waterproofingEstimate', require('./controllers/waterproofingEstimate.js'));
-app.use('/waterproofingPrimer', require('./controllers/waterproofingPrimers.js'));
-app.use('/waterproofingTopcoat', require('./controllers/waterproofingTopcoats.js'));
-
+routes.defineRoutes();
 // Primary app routes.
-app.get('/', homeController.index);
-app.get('/login', userController.getLogin);
-app.post('/login', userController.postLogin);
-app.get('/logout', userController.logout);
-app.get('/forgot', userController.getForgot);
-app.post('/forgot', userController.postForgot);
-app.get('/reset/:token', userController.getReset);
-app.post('/reset/:token', userController.postReset);
-app.get('/signup', userController.getSignup);
-app.post('/signup', userController.postSignup);
-app.get('/contact', contactController.getContact);
-app.post('/contact', contactController.postContact);
-app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
-app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
-app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
-app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
-app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
-
+routes.definePrimaryAppRoutes();
 // API examples routes.
-app.get('/api', apiController.getApi);
-app.get('/api/lastfm', apiController.getLastfm);
-app.get('/api/nyt', apiController.getNewYorkTimes);
-app.get('/api/aviary', apiController.getAviary);
-app.get('/api/steam', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getSteam);
-app.get('/api/stripe', apiController.getStripe);
-app.post('/api/stripe', apiController.postStripe);
-app.get('/api/scraping', apiController.getScraping);
-app.get('/api/twilio', apiController.getTwilio);
-app.post('/api/twilio', apiController.postTwilio);
-app.get('/api/clockwork', apiController.getClockwork);
-app.post('/api/clockwork', apiController.postClockwork);
-app.get('/api/foursquare', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getFoursquare);
-app.get('/api/tumblr', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getTumblr);
-app.get('/api/facebook', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getFacebook);
-app.get('/api/github', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getGithub);
-app.get('/api/twitter', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getTwitter);
-app.post('/api/twitter', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postTwitter);
-app.get('/api/linkedin', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getLinkedin);
-app.get('/api/instagram', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getInstagram);
-app.get('/api/paypal', apiController.getPayPal);
-app.get('/api/paypal/success', apiController.getPayPalSuccess);
-app.get('/api/paypal/cancel', apiController.getPayPalCancel);
-app.get('/api/lob', apiController.getLob);
-app.get('/api/upload', apiController.getFileUpload);
-app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
-app.get('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getPinterest);
-app.post('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postPinterest);
-app.get('/api/google-maps', apiController.getGoogleMaps);
-
+routes.defineApiRoutes();
 //OAuth authentication routes. (Sign in)
-app.get('/auth/instagram', passport.authenticate('instagram'));
-app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'public_profile'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
-app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-
+routes.defineAuthenticationRoutes();
 // OAuth authorization routes. (API examples)
-app.get('/auth/foursquare', passport.authorize('foursquare'));
-app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureRedirect: '/api' }), (req, res) => {
-  res.redirect('/api/foursquare');
-});
-app.get('/auth/tumblr', passport.authorize('tumblr'));
-app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), (req, res) => {
-  res.redirect('/api/tumblr');
-});
-app.get('/auth/steam', passport.authorize('openid', { state: 'SOME STATE' }));
-app.get('/auth/steam/callback', passport.authorize('openid', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
-});
-app.get('/auth/pinterest', passport.authorize('pinterest', { scope: 'read_public write_public' }));
-app.get('/auth/pinterest/callback', passport.authorize('pinterest', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect('/api/pinterest');
-});
-
+routes.defineAuthorizationRoutes();
 // end routing ================================================
 
 app.use(errorHandler());

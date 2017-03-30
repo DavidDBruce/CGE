@@ -1,3 +1,5 @@
+# P2-8
+# ShivaTeja Miyapuram, Manohar Sriram
 ---
 - name: 70714/70715 - epoxy
   _id: 1
@@ -6,6 +8,7 @@
   unit: gal
   displayorder: 10
   price: 56.30
+  IsDeleted: false
 
 - name: 70714/70715=09 general purpose urethane
   _id: 2
@@ -14,6 +17,7 @@
   unit: gal
   displayorder: 20
   price: 50.38
+  IsDeleted: false
 
 - name: 70734/70735 - floor brite epoxy
   _id: 3
@@ -22,6 +26,7 @@
   unit: gal
   displayorder: 30
   price: 77.45
+  IsDeleted: false
 
 - name: 70805/7952 - chem resistant urethane
   _id: 4
@@ -30,6 +35,7 @@
   unit: gal
   displayorder: 40
   price: 72.67
+  IsDeleted: false
 
 - name: 70815/70816 - urethane Hi-solids
   _id: 5
@@ -38,6 +44,7 @@
   unit: gal
   displayorder: 50
   price: 113.15
+  IsDeleted: false
 
 - name: 70714/70715-01 fast cure epoxy
   _id: 6
@@ -46,6 +53,7 @@
   unit: gal
   displayorder: 60
   price: 66.40
+  IsDeleted: false
 
 - name: 70714/70715-01 fast cure epoxy
   _id: 7
@@ -54,6 +62,7 @@
   unit: gal
   displayorder: 70
   price: 66.40
+  IsDeleted: false
 
 - name: 70714/70715-01 fast cure epoxy
   _id: 8
@@ -62,6 +71,7 @@
   unit: gal
   displayorder: 80
   price: 66.40
+  IsDeleted: false
 #70714/70715 - epoxy                                   $56.30/gal
 #70714/70715=09 general purpose urethane    $50.38/gal  
 #70734/70735 - floor brite epoxy                     $77.45/gal

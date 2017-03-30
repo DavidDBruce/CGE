@@ -2,7 +2,33 @@ const async = require('async');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const passport = require('passport');
-const User = require('../models/User');
+const User = require('../models/user');
+
+
+/**
+ * Registering new user
+ */
+
+exports.newUser = function(new_user){
+
+console.log(new_user);
+  var user = new User(new_user);
+
+  User.findOne({ email: new_user.email }, (err, existingUser) => {
+    //if (err) { return next(err); }
+    if (existingUser) {
+      User.remove({email: existingUser.email}, function(err, removed){
+          if(err)
+            console.log(err)
+      })
+    }
+    
+    user.save();
+    console.log("User with email: "+ new_user.email+" has seeded now.")
+    
+  });
+}
+
 
 /**
  * GET /login
@@ -25,7 +51,6 @@ exports.postLogin = (req, res, next) => {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password cannot be blank').notEmpty();
   req.sanitize('email').normalizeEmail({ remove_dots: false });
-
   const errors = req.validationErrors();
 
   if (errors) {
@@ -36,12 +61,14 @@ exports.postLogin = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) { return next(err); }
     if (!user) {
+      console.log(info);
       req.flash('errors', info);
       return res.redirect('/login');
     }
     req.logIn(user, (err) => {
       if (err) { return next(err); }
-      req.flash('success', { msg: 'Success! You are logged in.' });
+     req.flash('success','Success! You are logged in.');
+      console.log(err);
       res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
@@ -53,7 +80,8 @@ exports.postLogin = (req, res, next) => {
  */
 exports.logout = (req, res) => {
   req.logout();
-  res.redirect('/');
+  req.flash('success',"Successfully logged out.");
+  res.redirect('/login');
 };
 
 /**
@@ -95,6 +123,7 @@ exports.postSignup = (req, res, next) => {
     if (err) { return next(err); }
     if (existingUser) {
       req.flash('errors', { msg: 'Account with that email address already exists.' });
+      console.log("User already exists.");
       return res.redirect('/signup');
     }
     user.save((err) => {

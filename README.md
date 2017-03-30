@@ -131,6 +131,15 @@ OR run faster, safer yarn install. Yarn performs the same functions as npm. Inst
 
 # Start up Mongodb
 
+Do create folder in C dirve as: C:\data\db
+
+- Click the windows icon in the lower left of your screen
+- Right-click "computer" and click properties
+- In the nav on the left side of the page click on "Advanced system settings"
+- Click Environment Variables
+- Under the user section click PATH so that the section is highlighted and click edit
+- In variable value go all the way to the end of the text and add ";C:\Program Files\MongoDB\Server\3.4\bin" to it
+
 Right-click on the project folder and open Git Bash. Run mongod to start MongoDB.  (When done working the application, you can hit CTRL-C to stop.)
 
 ```
@@ -145,8 +154,7 @@ In Windows, right-click on the project folder and "Open Command Window Here as A
 > nodemon app.js
 ```
 
-Point your browser to `http://localhost:8082` (for Sec 02)
-Point your browser to `http://localhost:8084` (for Sec 04)
+Point your browser to `http://localhost:8082` 
 
 # Building and editing the code
 
@@ -178,7 +186,3 @@ The repo will change OFTEN and A LOT. :)
 Hackathon-Starter project
 
 - https://github.com/sahat/hackathon-starter
-
-
-
-

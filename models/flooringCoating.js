@@ -1,3 +1,5 @@
+// P2-8
+// ShivaTeja Miyapuram, Manohar Sriram
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
@@ -6,7 +8,8 @@ var FlooringCoatingSchema = new Schema({
     name: { type: String, required: true },
     unit: { type: String, required: true },
     displayorder: { type: String, required: true },
-    price: { type: Number, required: true }
+    price: { type: Number, required: true },
+    IsDeleted: { type: Boolean, required: true }
 })
 
 var flooringCoating = mongoose.model('FlooringCoating', FlooringCoatingSchema)
