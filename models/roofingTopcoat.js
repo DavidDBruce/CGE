@@ -1,10 +1,5 @@
-
-//DevTeam ID (P3-8)
-//Dev1 : Swaroop Gembali [S528802]
-//Dev2 : Tarun Kumar Potlapalli [S528757]
-
-
-
+//P3-4
+//Reshma Shaik, Anil Seshukumar Akula
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
@@ -13,8 +8,7 @@ var RoofingTopcoatSchema = new Schema({
     name:  { type: String, required: true },
     unit:  { type: String, required: true },
     displayorder:  { type: String, required: true },
-    price:  { type: Number, required: true },
-    isDeleted:{type: Boolean, required: true }
+    price:  { type: Number, required: true }
 })
 
 var roofingTopcoat = mongoose.model('RoofingTopcoat', RoofingTopcoatSchema)

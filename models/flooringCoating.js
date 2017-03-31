@@ -8,8 +8,7 @@ var FlooringCoatingSchema = new Schema({
     name: { type: String, required: true },
     unit: { type: String, required: true },
     displayorder: { type: String, required: true },
-    price: { type: Number, required: true },
-    IsDeleted: { type: Boolean, required: true }
+    price: { type: Number, required: true }
 })
 
 var flooringCoating = mongoose.model('FlooringCoating', FlooringCoatingSchema)
