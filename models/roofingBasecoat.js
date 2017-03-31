@@ -10,7 +10,7 @@ var RoofingBasecoatSchema = new Schema({
   unit: { type: String, required: true },
   displayorder: { type: String, required: true },
   price: { type: Number, required: true },
-  isDeleted:{type: boolean, required: true }
+  isDeleted:{type: Boolean, required: true }
 })
 
 var roofingBasecoat = mongoose.model('RoofingBasecoat', RoofingBasecoatSchema)
