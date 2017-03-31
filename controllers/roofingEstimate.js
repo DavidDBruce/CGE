@@ -1,5 +1,5 @@
-//P3-10
-//Joel Beckley, Veera Kishon Kumar Mucherla
+//P3-3
+//Unnathi VallapuReddy,Devin Miller
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -9,6 +9,7 @@ var express = require('express');
 var api = express.Router();
 var Model = require('../models/roofingEstimate.js');  
 const notfoundstring ='estimates';
+var isDeleted;
 
 // see app.js for the root request this controller handles
 
