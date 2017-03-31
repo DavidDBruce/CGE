@@ -168,4 +168,26 @@ api.post('/delete/:id', function(req, res, next) {
 
 
 module.exports = api;
+/* 10 controller methods handled by controller:
 
+controllers/roofingBasecoats.js
+
+2 Respond with JSON:
+
+http://localhost:8082/waterproofingBasecoat/findall [WORKING]
+http://localhost:8082/waterproofingBasecoat/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://localhost:8082/waterproofingBasecoat [WORKING]
+http://localhost:8082/waterproofingBasecoat/create [WORKING]
+http://localhost:8082/waterproofingBasecoat/delete/1 [WORKING]
+http://localhost:8082/waterproofingBasecoat/details/1 [WORKING]
+http://localhost:8082/waterproofingBasecoat/edit/1[WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://localhost:8082/waterproofingBasecoat/save [NOT-WORKING]
+http://localhost:8082/waterproofingBasecoat/save/1 [NOT-WORKING]
+http://localhost:8082/waterproofingBasecoat/delete/1 [WORKING]
+*/
