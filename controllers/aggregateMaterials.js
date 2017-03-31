@@ -163,7 +163,7 @@ http://localhost:8082/aggregate/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
-http://localhost:8082/aggregate/save [NOT WORKING]
-http://localhost:8082/aggregate/save/1 [NOT WORKING]
+http://localhost:8082/aggregate/save [WORKING]
+http://localhost:8082/aggregate/save/1 [WORKING]
 http://localhost:8082/aggregate/delete/1 [WORKING]
 */
