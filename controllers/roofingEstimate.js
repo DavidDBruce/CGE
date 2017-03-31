@@ -1,5 +1,5 @@
-//P3-3
-//Unnathi VallapuReddy,Devin Miller
+//P3-10
+//Joel Beckley, Veera Kishon Kumar Mucherla
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -140,3 +140,26 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+/* 10 controller methods handled by controller:
+
+controllers/roofingEstimate.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8082/roofingEstimate/findall [WORKING]
+http://127.0.0.1:8082/roofingEstimate/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8082/roofingEstimate [WORKING]
+http://127.0.0.1:8082/roofingEstimate/create [WORKING]
+http://127.0.0.1:8082/roofingEstimate/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingEstimate/details/1 [WORKING]
+http://127.0.0.1:8082/roofingEstimate/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8082/roofingEstimate/save [WORKING]
+http://127.0.0.1:8082/roofingEstimate/save/1 [WORKING]
+http://127.0.0.1:8082/roofingEstimate/delete/1 [WORKING]
+*/

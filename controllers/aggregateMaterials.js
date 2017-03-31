@@ -144,3 +144,26 @@ api.post('/delete/:id', function(req, res, next) {
 
 module.exports = api;
 
+/* 10 controller methods handled by controller:
+
+controllers/roofingBasecoats.js
+
+2 Respond with JSON:
+
+http://localhost:8082/aggregate/findall [WORKING]
+http://localhost:8082/aggregate/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://localhost:8082/aggregate [WORKING]
+http://localhost:8082/aggregate/create [WORKING]
+http://localhost:8082/aggregate/delete/1 [WORKING]
+http://localhost:8082/aggregate/details/1 [WORKING]
+http://localhost:8082/aggregate/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://localhost:8082/aggregate/save [WORKING]
+http://localhost:8082/aggregate/save/1 [WORKING]
+http://localhost:8082/aggregate/delete/1 [WORKING]
+*/

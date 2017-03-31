@@ -1,5 +1,5 @@
-//P3-3
-//Unnathi VallapuReddy,Devin Miller
+//P3-10
+//Joel Beckley, Veera Kishon Kumar Mucherla
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const AggregateMaterial = require("./aggregateMaterial.js");
@@ -11,7 +11,7 @@ const RoofingTopcoat = require("./roofingTopcoat.js");
 const WaterproofingBasecoat = require("./waterproofingBasecoat.js");
 const WaterproofingPrimer = require("./waterproofingPrimer.js");
 const WaterproofingTopcoat = require("./waterproofingTopcoat.js");
-
+var isDeleted;
 const RoofingEstimateSchema = new Schema({
   _id: { type: Number, required: true },
   "client": { type: String, required: true },
