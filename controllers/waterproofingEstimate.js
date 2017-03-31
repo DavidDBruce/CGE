@@ -148,7 +148,7 @@ module.exports = api;
 
 /* 10 controller methods handled by controller:
 
-controllers/roofingBasecoats.js
+controllers/waterproofingEstimate.js
 
 2 Respond with JSON:
 

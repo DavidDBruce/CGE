@@ -4,8 +4,6 @@
 //Dev2 : Tarun Kumar Potlapalli [S528757]
 
 
-//P3-4
-//Reshma Shaik, Anil Seshukumar Akula
 
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
