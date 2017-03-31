@@ -9,6 +9,7 @@ var express = require('express');
 var api = express.Router();
 var Model = require('../models/roofingEstimate.js');  
 const notfoundstring ='estimates';
+var isDeleted;
 
 // see app.js for the root request this controller handles
 
