@@ -139,3 +139,26 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+/* 10 controller methods handled by controller:
+
+controllers/roofingBasecoats.js
+
+2 Respond with JSON:
+
+http://localhost:8082/flooringEstimate/findall [WORKING]
+http://localhost:8082/flooringEstimate/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://localhost:8082/flooringEstimate [WORKING]
+http://localhost:8082/flooringEstimate/create [WORKING]
+http://localhost:8082/flooringEstimate/delete/1 [WORKING]
+http://localhost:8082/flooringEstimate/details/1 [WORKING]
+http://localhost:8082/flooringEstimate/edit/1[WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://localhost:8082/flooringEstimate/save [NOT-WORKING]
+http://localhost:8082/flooringEstimate/save/1 [NOT-WORKING]
+http://localhost:8082/flooringEstimate/delete/1
+*/

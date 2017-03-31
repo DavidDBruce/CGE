@@ -142,3 +142,30 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+
+
+
+
+/* 10 controller methods handled by controller:
+
+controllers/roofingBasecoats.js
+
+2 Respond with JSON:
+
+http://localhost:8082/waterproofingEstimate/findall [WORKING]
+http://localhost:8082/waterproofingEstimate/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://localhost:8082/waterproofingEstimate [WORKING]
+http://localhost:8082/waterproofingEstimate/create [WORKING]
+http://localhost:8082/waterproofingEstimate/delete/1 [WORKING]
+http://localhost:8082/waterproofingEstimate/details/1 [WORKING]
+http://localhost:8082/waterproofingEstimate/edit/1[WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://localhost:8082/waterproofingEstimate/save [NOT-WORKING]
+http://localhost:8082/waterproofingEstimate/save/1 [NOT-WORKING]
+http://localhost:8082/waterproofingEstimate/delete/1
+*/
