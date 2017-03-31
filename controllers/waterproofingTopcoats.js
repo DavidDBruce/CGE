@@ -2,7 +2,7 @@
 
 //P4-11 Darshan Yadav Venkatesh,Avinash vasadi.
 
-// p4-11 Avinash vasadi, Darshan Yadav Venkatesh
+
 
 var express = require('express');
 var api = express.Router();
@@ -169,3 +169,27 @@ api.post('/delete/:id', function(req, res, next) {
 
 
 module.exports = api;
+
+/* 10 controller methods handled by controller:
+
+controllers/waterproofingTopcoats.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8082/waterproofingTopcoats/findall [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8082/waterproofingTopcoats [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/create [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/delete/1 [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/details/1 [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/edit/1 [NOTWORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8082/waterproofingTopcoats/save [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/save/1 [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoats/delete/1 [NOTWORKING]
+*/
