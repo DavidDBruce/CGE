@@ -29,6 +29,7 @@ const WaterproofingEstimateSchema = new Schema({
     "lengthFeet": { type: Number, required: true, default: 100 },
     "squarefootage": { $mult: ['$widthFeet', '$lengthFeet' ] }
   }],
+  IsDeleted: { type: Boolean, required: true, default:false},
   "flooring": {
     "floorSystemType": { type: String, required: true, default: "Epoxy", enum: ["Epoxy", "Decorative Epoxy", "Urethane"] },
     "usesUrethane": { type: Boolean, required: true, default: false },
@@ -73,7 +74,8 @@ const WaterproofingEstimateSchema = new Schema({
      primerCoverageSqFt: { type: Number, required: true },
      usesTopcoat: { type: Boolean, required: true, default: false },
      topcoatSelection: [{ type: Schema.Types.ObjectId, ref: WaterproofingTopcoat, required: false }],
-     topcoatCoverageSqFt: { type: Number, required: true }
+     topcoatCoverageSqFt: { type: Number, required: true },
+     IsDeleted: { type: Boolean, required: true, default:false}
   },
   "aggregate": { 
     isUsed: { type: Boolean, required: true, default: false },
