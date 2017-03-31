@@ -1,8 +1,5 @@
-//P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri
-//=======
 // P4-5 
 // Saidevi Uppalapati , Raviteja Chintala
-//>>>>>>> 9bdaaf7ba70c6ee06a028be14872718931626ef0
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
