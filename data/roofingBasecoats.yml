@@ -5,13 +5,15 @@
   unit: gal
   displayorder: 10
   price: 40.70
+  isDeleted: false
 - _id: 2
   name: 70620 - permathane II
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 20
   price: 38.50
+  isDeleted: false
 #7419 HB - perma-gard HB    $40.70/gal
 #70620 - permathane II      $38.50/gal
-#P3-12; Benjamin Wolff, Nagnath Gokuldas Prabhu
+
 #devteam ID (P3-7) Amarendar Reddy Reddygari (s528760), Connor Besancenez (s519984) are going to work on Roofing basecoats.
