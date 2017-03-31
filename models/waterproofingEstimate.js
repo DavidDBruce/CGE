@@ -29,6 +29,7 @@ const WaterproofingEstimateSchema = new Schema({
     "lengthFeet": { type: Number, required: true, default: 100 },
     "squarefootage": { $mult: ['$widthFeet', '$lengthFeet' ] }
   }],
+  IsDeleted: { type: Boolean, required: true, default:false},
   "flooring": {
     "floorSystemType": { type: String, required: true, default: "Epoxy", enum: ["Epoxy", "Decorative Epoxy", "Urethane"] },
     "usesUrethane": { type: Boolean, required: true, default: false },
