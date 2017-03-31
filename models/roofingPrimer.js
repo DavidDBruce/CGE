@@ -9,7 +9,8 @@ var RoofingPrimerSchema = new Schema({
   name: { type: String, required: true },
   unit: { type: String, required: true },
   displayorder: { type: String, required: true },
-  price: { type: Number, required: true }
+  price: { type: Number, required: true },
+  isDeleted: { type: Boolean, required: false }
 })
 
 var roofingPrimer = mongoose.model('RoofingPrimer', RoofingPrimerSchema)

@@ -147,21 +147,21 @@ controllers/flooringCoating.js
 
 2 Respond with JSON:
 
-http://127.0.0.1:8081/flooringCoating/findall [WORKING]
-http://127.0.0.1:8081/flooringCoating/findone/1 [WORKING]
+http://127.0.0.1:8082/flooringCoating/findall [WORKING]
+http://127.0.0.1:8082/flooringCoating/findone/1 [WORKING]
 
 5 Respond with CRUD Views:
 
-http://127.0.0.1:8081/flooringCoating [WORKING]
-http://127.0.0.1:8081/flooringCoating/create [WORKING]
-http://127.0.0.1:8081/flooringCoating/delete/1 [WORKING]
-http://127.0.0.1:8081/flooringCoating/details/1 [WORKING]
-http://127.0.0.1:8081/flooringCoating/edit/1 [WORKING]
+http://127.0.0.1:8082/flooringCoating [WORKING]
+http://127.0.0.1:8082/flooringCoating/create [WORKING]
+http://127.0.0.1:8082/flooringCoating/delete/1 [WORKING]
+http://127.0.0.1:8082/flooringCoating/details/1 [WORKING]
+http://127.0.0.1:8082/flooringCoating/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
-http://127.0.0.1:8081/flooringCoating/save [WORKING]
-http://127.0.0.1:8081/flooringCoating/save/1 [WORKING]
+http://127.0.0.1:8081/flooringCoating/save [WORKING]   -- NOT WORKING
+http://127.0.0.1:8081/flooringCoating/save/1 [WORKING]  -- NOT WORKING
 http://127.0.0.1:8081/flooringCoating/delete/1 [WORKING]
 */
 
