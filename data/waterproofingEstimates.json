@@ -21,6 +21,7 @@
         "lengthFeet": 100
       }
     ],
+    "isDeleted":false,
     "flooring": {},
     "roofing": {},
     "waterproofing": {
