@@ -8,21 +8,34 @@
   unit: gal
   displayorder: 10
   price: 44.20
+<<<<<<< HEAD
   isDeleted: false
+=======
+  isDeleted : false
+>>>>>>> 1e7dfb8630b0a8bf98d55cda148c01a949c3ecef
 - _id: 2
   name: Silicone
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 20
   price: 41.80
+<<<<<<< HEAD
   isDeleted: false
+=======
+  isDeleted : false
+>>>>>>> 1e7dfb8630b0a8bf98d55cda148c01a949c3ecef
 - _id: 3
   name: Acrylic
   defaultCoverageSqFt: 100
   unit: gal
   displayorder: 30
   price: 33.25
+<<<<<<< HEAD
   isDeleted: false
+=======
+  isDeleted : false
+  
+>>>>>>> 1e7dfb8630b0a8bf98d55cda148c01a949c3ecef
 #The roofing product options are:
 #Urethane - $44.20/gal
 #Silicone - $41.80/gal

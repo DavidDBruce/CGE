@@ -8,6 +8,7 @@
   unit: 100lb bag
   displayorder: 10
   price: 18.80
+  isdeleted: false
 
 - name: 86301 - quartz
   _id: 2
@@ -16,6 +17,7 @@
   unit: 50lb bag
   displayorder: 20
   price: 22.15
+  isdeleted: false
 
 - name: 86302 - uv stable quartz
   _id: 3
@@ -23,6 +25,7 @@
   unit: 50lb bag
   displayorder: 30
   price: 29.00
+  isdeleted: false
 
 - name: 86500 - glass beads
   _id: 4
@@ -30,6 +33,7 @@
   unit: 50lb bag
   displayorder: 40
   price: 77.65
+  isdeleted: false
   
 - name: 86500 - glass beads
   _id: 5
@@ -37,6 +41,7 @@
   unit: 50lb bag
   displayorder: 50
   price: 77.65
+  isdeleted: false
   
 - name: 86500 - glass beads
   _id: 6
@@ -44,4 +49,5 @@
   unit: 50lb bag
   displayorder: 60
   price: 77.65
+  isdeleted: false
 
