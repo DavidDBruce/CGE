@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 <!--
-P3-4
+DEVTEAM P3-4
 Anil seshu kumar Akula , Reshma Shaik -->
+=======
+>>>>>>> 210dbd8e1863bc6b26a977fc46eb13fee2c510c2
 <div class="form-group">
   <label for="usesTopcoat">Uses Topcoat?</label>
   <input type="checkbox" class="form-control" id="usesTopcoat" name="usesTopcoat" <%= estimate.roofing.usesTopcoat ? 'checked' : ' ' %> />
@@ -12,7 +15,7 @@ Anil seshu kumar Akula , Reshma Shaik -->
        <option value="<%= data[i]._id %>"<%= (estimate.roofing.topcoatSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
     <% } %>
 </select>
-</div> 
+</div>
 <div class="form-group">
   <label for="topcoatCoverageSqFt">Topcoat Coverage (SqFt)</label>
   <input type="number" class="form-control" id="topcoatCoverageSqFt" name="topcoatCoverageSqFt" value="<%= estimate.roofing.topcoatCoverageSqFt %>" min=0 max=200 >

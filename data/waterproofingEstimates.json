@@ -21,7 +21,7 @@
         "lengthFeet": 100
       }
     ],
-    "isDeleted":false,
+    
     "flooring": {},
     "roofing": {},
     "waterproofing": {
@@ -43,8 +43,7 @@
       "primerCoverageSqFt": 100,
       "usesTopcoat": true,
       "topcoatSelection": 1,
-      "topcoatCoverageSqFt": 100,
-      "isDeleted":false
+      "topcoatCoverageSqFt": 100
     },
     "aggregate": {
       "isUsed": true,
