@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-=======
-//P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri
-//=======
->>>>>>> 02cbb4434ebe44038e8bbf1b29259b3213452dcf
 // P4-5 
 // Saidevi Uppalapati , Raviteja Chintala
-//>>>>>>> 9bdaaf7ba70c6ee06a028be14872718931626ef0
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -145,8 +139,4 @@ api.post('/delete/:id', function(req, res, next) {
     return res.redirect('/waterproofingEstimate');
 });
 
-<<<<<<< HEAD
 module.exports = api;
-=======
-module.exports = api;
->>>>>>> 02cbb4434ebe44038e8bbf1b29259b3213452dcf
