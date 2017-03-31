@@ -1,7 +1,6 @@
-// P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri
 //P4-5 
 // Saidevi Uppalapati , Raviteja Chintala
-//p4-10 | Aswini Vadlamudi, Haritha Kurla
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const AggregateMaterial = require("./aggregateMaterial.js");
