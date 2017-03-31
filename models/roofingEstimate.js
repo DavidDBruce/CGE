@@ -1,5 +1,5 @@
-//P3-3
-//Unnathi VallapuReddy,Devin Miller
+//P3-10
+//Joel Beckley, Veera Kishon Kumar Mucherla
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const AggregateMaterial = require("./aggregateMaterial.js");
