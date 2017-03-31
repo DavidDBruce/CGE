@@ -144,3 +144,27 @@ api.post('/delete/:id', function(req, res, next) {
 
 
 module.exports = api;
+
+/* 10 controller methods handled by controller:
+
+controllers/milageRate.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8082/milageRate/findall [WORKING]
+http://127.0.0.1:8082/milageRate/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8082/milageRate [WORKING]
+http://127.0.0.1:8082/milageRate/create [WORKING]
+http://127.0.0.1:8082/milageRate/delete/1 [WORKING]
+http://127.0.0.1:8082/milageRate/details/1 [WORKING]
+http://127.0.0.1:8082/milageRate/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8082/milageRate/save [WORKING]
+http://127.0.0.1:8082/milageRate/save/1 [WORKING]
+http://127.0.0.1:8082/milageRate/1 [WORKING]
+*/

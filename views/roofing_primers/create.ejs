@@ -1,22 +1,25 @@
-//dev team ID(P4-9),Srinithya Kamareddy(S528740),Varsha Basawapuram(S528735)
+<!--Dev Team P3-6
+Neeraja Garigipati s528801
+Vaishnavi Kalvakota s528803
+-->
 <br/>
 
 <br/>
-<h2>Create a new waterproofing topcoat</h2>
+<h2>Create a new roofing primer</h2>
 <p>There are currently
-	<%= waterproofingTopcoats.query.length %> waterproofingTopcoats. </p>
+	<%= roofingPrimers.query.length %> roofingPrimers. </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<waterproofingTopcoats.query.length; i++) {
-    if(roofingTopcoats.query[i]._id > maxID) {
-        maxID=waterproofingTopcoats.query[i]._id;
+for (var i=0; i<roofingPrimers.query.length; i++) {
+    if(roofingPrimers.query[i]._id > maxID) {
+        maxID=roofingPrimers.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<waterproofingTopcoats.query.length; i++) {
-    if(waterproofingTopcoats.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=waterproofingTopcoats.query[i].displayorder;
+for (var i=0; i<roofingPrimers.query.length; i++) {
+    if(roofingPrimers.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=roofingPrimers.query[i].displayorder;
         }
 }
 %>
@@ -26,7 +29,7 @@ for (var i=0; i<waterproofingTopcoats.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="waterproofingTopcoat" method="POST" action="/waterproofingTopcoat/save" + _id.value>
+			<form name="roofingPrimer" method="POST" action="/roofingPrimer/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
@@ -58,7 +61,7 @@ for (var i=0; i<waterproofingTopcoats.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/roofingTopcoat">
+			<form method="get" action="/roofingPrimer">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>
