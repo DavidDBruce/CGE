@@ -1,4 +1,21 @@
 <!-- Dev Team ID (P4-3) Akshay Reddy Vontari(S528772),Kranthi Kumar Parelly(S528756)-->
+<div class="form-group">
+  <label for="usesPrimer">Uses Primer?</label>
+  <input type="checkbox" class="form-control" id="usesPrimer" name="usesPrimer" <%= estimate.waterproofing.usesPrimer ? 'checked' : ' ' %> />
+</div>
+<div class="form-group">
+  <label for="primerSelection">Primer Selection</label>
+  <select class="form-control" name="primerSelection">
+    <%  var data = waterproofingPrimers.query; for( var i=0; i<data.length; i++){ %>
+       <option value="<%= data[i]._id %>" value="<%= (estimate.waterproofing.primerSelection == data[i]._id)?'selected':'' %>>" name=" <%= data[i].name %>"> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group">
+  <label for="primerCoverageSqFt">Primer Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.waterproofing.primerCoverageSqFt %>" min=80 max=150 >
+</div>
+
 
   
 
