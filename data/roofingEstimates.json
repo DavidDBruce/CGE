@@ -9,6 +9,7 @@
     "zipcode": 64468,
     "latitude": 40.3519243,
     "longitude": -94.8859978,
+    "IsDeleted":"false",
     "areas": [
       {
         "description": "A1",

@@ -1,7 +1,5 @@
-// P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri
 // P4-5 
 // Saidevi Uppalapati , Raviteja Chintala
-// p4-10 | Aswini Vadlamudi, Haritha Kurla 
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -142,6 +140,7 @@ api.post('/delete/:id', function(req, res, next) {
 });
 
 module.exports = api;
+<<<<<<< HEAD
 
 
 
@@ -169,3 +168,5 @@ http://localhost:8082/waterproofingEstimate/save [NOT-WORKING]
 http://localhost:8082/waterproofingEstimate/save/1 [NOT-WORKING]
 http://localhost:8082/waterproofingEstimate/delete/1
 */
+=======
+>>>>>>> 2881bcbce48b5ddae8e2ef5c0613588f8da52cf9

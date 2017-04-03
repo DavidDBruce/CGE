@@ -11,7 +11,7 @@ const RoofingTopcoat = require("./roofingTopcoat.js");
 const WaterproofingBasecoat = require("./waterproofingBasecoat.js");
 const WaterproofingPrimer = require("./waterproofingPrimer.js");
 const WaterproofingTopcoat = require("./waterproofingTopcoat.js");
-
+var IsDeleted;
 const RoofingEstimateSchema = new Schema({
   _id: { type: Number, required: true },
   "client": { type: String, required: true },
