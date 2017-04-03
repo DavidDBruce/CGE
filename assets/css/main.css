@@ -1,8 +1,11 @@
-
-
 /* ==========================================================================
    needed for BootStrap menu
    ========================================================================== */
+   
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+} 
  
 .dropdown-submenu {
     position: relative;
