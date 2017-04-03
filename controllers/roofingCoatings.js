@@ -148,21 +148,21 @@ controllers/roofingCoating.js
 
 2 Respond with JSON:
 
-http://127.0.0.1:8081/roofingCoating/findall [WORKING]
-http://127.0.0.1:8081/roofingCoating/findone/1 [WORKING]
+http://127.0.0.1:8082/roofingCoating/findall [WORKING]
+http://127.0.0.1:8082/roofingCoating/findone/1 [WORKING]
 
 5 Respond with CRUD Views:
 
-http://127.0.0.1:8081/roofingCoating [WORKING]
-http://127.0.0.1:8081/roofingCoating/create [WORKING]
-http://127.0.0.1:8081/roofingCoating/delete/1 [WORKING]
-http://127.0.0.1:8081/roofingCoating/details/1 [WORKING]
-http://127.0.0.1:8081/roofingCoating/edit/1 [WORKING]
+http://127.0.0.1:8082/roofingCoating [WORKING]
+http://127.0.0.1:8082/roofingCoating/create [WORKING]
+http://127.0.0.1:8082/roofingCoating/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingCoating/details/1 [WORKING]
+http://127.0.0.1:8082/roofingCoating/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
-http://127.0.0.1:8081/roofingCoating/save [WORKING]
-http://127.0.0.1:8081/roofingCoating/save/1 [WORKING]
-http://127.0.0.1:8081/roofingCoating/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingCoating/save [WORKING]
+http://127.0.0.1:8082/roofingCoating/save/1 [WORKING]
+http://127.0.0.1:8082/roofingCoating/delete/1 [WORKING]
 */
 
