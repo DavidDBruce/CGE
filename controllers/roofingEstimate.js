@@ -44,7 +44,7 @@ api.get("/create",ensureAuthenticated.ensureLoggedIn, function(req, res) {
 api.get('/delete/:id', function(req, res) {
     console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.estimates.query;
+    var data = req.app.locals.roofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -60,7 +60,7 @@ api.get('/delete/:id', function(req, res) {
 api.get('/details/:id', function(req, res) {
     console.log("Handling GET /details/:id " + req);
     var id = parseInt(req.params.id);
-    var data = req.app.locals.estimates.query;
+    var data = req.app.locals.roofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
@@ -113,7 +113,7 @@ api.post('/save/:id', function(req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
-    var data = req.app.locals.estimates.query;
+    var data = req.app.locals.roofingEstimates.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
@@ -153,13 +153,13 @@ http://127.0.0.1:8082/roofingEstimate/findone/1 [WORKING]
 
 http://127.0.0.1:8082/roofingEstimate [WORKING]
 http://127.0.0.1:8082/roofingEstimate/create [WORKING]
-http://127.0.0.1:8082/roofingEstimate/delete/1 [ERROR 500]
-http://127.0.0.1:8082/roofingEstimate/details/1 [ERROR 500]
+http://127.0.0.1:8082/roofingEstimate/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingEstimate/details/1 [WORKING]
 http://127.0.0.1:8082/roofingEstimate/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
 http://127.0.0.1:8082/roofingEstimate/save [WORKING]
 http://127.0.0.1:8082/roofingEstimate/save/1 [WORKING]
-http://127.0.0.1:8082/roofingEstimate/delete/1 [ERROR 500]
+http://127.0.0.1:8082/roofingEstimate/delete/1 [WORKING]
 */
