@@ -16,6 +16,7 @@
         <th>Display Order</th>
         <th>Price</th>
         <th>Unit</th>
+        <th>Status</th>
        <th>Actions</th>
     </tr>
     </thead>
@@ -28,11 +29,13 @@
 						</td>
             <td><%=  roofingBasecoats.query[i].name %></td>
             <td><%=  roofingBasecoats.query[i].displayorder %></td>
-            <td><%=  roofingBasecoats.query[i].price %></td>
+            <td><%=  roofingBasecoats.query[i].price %></td>   
             <td><%=  roofingBasecoats.query[i].unit %></td>
+            <td><%=  roofingBasecoats.query[i].status %></td>
             <td>
+            <a href="roofingBasecoat/deactivate/<%=  count%>">	<button type="button" class="btn btn-info"> Deactivate </button></a>
 						<a href="roofingBasecoat/delete/<%=  count%>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
-            <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-info">  Details </button></a> 
+            <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-success">  Details </button></a> 
 						<a href="roofingBasecoat/edit/<%=  count%>">	<button type="button" class="btn btn-warning"> Edit </button></a> 
 						</td>
          </tr>
