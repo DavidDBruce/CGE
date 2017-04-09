@@ -129,7 +129,6 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item._id = parseInt(req.body._id);
     item.customerName = req.body.customerName;
     item.address = req.body.address;
     item.city = req.body.city;
