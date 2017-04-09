@@ -9,5 +9,16 @@
         "sqft": "126152",
         "customerType": "Retail",
         "contact": ""
+    },
+    {
+        "_id":2,
+        "customerName": "Sterling Ridge Shopping Center",
+        "address": "11201-11215 E 24 Hwy",
+        "city": "Independence",
+        "state": "MO",
+        "zip": "64054",
+        "sqft": "39940",
+        "customerType": "Retail",
+        "contact": "Paul Stone"
     }
 ]

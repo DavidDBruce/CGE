@@ -6,7 +6,7 @@
 
     <p>There are
       <%= prospects.query.length %> prospects. <br/>
-        <a href="prospects/create">Add a new prospect.</a></p>
+        <a href="prospects/create"class="btn btn-info" role="button">Add a new prospect</a></p>
 
     <table class="table" border="1">
       <thead>
@@ -54,9 +54,9 @@
               <%= prospects.query[i].contact %>
             </td>
             <td>
-              <a href="mileageRate/delete/<%=  mileageRates.query[i]._id %>" class="btn btn-danger"> Delete </a>
-              <a href="mileageRate/details/<%= mileageRates.query[i]._id %>" class="btn btn-info"> Details </a>
-              <a href="mileageRate/edit/<%=    mileageRates.query[i]._id %>" class="btn btn-warning">  Edit </a>
+              <a href="prospects/delete/<%=  prospects.query[i]._id %>" class="btn btn-danger"> Delete </a>
+              <a href="prospects/details/<%= prospects.query[i]._id %>" class="btn btn-info"> Details </a>
+              <a href="prospects/edit/<%=    prospects.query[i]._id %>" class="btn btn-warning">  Edit </a>
             </td>
           </tr>
           <% } %>
