@@ -39,14 +39,14 @@ api.get('/findone/:id', function(req, res){
 // GET all
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
-    return res.render('potentialCustomers/index.ejs',
+    return res.render('prospect/index.ejs',
         { title: "Prospects", layout: "layout.ejs" });
 });
 
 // GET create
 api.get("/create", function(req, res) {
     console.log('Handling GET /create' + req);
-    res.render("potentialCustomers/create.ejs",
+    res.render("prospect/create.ejs",
         { title: "Prospects", layout: "layout.ejs" });
 });
 
@@ -58,7 +58,7 @@ api.get('/delete/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('potentialCustomers/delete.ejs',
+    return res.render('prospect/delete.ejs',
         {
             title: "Prospects",
             layout: "layout.ejs",
@@ -73,7 +73,7 @@ api.get('/details/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('potentialCustomers/details.ejs',
+    return res.render('prospect/details.ejs',
         {
             title: "Prospects",
             layout: "layout.ejs",
@@ -89,7 +89,7 @@ api.get('/edit/:id', function(req, res) {
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('potentialCustomers/edit.ejs',
+    return res.render('prospect/edit.ejs',
         {
             title: "Prospects",
             layout: "layout.ejs",
@@ -116,7 +116,7 @@ api.post('/save', function(req, res) {
     item.contact = req.body.contact;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
-    return res.redirect('/mileageRate');
+    return res.redirect('/prospect');
 });
 
 // POST update
