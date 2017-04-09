@@ -1,0 +1,13 @@
+[
+    {
+        "_id":1,
+        "customerName": "Shawnee Village Shopping Center",
+        "address": "6415-6471 Quivira Rd",
+        "city": "Shawnee",
+        "state": "KS",
+        "zip": "66216",
+        "sqft": "126152",
+        "customerType": "Retail",
+        "contact": ""
+    }
+]

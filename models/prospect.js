@@ -6,6 +6,7 @@ var mongoose = require('mongoose')
 var ProspectSchema = new Schema({
   _id: { type: Number, required: true },
   customerName: {type: String, default: "", required: true},
+  address: {type: String, default: "", required: true},
   city: { type: String, default: "", required: true },
   state: {type: String, default:"",required: true},
   zip: {type: String, default: "", required: true},
