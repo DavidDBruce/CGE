@@ -8,7 +8,7 @@
   unit: 100lb bag
   displayorder: 10
   price: 18.80
-  isdeleted: false
+  Isdeleted: false
 
 - name: 86301 - quartz
   _id: 2
@@ -17,7 +17,7 @@
   unit: 50lb bag
   displayorder: 20
   price: 22.15
-  isdeleted: false
+  Isdeleted: false
 
 - name: 86302 - uv stable quartz
   _id: 3
