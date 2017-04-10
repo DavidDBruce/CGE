@@ -49,15 +49,15 @@ api.get("/create", function(req, res) {
         { title: "WP Basecoat", layout: "layout.ejs" });
 });
 
-// GET /devare/:id
+// GET /delete/:id
 api.get('/devare/:id', function(req, res) {
-    console.log("Handling GET /devare/:id " + req);
+    console.log("Handling GET /delete/:id " + req);
     var id = parseInt(req.params.id);
     var data = req.app.locals.waterproofingBasecoats.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    return res.render('waterproofing_basecoats/devare.ejs',
+    return res.render('waterproofing_basecoats/delete.ejs',
         {
             title: "WP Basecoat",
             layout: "layout.ejs",
@@ -150,9 +150,9 @@ api.post('/save/:id', function(req, res) {
 });
 
 
-// DEvarE id (uses HTML5 form method POST)
-api.post('/devare/:id', function(req, res, next) {
-    console.log("Handling DEvarE request" + req);
+// DELETE id (uses HTML5 form method POST)
+api.post('/delete/:id', function(req, res, next) {
+    console.log("Handling DELETE request" + req);
 });
 // DELETE id (uses HTML5 form method POST)
 api.post('/delete/:id', function(req, res, next) {
