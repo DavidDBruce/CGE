@@ -13,7 +13,7 @@ for (let i=0; i<mileageRates.query.length; i++) {
         maxID=mileageRates.query[i]._id;
         }
 }
-maxRate=0; 
+maxRate=0.00; 
 for (let i=0; i<mileageRates.query.length; i++) {
     if(mileageRates.query[i].dollarsPerMile > maxRate) {
         maxRate=mileageRates.query[i].dollarsPerMile;
@@ -40,7 +40,7 @@ for (let i=0; i<mileageRates.query.length; i++) {
 
 				<div class="form-group">
 					<label for="dollarsPerMile">Dollars Per Mile ($USD)</label>
-					<input type="number" class="form-control" id="dollarsPerMile" name="dollarsPerMile" value="<%= maxRate %>"
+					<input type="number" step="any" class="form-control" id="dollarsPerMile" name="dollarsPerMile" value="<%= maxRate %>"
 						required>
 				</div>
 

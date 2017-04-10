@@ -22,6 +22,7 @@ const FlooringEstimateSchema = new Schema({
   "latitude": { type: Number, required: false },
   "longitude": { type: Number, required: false },
   "areas": [{
+    _id: { type: Number, required: true },
     "description": { type: String, required: true },
     "widthFeet": { type: Number, required: true, default: 10 },
     "lengthFeet": { type: Number, required: true, default: 100 },
@@ -74,7 +75,7 @@ const FlooringEstimateSchema = new Schema({
      topcoatSelection: [{ type: Schema.Types.ObjectId, ref: WaterproofingTopcoat, required: false }],
      topcoatCoverageSqFt: { type: Number, required: true }
   },
-  "aggregate": { 
+  "aggregate": {
     isUsed: { type: Boolean, required: true, default: false },
     aggregateTypeSelection: { type: String, required: true, default: "Sand",  enum: ["Sand", "Quartz", "Flake", "Glass Beads"]  },
     aggregateMaterialSelection: [{ type: Number, ref: AggregateMaterial, required: false}],
@@ -94,7 +95,7 @@ const FlooringEstimateSchema = new Schema({
     milesPerDrive: { type: Number, required: true, default: 100 },
     dollarsPerMile: { type: Number, required: true, default: 0.50 }
   }],
-  "miscellaneousEntries": [{ 
+  "miscellaneousEntries": [{
     description: { type: String, required: true },
     cost: { type: Number, required: true, default: 0 }
   }],

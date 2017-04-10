@@ -10,7 +10,11 @@ var RoofingTopcoatSchema = new Schema({
      status:{type: String, required: true },
     displayorder:  { type: String, required: true },
     price:  { type: Number, required: true },
+
+    status:{type:String, required:true},
+
     isActive:{type: Boolean, required: true }
+
 })
 
 var roofingTopcoat = mongoose.model('RoofingTopcoat', RoofingTopcoatSchema)
