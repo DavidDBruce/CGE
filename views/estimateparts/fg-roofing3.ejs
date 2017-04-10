@@ -1,13 +1,8 @@
 <!--DEVTEAM: P3-5
 Dasarsh Manikonda , Mathew horner -->
 <div class="form-group">
-<<<<<<< HEAD
-  <label for="usesPrimer">Uses Primer?</label>
-  <input type="checkbox" class="form-control" id="usesPrimer" name="usesPrimer" <%= estimate.roofing.usesPrimer ? 'checked' : ' ' %> />
-=======
   <input type="checkbox" id="usesPrimer" name="usesPrimer" <%= estimate.roofing.usesPrimer ? 'checked' : ' ' %> />
 <b>Uses Primer?</b>
->>>>>>> ddd070996878af12e693299c14267c85547ac56d
 </div>
 <div class="form-group">
   <label for="primerSelection">Primer Selection</label>
@@ -19,11 +14,5 @@ Dasarsh Manikonda , Mathew horner -->
 </div>
 <div class="form-group">
   <label for="primerCoverageSqFt">Primer Coverage (SqFt)</label>
-<<<<<<< HEAD
-  <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.roofing.primerCoverageSqFt %>" min=0 max=200 >
-</div>
-
-=======
   <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.roofing.primerCoverageSqFt ? estimate.roofing.primerCoverageSqFt : '0' %>" min=0 max=200 >
 </div>
->>>>>>> ddd070996878af12e693299c14267c85547ac56d
