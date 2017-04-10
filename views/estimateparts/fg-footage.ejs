@@ -1,9 +1,12 @@
 <hr>
 <h2>Square Footage</h2>
 <hr>
+<div id="sqrFootage">
 <% for(var i=0; i<estimate.areas.length; i++) { e = estimate.areas[i];  %>
    <% include fg-footage-entry.ejs %>
 <% } %>
-<button class="btn btn-primary">Add Area</button>
+</div>
+<input type="button" class="btn btn-primary" value="Add Area" id="addSFootage" />
 <br/>
+
 <!-- P2-1 David Bruce, Cassandra Baldus -->
