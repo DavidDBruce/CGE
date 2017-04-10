@@ -3,9 +3,9 @@
 
 <% console.log(roofingBasecoats.query); %>
 <div class="container">
- <h2>Roofing basecoats</h2>
+ <h2>Roofing Basecoats</h2>
 
-<p>There are  <%= roofingBasecoats.query.length %> roofing basecoats. <br/>
+<!--<p>There are  <%= roofingBasecoats.query.length %> roofing basecoats. <br/>-->
 <a href="roofingBasecoat/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
 
 <table class="table" border="1" id="t13">
@@ -16,6 +16,7 @@
         <th>Display Order</th>
         <th>Price</th>
         <th>Unit</th>
+        <th>Status</th>
        <th>Actions</th>
     </tr>
     </thead>
@@ -28,11 +29,13 @@
 						</td>
             <td><%=  roofingBasecoats.query[i].name %></td>
             <td><%=  roofingBasecoats.query[i].displayorder %></td>
-            <td><%=  roofingBasecoats.query[i].price %></td>
+            <td><%=  roofingBasecoats.query[i].price %></td>   
             <td><%=  roofingBasecoats.query[i].unit %></td>
+            <td><%=  roofingBasecoats.query[i].status %></td>
             <td>
+            <a href="roofingBasecoat/deactivate/<%=  count%>">	<button type="button" class="btn btn-info"> Deactivate </button></a>
 						<a href="roofingBasecoat/delete/<%=  count%>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
-            <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-info">  Details </button></a> 
+            <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-success">  Details </button></a> 
 						<a href="roofingBasecoat/edit/<%=  count%>">	<button type="button" class="btn btn-warning"> Edit </button></a> 
 						</td>
          </tr>
