@@ -9,7 +9,7 @@ var WaterproofingTopcoatSchema = new Schema({
     unit:  { type: String, required: true },
     displayorder:  { type: String, required: true },
     price:  { type: Number, required: true },
-    IsDeleted: { type: Boolean, required: true, default: false }
+  IsDeleted: { type: Boolean, required: true, default: false }
 
 })
 
