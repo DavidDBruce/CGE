@@ -33,7 +33,7 @@ const FlooringEstimateSchema = new Schema({
     "usesUrethane": { type: Boolean, required: true, default: false },
     "urethaneProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
     "urethaneCoverageSqFt": { type: Number, required: true },
-    "usesEpoxy": { type: Boolean, required: true, default: false },
+    "usesEpoxy": { type: Boolean, required: true, default: False },
     "epoxyProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
     "epoxyCoverageSqFt": { type: Number, required: false }
   },

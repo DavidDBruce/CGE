@@ -1,9 +1,9 @@
 <div  class="form-group">
   <label for="usesEpoxy">Uses Epoxy?</label>
-  <input type="checkbox" class="form-control" id="usesEpoxy" name="usesEpoxy" <%= estimate.flooring.usesEpoxy ? 'checked' : ' ' %> />
+  <input type="checkbox" class="form-control" id="usesEpoxy" onchange="checkchange()" name="usesEpoxy" <%= estimate.flooring.usesEpoxy ? 'checked' : ' ' %> />
 </div>
 <div class="form-group">
-  <label for="epoxyProductSelection">Epoxy Product Selection</label>
+  <label for="epoxyProductSelection" id="epoxyProductSelectionlabel">Epoxy Product Selection</label>
   <select class="form-control" name="epoxyProductSelection" id="epoxyProductSelection"  >
     <%  var data = flooringCoatings.query; for( var i=0; i<data.length; i++){ %>
     <option value="<%= data[i]._id %>" <%= (estimate.flooring.epoxyProductSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
@@ -11,6 +11,29 @@
 </select>
 </div>
 <div class="form-group">
-  <label for="epoxyCoverageSqFt">Epoxy Coverage (SqFt)</label>
-  <input type="number" class="form-control" id="epoxyCoverageSqFt" name="epoxyCoverageSqFt" value="<%= estimate.flooring.epoxyCoverageSqFt %>" min=100 max=400 >
+  <label for="epoxyCoverageSqFt" id="epoxyCoverageSqFtlabel">Epoxy Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="epoxyCoverageSqFt" onkeyup="if (this.value.length >= 2) checkrange()" name="epoxyCoverageSqFt" value="<%= estimate.flooring.epoxyCoverageSqFt || 100 %>" min=100 max=400>
 </div>
+<script>
+    function checkrange() {
+   // var x = document.getElementById("epoxyCoverageSqFt");
+   // if((x.value > 400 || x.value < 100) )
+    //alert("Enter SqFt between 100 and 400");
+}
+   function checkchange()  {
+     if (document.getElementById('usesEpoxy').checked) {
+        alert('Epoxy will be checked');
+         document.getElementById('epoxyProductSelection').style.display = "block";
+         document.getElementById('epoxyCoverageSqFt').style.display = "block";
+
+     }
+ else {
+     alert("Epoxy wil be unchecked");
+     document.getElementById('epoxyProductSelection').style.display = "none";
+      document.getElementById('epoxyCoverageSqFt').style.display = "none";
+     document.getElementById('epoxyProductSelectionlabel').style.display = "none";
+      document.getElementById('epoxyCoverageSqFtlabel').style.display = "none";
+
+   }
+}
+</script>
