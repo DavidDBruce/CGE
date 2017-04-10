@@ -6,7 +6,7 @@
 <br/>
 <h2>Create a new roofing basecoat</h2>
 <p>There are currently
-	<%= roofingBasecoats.query.length %> roofingBasecoats. </p>
+	<%= roofingBasecoats.query.length %> roofing basecoats. </p>
 <br/>
 <% 
 maxID=0; 
@@ -52,7 +52,7 @@ for (var i=0; i<roofingBasecoats.query.length; i++) {
 
 				<div class="form-group">
 					<label for="price">Price</label>
-					<input type="text" class="form-control" id="price" name="price" value="30" required>
+					<input type="number" class="form-control" id="price" name="price" value="30" min="0" required>
 				</div>
 
 				<div class="form-group">
