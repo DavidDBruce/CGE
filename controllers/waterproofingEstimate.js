@@ -1,5 +1,4 @@
-// P4-5 
-// Saidevi Uppalapati , Raviteja Chintala
+
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
