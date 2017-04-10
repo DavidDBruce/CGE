@@ -18,6 +18,7 @@ Vaishnavi Kalvakota s528803
                     <th>Display Order</th>
                     <th>Price</th>
                     <th>Unit</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -41,12 +42,15 @@ Vaishnavi Kalvakota s528803
                                 <td>
                                     <%=  roofingPrimers.query[i].unit %>
                                 </td>
+                                <td>Active</td>
                                 <td>
+                                    <a href="roofingPrimer/index/<%=  count%>"> <button type="button" class="btn btn-info"> Deactivate </button></a>
                                     <a href="roofingPrimer/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
                                     <a href="roofingPrimer/details/<%=  count%>"> <button type="button" class="btn btn-info">  Details </button></a>
-                                    <a href="roofingPrimer/edit/<%=  count%>"> <button type="button" class="btn btn-warning">< Edit </button></a>
+                                    <a href="roofingPrimer/edit/<%=  count%>"> <button type="button" class="btn btn-warning">  Edit </button></a>
 
                                 </td>
+                                
                         </tr>
                         <% } %>
             </tbody>

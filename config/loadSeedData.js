@@ -14,6 +14,7 @@ module.exports = {
         global.flooringCoatings = require('../data/flooringCoatings.yml');
         global.flooringEstimates = require('../data/flooringEstimates.json');
         global.mileageRates = require('../data/mileageRates.json');
+        global.prospects = require('../data/prospects.json');
         global.roofingBasecoats = require('../data/roofingBasecoats.yml');
         global.roofingCoatings = require('../data/roofingCoatings.yml');
         global.roofingEstimates = require('../data/roofingEstimates.json');
@@ -29,6 +30,7 @@ module.exports = {
         db.insert(flooringCoatings);
         db.insert(flooringEstimates);
         db.insert(mileageRates);
+        db.insert(prospects);
         db.insert(roofingBasecoats);
         db.insert(roofingCoatings);
         db.insert(roofingEstimates);
@@ -44,6 +46,7 @@ module.exports = {
         app.locals.flooringCoatings = db.find(flooringCoatings);
         app.locals.flooringEstimates = db.find(flooringEstimates);
         app.locals.mileageRates = db.find(mileageRates);
+        app.locals.prospects = db.find(prospects);
         app.locals.roofingBasecoats = db.find(roofingBasecoats);
         app.locals.roofingCoatings = db.find(roofingCoatings);
         app.locals.roofingEstimates = db.find(roofingEstimates);
