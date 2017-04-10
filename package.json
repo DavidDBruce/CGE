@@ -14,7 +14,7 @@
   "engines": {
     "node": "latest"
   },
-  "isDeleted": "false",
+  "isDeleted":"false",
   "dependencies": {
     "async": "^2.1.2",
     "bcrypt-nodejs": "^0.0.3",

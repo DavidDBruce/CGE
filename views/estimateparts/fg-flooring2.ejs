@@ -16,19 +16,17 @@
 </div>
 <script>
     function checkrange() {
-   // var x = document.getElementById("epoxyCoverageSqFt");
-   // if((x.value > 400 || x.value < 100) )
-    //alert("Enter SqFt between 100 and 400");
+
 }
    function checkchange()  {
      if (document.getElementById('usesEpoxy').checked) {
-        alert('Epoxy will be checked');
+        alert('is checked');
          document.getElementById('epoxyProductSelection').style.display = "block";
          document.getElementById('epoxyCoverageSqFt').style.display = "block";
 
      }
  else {
-     alert("Epoxy wil be unchecked");
+     alert("now it's not checked");
      document.getElementById('epoxyProductSelection').style.display = "none";
       document.getElementById('epoxyCoverageSqFt').style.display = "none";
      document.getElementById('epoxyProductSelectionlabel').style.display = "none";
