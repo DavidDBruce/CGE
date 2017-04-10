@@ -107,6 +107,7 @@ api.post('/save', function(req, res) {
     item.name = req.body.name;
     item.unit = req.body.unit;
     item.price = req.body.price;
+    item.status = req.body.status;
     item.displayorder = parseInt(req.body.displayorder);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
@@ -126,6 +127,7 @@ api.post('/save/:id', function(req, res) {
     item.name = req.body.name;
     item.unit = req.body.unit;
     item.price = req.body.price;
+    item.status = req.body.status;
     item.displayorder = req.body.displayorder;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/roofingBasecoat');

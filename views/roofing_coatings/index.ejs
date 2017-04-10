@@ -17,6 +17,7 @@ Vaishnavi Kalvakota s528803
 					<th>Price</th>
 					<th>Unit</th>
 					<th>Actions</th>
+					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,10 +39,13 @@ Vaishnavi Kalvakota s528803
 							<%=  roofingCoatings.query[i].unit %>
 						</td>
 						<td>
+							<a href="roofingCoating/edit/<%=    roofingCoatings.query[i]._id %>"class="btn btn-warning">  Deactiavte </a>
 							<a href="roofingCoating/delete/<%=  roofingCoatings.query[i]._id %>"class="btn btn-danger" >	 Delete </a> 
 							<a href="roofingCoating/details/<%= roofingCoatings.query[i]._id %>"class="btn btn-info">	   Details </a> 
 							<a href="roofingCoating/edit/<%=    roofingCoatings.query[i]._id %>"class="btn btn-warning">  Edit </a>
+							
 						</td>
+						<td>active</td>
 					</tr>
 					<% } %>
 			</tbody>
