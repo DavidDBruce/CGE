@@ -4,9 +4,9 @@ Nikhil Muthyala, Sahu Chintha -->
 <h2>Aggregate Costs</h2>
 <hr>
 <div class="form-group">
-    <label for="usesAggregate">Uses Aggregate?</label>
     <input type="checkbox" onclick="ShowHideDiv(this)" id="usesAggregate" name="usesAggregate" <%= estimate.usesAggregate ? 'checked' : ' ' %> />
-</div>
+    <label for="usesAggregate">Uses Aggregate?</label>
+   </div>
 <script type="text/javascript">
     function ShowHideDiv(usesAggregate) {
         var AggregateTypeDiv = document.getElementById("AggregateTypeId");
