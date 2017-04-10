@@ -2,9 +2,10 @@
 Joel Beckley, Veera Kishon Kumar Mucherla-->
 <br/>
 <br/>
-<h2>Create a new Roofing Estimate </h2>
+<h2>Create a new roofing estimate </h2>
 <p>There are currently
 	<%= roofingEstimates.query.length %>
+	roofing estimate(s)
 </p>
 <br/>
 <% 
@@ -27,16 +28,16 @@ for (var i=0; i<roofingEstimates.query.length; i++) {
 
 				<% include ../estimateparts/fg-about %>
 					<% include ../estimateparts/fg-footage %>
-						<% include ../estimateparts/fg-roofing %>
-								<% include ../estimateparts/fg-aggregate %>
-									<% include ../estimateparts/fg-labor %>
-										<% include ../estimateparts/fg-mileage %>
-											<% include ../estimateparts/fg-misc %>
-												<% include ../estimateparts/fg-comment %>
+							<% include ../estimateparts/fg-roofing %>
+									<% include ../estimateparts/fg-aggregate %>
+										<% include ../estimateparts/fg-labor %>
+											<% include ../estimateparts/fg-mileage %>
+												<% include ../estimateparts/fg-misc %>
+													<% include ../estimateparts/fg-comment %>
 										
-													<div class="form-group">
-														<input type="submit" value="Post new entry" class="btn btn-primary" />
-													</div>
+														<div class="form-group">
+															<input type="submit" value="Post new entry" class="btn btn-primary" />
+														</div>
 			</form>
 			<br/>
 			<form method="get" action="/roofingEstimate">

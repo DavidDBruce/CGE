@@ -1,18 +1,18 @@
 <!--P3-2
-Alekhya Devi Manne, Elizabeth Billings-->
+Alekhya Devi Manne , Elizabeth Billings-->
 <div class="form-group">
   <label for="coatingType">Coating Type</label>
   <div class="funkyradio">
     <div class="funkyradio-primary">
-      <input type="radio" name="Urethane" id="Urethane" <%= (estimate.roofing.coatingType =='Urethane') ? 'checked' : ' ' %> />
+      <input type="checkbox" name="Urethane" id="Urethane" <%= (estimate.roofing.coatingType =='Urethane') ? 'checked' : ' ' %> />
       <label for="Urethane">Urethane</label>
     </div>
     <div class="funkyradio-success">
-      <input type="radio" name="Silicone" id="Silicone" <%= (estimate.roofing.coatingType =='Silicone') ? 'checked' : ' ' %> />
+      <input type="checkbox" name="Silicone" id="Silicone" <%= (estimate.roofing.coatingType =='Silicone') ? 'checked' : ' ' %> />
       <label for="Silicone">Silicone</label>
     </div>
     <div class="funkyradio-warning">
-      <input type="radio" name="Acrylic" id="Acrylic" <%= (estimate.roofing.coatingType =='Acrylic') ? 'checked' : ' ' %> />
+      <input type="checkbox" name="Acrylic" id="Acrylic" <%= (estimate.roofing.coatingType =='Acrylic') ? 'checked' : ' ' %> />
       <label for="Acrylic">Acrylic</label>
     </div>
   </div>

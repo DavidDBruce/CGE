@@ -144,24 +144,25 @@ module.exports = api;
 
 /* 10 controller methods handled by controller:
 
-controllers/waterproofingPrimers.js
+controllers/roofingPrimers.js
 
 2 Respond with JSON:
 
-http://127.0.0.1:8082/waterproofingPrimers/findall [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/findone/1 [WORKING]
+http://127.0.0.1:8082/roofingPrimer/findall [WORKING]
+http://127.0.0.1:8082/roofingPrimer/findone/1 [WORKING]
 
 5 Respond with CRUD Views:
 
-http://127.0.0.1:8082/waterproofingPrimers [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/create [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/delete/1 [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/details/1 [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/edit/1 [WORKING]
+http://127.0.0.1:8082/roofingPrimer [WORKING]
+http://127.0.0.1:8082/roofingPrimer/create [WORKING]
+http://127.0.0.1:8082/roofingPrimer/delete/1 [WORKING]
+http://127.0.0.1:8082/roofingPrimer/details/1 [WORKING]
+http://127.0.0.1:8082/roofingPrimer/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
-http://127.0.0.1:8082/waterproofingPrimers/save [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/save/1 [WORKING]
-http://127.0.0.1:8082/waterproofingPrimers/1 [WORKING]
+http://127.0.0.1:8082/roofingPrimer/save [WORKING]
+http://127.0.0.1:8082/roofingPrimer/save/1 [WORKING]
+http://127.0.0.1:8082/roofingPrimer/delete/1 [WORKING]
 */
+
