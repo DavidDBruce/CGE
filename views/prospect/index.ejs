@@ -7,8 +7,8 @@
     <p>There are
       <%= prospects.query.length %> prospects. <br/>
         <a href="prospect/create"class="btn btn-info" role="button">Add a new prospect</a></p>
-
-    <table class="table" border="1">
+        <input style="margin-bottom: 10px;" class= "form-control" type="text" id="prospectSearch" name="prospectSearch" onkeyup="nameSearch()" placeholder="Search for a customer">
+    <table id ="prospectTable"class="table" border="1">
       <thead>
         <tr>
           <th>ID</th>
@@ -63,46 +63,33 @@
       </tbody>
     </table>
   </div>
-  <!--<table id="prospectTable" class="table" border="1">
-    <thead>
-      <tr>
-        <th onclick="sortTable(0)">ID</th>
-        <th onclick="sortTable(1)">Customer Name</th>
-        <th onclick="sortTable(2)">Address</th>
-        <th onclick="sortTable(3)">City</th>
-        <th onclick="sortTable(4)">State</th>
-        <th>Zip</th>
-        <th>Sq.Ft</th>
-        <th>Type</th>
-        <th>Contact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Jordan Nazario</td>
-        <td>123 Fake Address Street</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
 
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Hunter Turley</td>
-        <td>124 Fake Address Street</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-        <td>Placeholder</td>
-      </tr>
-    </tbody>
-  </table>
+  <script>
+    //Search functionality for prospect table (based on customer name). Taken from w3schools
+function nameSearch() {
+  // Declare variables
+  var input,table, tr, td, i;
+  input = document.getElementById("prospectSearch");
+  input = input.value.toUpperCase();
+  table = document.getElementById("prospectTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(input) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+  <!--
+    This function was previously included as a way to sort each column of the table. Taken from w3 schools
+
 
   <script>
                      function sortTable(n) {
