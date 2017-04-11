@@ -86,7 +86,7 @@ api.get('/edit/:id', function (req, res) {
         });
 });
 
-//For deactivate button
+//For deactivate button proposed in class.
 
 api.get('/active/:id/:ison', function(req,res){
     console.log("Handling POST /active/:id/:ison " + req);
