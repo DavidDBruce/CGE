@@ -6,7 +6,7 @@ Joel Beckley, Veera Kishon Kumar Mucherla-->
     <a href="/roofingEstimate/create" class="btn btn-primary">Add a new one</a></p>
 <% for (var i = 0; i < roofingEstimates.query.length; i++) { estimate = roofingEstimates.query[i]; %>
   <div class="panel panel-default">
-    <div class="panel-heading"></div>
+    <div class="panel-heading"><%=estimate.client%> - <%=estimate.address%> (<%=estimate.city%>, <%=estimate.state%>)</div>
     <div class="text-muted pull-right"></div>
     <div class="panel-body">
       ID:
