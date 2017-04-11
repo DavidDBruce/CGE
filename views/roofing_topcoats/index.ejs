@@ -46,9 +46,10 @@ Dev2 : Tarun Kumar Potlapalli [S528757]-->
                 <td id="stat"><%=  roofingTopcoats.query[i].isactive %></td>
                 <td>
                   <a href="roofingTopcoat/active/<%=  count%>/<%=  roofingTopcoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingTopcoats.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingTopcoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
-                  <a href="roofingTopcoat/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
+                 
                   <a href="roofingTopcoat/details/<%=  count%>"> <button type="button" class="btn btn-info">   Details </button></a>
                   <a href="roofingTopcoat/edit/<%=  count%>"> <button type="button" class="btn btn-warning"> Edit </button></a>
+                   <a href="roofingTopcoat/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
                 </td>
             </tr>
             <% } %>
