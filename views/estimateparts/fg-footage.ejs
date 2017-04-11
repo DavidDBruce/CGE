@@ -5,8 +5,14 @@
 <% for(var i=0; i<estimate.areas.length; i++) { e = estimate.areas[i];  %>
    <% include fg-footage-entry.ejs %>
 <% } %>
+<!-- Initialization of page from previous data has been done-->
 </div>
-<input type="button" class="btn btn-primary" value="Add Area" id="addSFootage" />
+<input type="button" class="btn btn-primary" value="Add Area" onclick="addSFootage()"/>
 <br/>
+
+<script> addSFootage = function(){
+
+  alert("Add pressed!");
+} </script>
 
 <!-- P2-1 David Bruce, Cassandra Baldus -->

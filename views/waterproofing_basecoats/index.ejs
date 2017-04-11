@@ -8,7 +8,7 @@ Bhavishya Arelli
 
     <p>There are
       <%= waterproofingBasecoats.query.length %> waterproofing basecoats. <br/>
-        <a href="waterproofingTopcoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
+        <a href="waterproofingBasecoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
     <table class="table" border="1">
       <thead>
         <tr>
@@ -39,9 +39,10 @@ Bhavishya Arelli
               <%=  waterproofingBasecoats.query[i].unit %>
             </td>
             <td>
-              <a href="waterproofingTopcoat/delete/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-danger">  Delete </a>
-              <a href="waterproofingTopcoat/details/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-info">  Details </a>
-              <a href="waterproofingTopcoat/edit/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-warning">  Edit </a>
+                <a href="waterproofingBasecoat<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-info">  DeActivate </a>
+              <a href="waterproofingBasecoat/delete/<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-danger">  Delete </a>
+              <a href="waterproofingBasecoat/details/<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-info">  Details </a>
+              <a href="waterproofingBasecoat/edit/<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-warning">  Edit </a>
 
             </td>
           </tr>
