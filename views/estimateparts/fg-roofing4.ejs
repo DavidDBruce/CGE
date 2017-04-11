@@ -1,11 +1,7 @@
 
-<!--
-DEVTEAM :P3-4
-Anil seshu kumar Akula , Reshma Shaik -->
-<!--Testing-->
-
+<!--DEVTEAM :P3-4 Anil seshu kumar Akula , Reshma Shaik -->
 <div class="form-group">
-  <input type="checkbox" id="usesTopcoat" name="usesTopcoat" onchange="topchange()" <%= estimate.roofing.usesTopcoat ? 'checked' : ' ' %> />
+  <input type="checkbox" id="usesTopcoat" name="usesTopcoat" onchange="topdiff()" <%= estimate.roofing.usesTopcoat ? 'checked' : ' ' %> />
   <label for="usesTopcoat">Uses Topcoat?</label>
 </div>
 <div id = "top" style="display:none;">
@@ -23,11 +19,10 @@ Anil seshu kumar Akula , Reshma Shaik -->
 </div>
 </div>
 <script type="text/javascript">
-function topchange()  {
+function topdiff()  {
    var input = document.getElementById('usesTopcoat');
 if(input.checked) {
   document.getElementById('top').style.display = "block";        
-    
 } 
 else {
    
