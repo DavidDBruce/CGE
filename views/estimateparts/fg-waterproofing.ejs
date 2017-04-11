@@ -4,12 +4,30 @@
 <h2>Waterproofing Materials</h2>
 <hr>
 <div class="form-group">
-<label for="subtotal">Waterproofing-specific materials subtotal</label>
+<label for="subtotal">waterproofingType</label>
 <div class="funkyradio"  >
     <div class="funkyradio-primary">
+
 	<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required default=0>
+    <input type="raido" name="Primer" id="Primer" <%= (estimate.waterproofing.waterproofingType =='Primer') ? 'checked' : ' ' %> />
+        <lable for="Primer">usesPriemr</lable>
+
+	<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required value="0">
+
     </div>
+    <div class="funkyradio"  >
+    <div class="funkyradio-success">
+	<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required default=0>
+    <input type="radio" name="Basecoat" id=" Basecoat" <%= (estimate.waterproofing.waterproofingType =='Basecoat') ? 'checked' : ' ' %> />
+        <lable for="Basecoat">Basecoat</lable>
+    </div>
+    <div class="funkyradio"  >
+    <div class="funkyradio-warning">
+	<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required default=0>
+    <input type="radio" name="Topcoat" id=" Topcoat" <%= (estimate.waterproofing.waterproofingType =='Topcoat') ? 'checked' : ' ' %> />
+        <lable for="Topcoat">Topcoat</lable>
+    
 </div>
- <% include ../estimateparts/fg-waterproofing1 %>
- <% include ../estimateparts/fg-waterproofing3 %>
- <% include ../estimateparts/fg-waterproofing_basecoat %>
+<!-- <% include ../estimateparts/fg-waterproofing1 %> -->
+<!-- <% include ../estimateparts/fg-waterproofing3 %> -->
+<!-- <% include ../estimateparts/fg-waterproofing_basecoat %> -->
