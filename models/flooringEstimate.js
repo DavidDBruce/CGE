@@ -31,10 +31,10 @@ const FlooringEstimateSchema = new Schema({
   IsDeleted: { type: Boolean, required: true, default:false} ,
   "flooring": {
     "floorSystemType": { type: String, required: true, default: "Epoxy", enum: ["Epoxy", "Decorative Epoxy", "Urethane"] },
-    "usesUrethane": { type: Boolean, required: true, default: false },
+    "usesUrethane": { type: Boolean, required: true, default: true },
     "urethaneProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
     "urethaneCoverageSqFt": { type: Number, required: true },
-    "usesEpoxy": { type: Boolean, required: true, default: false },
+    "usesEpoxy": { type: Boolean, required: true, default: true },
     "epoxyProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
     "epoxyCoverageSqFt": { type: Number, required: false }
   },
