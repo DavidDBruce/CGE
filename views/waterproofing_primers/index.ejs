@@ -4,7 +4,7 @@
 
 		<p>There are
 			<%= waterproofingPrimers.query.length %> waterproofing primers. <br/>
-				<a href="waterproofingTopcoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
+				<a href="waterproofingPrimer/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
 
 		<table class="table" border="1">
 			<thead>
@@ -36,9 +36,9 @@
 							<%=  waterproofingPrimers.query[i].unit %>
 						</td>
 						<td>
-							<a href="waterproofingTopcoat/delete/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-danger" >	 Delete </a>
-            <a href="waterproofingTopcoat/details/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-info">	   Details </a>
-			      <a href="waterproofingTopcoat/edit/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-warning">  Edit </a>
+							<a href="waterproofingPrimer/delete/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-danger" >	 Delete </a>
+            <a href="waterproofingPrimer/details/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-info">	   Details </a>
+			      <a href="waterproofingPrimer/edit/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-warning">  Edit </a>
 							
 						</td>
 					</tr>
