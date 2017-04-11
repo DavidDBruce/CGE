@@ -40,7 +40,7 @@
       "basecoatCoverageSqFt": 100,
       "usesPrimer": true,
       "primerSelection": 1,
-      "primerCoverageSqFt": 100,
+      "primerCoverageSqFt": 250,
       "usesTopcoat": true,
       "topcoatSelection": 1,
       "topcoatCoverageSqFt": 100,
