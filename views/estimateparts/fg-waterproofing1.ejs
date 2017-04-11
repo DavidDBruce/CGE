@@ -16,3 +16,19 @@
   <label for="primerCoverageSqFt">Primer Coverage (SqFt)</label>
   <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.waterproofing.primerCoverageSqFt || 250 %>" min=250 max=350 >
 </div>
+<script>
+function Wp_primerCheckChange()  {
+ if (document.getElementById('usesPrimer').checked) {
+   //here we need to display the elements
+   //alert('is checked');
+   document.getElementById('p1').style.display = "block";
+   document.getElementById('p2').style.display = "block";
+   }
+ else {
+   //here we need to hide the elements
+   //alert("Now it's not checked");
+   document.getElementById('p1').style.display = "none";
+   document.getElementById('p2').style.display = "none";
+   }
+}
+</script>
