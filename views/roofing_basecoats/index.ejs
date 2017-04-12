@@ -31,12 +31,12 @@
             <td><%=  roofingBasecoats.query[i].displayorder %></td>
             <td><%=  roofingBasecoats.query[i].price %></td>   
             <td><%=  roofingBasecoats.query[i].unit %></td>
-            <td><%=  roofingBasecoats.query[i].status %></td>
+            <td id="stat"><%=  roofingBasecoats.query[i].isactive %></td>
             <td>
-            <a href="roofingBasecoat/deactivate/<%=  count%>">	<button type="button" class="btn btn-info"> Deactivate </button></a>
-						<a href="roofingBasecoat/delete/<%=  count%>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
+            <a href="roofingBasecoat/active/<%=  count%>/<%=  roofingBasecoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingBasecoats.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingBasecoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
             <a href="roofingBasecoat/details/<%=  count%>">	<button type="button" class="btn btn-success">  Details </button></a> 
-						<a href="roofingBasecoat/edit/<%=  count%>">	<button type="button" class="btn btn-warning"> Edit </button></a> 
+						<a href="roofingBasecoat/edit/<%=  count%>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+            <a href="roofingBasecoat/delete/<%=  count%>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
 						</td>
          </tr>
          <% } %>
