@@ -7,18 +7,18 @@
 <div class="col-xs-3">
   <div class="form-group">
     <label for="numberOfVehicles">Count</label>
-    <input type="number" class="form-control" id="numberOfVehicles" name="numberOfVehicles" value="<%= e.numberOfVehicles %>" min=0 max=10 value=2 required>
+    <input type="number" step="any" class="form-control" id="numberOfVehicles" name="numberOfVehicles" value="<%= e.numberOfVehicles %>" min=0 max=10 value=2 required>
   </div>
 </div>
 <div class="col-xs-3">
   <div class="form-group">
     <label for="milesPerDrive">Mi/drive</label>
-    <input type="number" class="form-control" id="milesPerDrive" name="milesPerDrive" value="<%= e.milesPerDrive %>" min=0 max=1000 value=100 required>
+    <input type="number" step="any" class="form-control" id="milesPerDrive" name="milesPerDrive" value="<%= e.milesPerDrive %>" min=0 max=1000 value=100 required>
   </div>
 </div>
 <div class="col-xs-3">
   <div class="form-group">
     <label for="dollarsPerMile">$/mile</label>
-    <input type="number" class="form-control" id="dollarsPerMile" name="dollarsPerMile" value="<%= e.dollarsPerMile %>" min=0.00 max=10.00 value=0.50 required>
+    <input type="number" step="any" class="form-control" id="dollarsPerMile" name="dollarsPerMile" value="<%= e.dollarsPerMile %>" min=0.00 max=10.00 value=0.50 required>
   </div>
 </div>
