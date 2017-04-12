@@ -42,12 +42,14 @@ Vaishnavi Kalvakota s528803
                                 <td>
                                     <%=  roofingPrimers.query[i].unit %>
                                 </td>
-                                <td>Active</td>
+                                <td id="stat">
+						            <%=  roofingPrimers.query[i].isactive %>
+						        </td>
                                 <td>
-                                    <a href="roofingPrimer/index/<%=  count%>"> <button type="button" class="btn btn-warning"> Deactivate </button></a>
-                                    <a href="roofingPrimer/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
+                                    <a href="roofingPrimer/active/<%=  count%>/<%=  roofingPrimers.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingPrimers.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingPrimers.query[i].isactive?"Deactivate":"Activate" %></button></a>
                                     <a href="roofingPrimer/details/<%=  count%>"> <button type="button" class="btn btn-info">  Details </button></a>
                                     <a href="roofingPrimer/edit/<%=  count%>"> <button type="button" class="btn btn-warning">  Edit </button></a>
+                                    <a href="roofingPrimer/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
 
                                 </td>
                                 
