@@ -1,3 +1,4 @@
+<!-- P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri -->
 <div class="col-xs-3">
   <div class="form-group">
     <label for="description">Descr</label>
@@ -20,5 +21,13 @@
   <div class="form-group">
     <label for="dollarsPerMile">$/mile</label>
     <input type="number" step="any" class="form-control" id="dollarsPerMile" name="dollarsPerMile" value="<%= e.dollarsPerMile %>" min=0.00 max=10.00 value=0.50 required>
-  </div>
+      </div>
 </div>
+ <div class="col-xs-3">
+  <div class="form-group">
+    <label for="Total">Total </label>
+    <input type="number" step="any" class="form-control" id="Total" name="Total" value="<%= e.numberOfVehicles * e.milesPerDrive *e.dollarsPerMile %>" placeholder="Total" required>
+      </div>
+</div>
+
+ 

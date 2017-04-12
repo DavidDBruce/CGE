@@ -10,9 +10,18 @@ Nikhil Muthyala, Sahu Chintha -->
 <script type="text/javascript">
     function ShowHideDiv(usesAggregate) {
         var AggregateTypeDiv = document.getElementById("AggregateTypeId");
-        AggregateTypeDiv.style.display = usesAggregate.checked ? "block" : "none";
         var AggregateMaterialDiv = document.getElementById("AggregateMaterialId");
-        AggregateMaterialDiv.style.display = usesAggregate.checked ? "block" : "none";
+        if(usesAggregate.checked){      
+            AggregateTypeDiv.style.display = "block";        
+            AggregateMaterialDiv.style.display = "block";         
+        } else {
+            AggregateTypeDiv.style.display = "none";        
+            AggregateMaterialDiv.style.display = "none";
+            document.getElementById("Sand").checked = false;
+            document.getElementById("Quartz").checked = false;
+            document.getElementById("Flake").checked = false;
+            document.getElementById("Glass").checked = false;
+        }    
     }
 </script>
 <div class="form-group" id="AggregateTypeId" style="display:none;">

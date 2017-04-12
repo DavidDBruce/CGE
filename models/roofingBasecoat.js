@@ -10,7 +10,7 @@ var RoofingBasecoatSchema = new Schema({
   status:{type: String, required: true },
   displayorder: { type: String, required: true },
   price: { type: Number, required: true },
-  isActive:{type: Boolean, required: true }
+  isActive:{type: Boolean, required: true, default:true }
 })
 
 var roofingBasecoat = mongoose.model('RoofingBasecoat', RoofingBasecoatSchema)

@@ -6,7 +6,8 @@
         "unit": "gal",
         "displayorder": 10,
         "price": 33.75,
-        "isDeleted": false
+        "status": "active",
+        "isactive": true
     },
     {
         "_id": 2,
@@ -15,6 +16,7 @@
         "unit": "gal",
         "displayorder": 20,
         "price": 38.50,
-        "isDeleted": false
+        "status": "active",
+        "isactive": true
     }
 ]
