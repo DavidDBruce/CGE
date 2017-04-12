@@ -36,9 +36,10 @@
 						<td>
 							<%=  aggregateMaterials.query[i].unit %>
 						</td>
-						<td>active</td>
+						<td id="stat"><%=  aggregateMaterials.query[i].isactive %></td>
 						<td>
-							<a href="aggregate<%=  aggregateMaterials.query[i]._id %>" class="btn btn-info" role="button"> DeActivate </a>
+				 			 <a href="aggregate/active/<%=  count%>/<%=  aggregateMaterials.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  aggregateMaterials.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  aggregateMaterials.query[i].isactive?"Deactivate":"Activate" %></button></a>
+                 
 							<a href="aggregate/delete/<%=  aggregateMaterials.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
 							<a href="aggregate/details/<%= aggregateMaterials.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
 							<a href="aggregate/edit/<%=    aggregateMaterials.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a>

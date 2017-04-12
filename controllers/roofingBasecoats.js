@@ -95,6 +95,21 @@ api.get('/edit/:id', function(req, res) {
         });
 });
 
+//for acctivate
+
+api.get('/active/:id/:ison', function(req,res){
+    console.log("Handling POST /active/:id/:ison " + req);
+    var id = parseInt(req.params.id);
+    var ison = req.params.ison=="true"?true:false;
+    var data = req.app.locals.roofingBasecoats.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    item.isactive = ison;
+    res.redirect("/roofingBasecoat");
+});
+
+
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
 // POST new
@@ -140,7 +155,6 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Handling REMOVING ID=" + id);
     var data = req.app.locals.roofingBasecoats.query;
     var item = remove(data, { '_id': id });
-    //item.isDeleted = true;
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/roofingBasecoat');
