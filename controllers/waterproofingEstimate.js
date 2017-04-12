@@ -102,6 +102,9 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.description=req.body.description;
+    item.lengthFeet=req.body.lengthFeet;
+    item.widthFeet=req.body.widthFeet;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
