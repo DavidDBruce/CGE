@@ -140,6 +140,7 @@ api.post('/delete/:id', function(req, res, next) {
     console.log("Handling REMOVING ID=" + id);
     var data = req.app.locals.roofingBasecoats.query;
     var item = remove(data, { '_id': id });
+    //item.isDeleted = true;
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/roofingBasecoat');

@@ -7,7 +7,6 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/waterproofingTopcoat.js');
 const notfoundstring = 'No such waterproofing topcoat';
-
 // See app.js to find default view folder (e.g.,"views")
 // see app.js to find  default URI for this controller (e.g., "waterproofingTopcoat")
 // Specify the handler for each required combination of URI and HTTP verb 
@@ -177,15 +176,15 @@ http://127.0.0.1:8082/waterproofingTopcoats/findone/1 [WORKING]
 
 5 Respond with CRUD Views:
 
-http://127.0.0.1:8082/waterproofingTopcoats [WORKING]
-http://127.0.0.1:8082/waterproofingTopcoats/create [NOTWORKING]
-http://127.0.0.1:8082/waterproofingTopcoats/delete/1 [NOTWORKING]
-http://127.0.0.1:8082/waterproofingTopcoats/details/1 [NOTWORKING]
-http://127.0.0.1:8082/waterproofingTopcoats/edit/1 [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoat [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/create [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/delete/1 [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/details/1 [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/edit/1 [WORKING]
 
 3 Respond by executing CRUD actions:
 
-http://127.0.0.1:8082/waterproofingTopcoats/save [NOTWORKING]
-http://127.0.0.1:8082/waterproofingTopcoats/save/1 [NOTWORKING]
-http://127.0.0.1:8082/waterproofingTopcoats/delete/1 [NOTWORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/save [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/save/1 [WORKING]
+http://127.0.0.1:8082/waterproofingTopcoat/delete/1 [WORKING]
 */
