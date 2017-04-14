@@ -3,10 +3,13 @@ Joel Beckley, Veera Kishon Kumar Mucherla-->
 <br/>
 <br/>
 <h2>Create a new roofing estimate </h2>
-<p>There are currently
-	<%= roofingEstimates.query.length %>
-	roofing estimate(s)
-</p>
+<% if (roofingEstimates.query.length == 1){%>
+	<p>There is currently 1 roofing estimate.</p>
+<% }else{%>
+		<p>There are currently <%= roofingEstimates.query.length %> roofing estimates.</p>
+<% } %>
+
+
 <br/>
 <% 
 maxID=0; 

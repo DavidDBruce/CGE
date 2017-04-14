@@ -103,10 +103,23 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.roofing.roofType = roofTypeClassifier(req.body);
+    console.log("look, ma, it's a roof: " + item.roofing);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
 });
+
+function roofTypeClassifier(body){
+    if(body["Metal"] == "on")
+    return "Metal";
+    else if(body["Mod Bit"] == "on")
+    return "Mod Bit";
+    else if(body["Single Ply"] == "on")
+    return "Single Ply"
+    else return "No Roof Chosen";
+    
+};
 
 // POST update
 api.post('/save/:id', function(req, res) {
