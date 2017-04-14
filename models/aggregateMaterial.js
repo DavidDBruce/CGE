@@ -9,9 +9,10 @@ var AggregateMaterialSchema = new Schema({
     aggregateType: { type: String, required: true, default: 'Sand', enum: ['Sand', 'Quartz', 'Flake', 'Glass Beads'] },
     defaultCoverageSqFt: { type: Number, required: true, default: 200 },
     unit: { type: String, required: true, default: '100lb bag' },
+    status:{type: String, required: true },
     displayorder: { type: String, required: true, default: 99 },
     price: { type: Number, required: true, default: 20 },
-    IsDeleted: { type: Boolean, required: true, default: false }
+    isActive:{type: Boolean, required: true , default:true}
 })
 
 var aggregateMaterial = mongoose.model('AggregateMaterial', AggregateMaterialSchema)

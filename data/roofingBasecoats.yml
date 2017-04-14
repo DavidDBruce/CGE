@@ -6,7 +6,7 @@
   displayorder: 10
   price: 40.70
   status: active
-  isDeleted: false
+  isactive: true
 - _id: 2
   name: 70620 - permathane II
   defaultCoverageSqFt: 100
@@ -14,7 +14,7 @@
   displayorder: 20
   price: 38.50
   status: active
-  isDeleted: false
+  isactive: true
 #7419 HB - perma-gard HB    $40.70/gal
 #70620 - permathane II      $38.50/gal
 
