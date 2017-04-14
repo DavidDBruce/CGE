@@ -108,7 +108,20 @@ api.post('/save', function(req, res) {
     "widthFeet": req.body.widthFeet,
     "lengthFeet": req.body.lengthFeet,
     "squarefootage": req.body.widthFeet*req.body.lengthFeet 
-    });
+});
+item.miscellaneousEntries=[];
+item.miscellaneousEntries.push({
+    "description":req.body.miscdescription1,
+    "cost":req.body.cost
+});
+item.mileageEntries=[];
+item.mileageEntries.push({
+    "description": req.body.mileagedescription,
+        "numberOfVehicles": req.body.numberOfVehicles,
+        "milesPerDrive": req.body.milesPerDrive,
+        "dollarsPerMile": req.body.dollarsPerMile,
+        "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
+});
     
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
