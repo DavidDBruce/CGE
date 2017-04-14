@@ -102,6 +102,14 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.areas = [];
+    item.areas.push({
+    "description": req.body.description,
+    "widthFeet": req.body.widthFeet,
+    "lengthFeet": req.body.lengthFeet,
+    "squarefootage": req.body.widthFeet*req.body.lengthFeet 
+    });
+    
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
