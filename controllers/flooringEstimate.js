@@ -92,7 +92,7 @@ api.get('/edit/:id', function(req, res) {
 
 // POST new
 api.post('/save', function(req, res) {
-    console.log("Handling POST " + req.app.locals);
+    console.log("Handling POST " + req);
     var data = req.app.locals.flooringEstimates.query;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
