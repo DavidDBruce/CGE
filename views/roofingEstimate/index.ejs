@@ -1,8 +1,11 @@
 <!--P3-10
 Joel Beckley, Veera Kishon Kumar Mucherla-->
 <h2>Recent roofing estimates</h2>
-<p>There are
-  <%= roofingEstimates.query.length %> roofing estimates. <br/>
+<% if (roofingEstimates.query.length == 1){%>
+	<p>There is currently 1 roofing estimate.</p>
+<% }else{%>
+		<p>There are currently <%= roofingEstimates.query.length %> roofing estimates.</p>
+<% } %> <br/>
     <a href="/roofingEstimate/create" class="btn btn-primary">Add a new one</a></p>
 <% for (var i = 0; i < roofingEstimates.query.length; i++) { 
        estimate = roofingEstimates.query[i]; %>
