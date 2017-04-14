@@ -33,19 +33,19 @@ for (var i=0; i<flooringCoatings.query.length; i++) {
 				</div>
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name" name="name" value="Name" required>
+					<input type="text" class="form-control" id="name" name="name" value="Name" maxlength="50" required>
 				</div>
 				<div class="form-group">
 					<label for="unit">Unit</label>
-					<input type="text" class="form-control" id="unit" name="unit" value="gal" required>
+					<input type="text" class="form-control" id="unit" name="<un></un>it" value="gal" maxlength="3" required>
 				</div>
 				<div class="form-group">
 					<label for="price">Price</label>
-					<input type="text" class="form-control" id="price" name="price" value="30" required>
+					<input type="number" class="form-control" id="price" name="price" value="30" min="0" max="100" required>
 				</div>
 				<div class="form-group">
 					<label for="displayorder">Display Order</label>
-					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>	
+					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" min="0" max="200" required>	
 				</div>
 				<div class="form-group">
 					<input type="submit" value="Post new entry" class="btn btn-primary" />
