@@ -112,8 +112,15 @@ api.post('/save', function(req, res) {
 item.miscellaneousEntries=[];
 item.miscellaneousEntries.push({
     "description":req.body.miscdescription1,
-    "cost":req.body.cost
+    "cost":req.body.cost,
+    "Total":req.body.cost
 });
+item.usesPrimer=req.body.usesPrimer;
+item.primerSelection=req.body.primerSelection;
+item.primerCoverageSqFt=req.body.primerCoverageSqFt;
+item.usesTopcoat=req.body.usesTopcoat;
+item.topcoatSelection=req.body.topcoatSelection;
+item.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
 item.mileageEntries=[];
 item.mileageEntries.push({
     "description": req.body.mileagedescription,
