@@ -8,20 +8,20 @@
 <div class="funkyradio"  >
     <div class="funkyradio-primary">
 	<!--<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required default=0>-->
-    <input type="radio" name="Primer" id="Primer" <%= (estimate.waterproofing.waterproofingType =='Primer') ? 'checked' : ' ' %> />
+    <input type="radio" name="materials" id="Primer" <%= (estimate.waterproofing.waterproofingType =='Primer') ? 'checked' : ' ' %> />
         <label for="Primer">Primer</label>
 	<!--<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required value="0">-->
     </div>
   <!--  <div class="funkyradio"  > -->
     <div class="funkyradio-success">
 	<!--<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required default=0>-->
-    <input type="radio" name="Basecoat" id=" Basecoat" <%= (estimate.waterproofing.waterproofingType =='Basecoat') ? 'checked' : ' ' %> />
+    <input type="radio" name="materials" id=" Basecoat" <%= (estimate.waterproofing.waterproofingType =='Basecoat') ? 'checked' : ' ' %> />
         <label for="Basecoat">Basecoat</label>
     </div>
    <!-- <div class="funkyradio"  > -->
     <div class="funkyradio-warning">
 	<!--<input type="number" class="form-control" id="subtotal" name="subtotal" min=0 max=500000 required default=0>-->
-    <input type="radio" name="Topcoat" id=" Topcoat" <%= (estimate.waterproofing.waterproofingType =='Topcoat') ? 'checked' : ' ' %> />
+    <input type="radio" name="materials" id=" Topcoat" <%= (estimate.waterproofing.waterproofingType =='Topcoat') ? 'checked' : ' ' %> />
         <label for="Topcoat">Topcoat</label>
  </div>   
 </div>
