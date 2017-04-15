@@ -104,7 +104,6 @@ api.post('/save', function(req, res) {
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
     item.roofing.roofType = roofTypeClassifier(req.body);
-    console.log("look, ma, it's a roof: " + item.roofing);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
