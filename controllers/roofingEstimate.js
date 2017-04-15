@@ -135,6 +135,7 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.roofing.roofType = roofTypeClassifier(req.body);
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
 });
