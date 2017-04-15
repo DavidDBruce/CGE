@@ -115,6 +115,15 @@ item.miscellaneousEntries.push({
     "cost":req.body.cost,
     "Total":req.body.cost
 });
+item.laborEntries=[];
+item.laborEntries.push({
+    "description":req.body.labourdescription,
+    "count":req.body.count,
+"hoursPerPerson":req.body.hoursPerPerson,
+"dollarsPerHour":req.body.dollarsPerHour,
+"nightsPerPerson":req.body.nightsPerPerson,
+"roomCost":req.body.roomCost
+});
 item.usesPrimer=req.body.usesPrimer;
 item.primerSelection=req.body.primerSelection;
 item.primerCoverageSqFt=req.body.primerCoverageSqFt;
