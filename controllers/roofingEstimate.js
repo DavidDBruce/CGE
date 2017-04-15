@@ -104,6 +104,11 @@ api.post('/save', function(req, res) {
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
     item.roofing.roofType = roofTypeClassifier(req.body);
+    var desc = req.body.description;
+    var width = req.body.widthFeet;
+    var length = req.body.lengthFeet;
+    var sqft = req.body.squarefootage
+    item.areas = [{desc, width, length, sqft}]
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
@@ -135,6 +140,11 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    var desc = req.body.description;
+    var width = req.body.widthFeet;
+    var length = req.body.lengthFeet;
+    var sqft = req.body.squarefootage;
+    item.areas = [{desc, width, length, sqft}];
     item.roofing.roofType = roofTypeClassifier(req.body);
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
