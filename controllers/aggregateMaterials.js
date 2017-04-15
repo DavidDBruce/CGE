@@ -104,7 +104,7 @@ api.get('/active/:id/:ison', function(req,res){
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
     item.isactive = ison;
-    res.redirect("/aggregateMaterial");
+    res.redirect("/aggregate");
 });
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
