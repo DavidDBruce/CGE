@@ -50,21 +50,6 @@
   displayorder: 60
   price: 66.40
 
-- name: 70714/70715-01 fast cure epoxy
-  _id: 7
-  coatingType: Epoxy
-  defaultCoverageSqFt: 100
-  unit: gal
-  displayorder: 70
-  price: 66.40
-
-- name: 70714/70715-01 fast cure epoxy
-  _id: 8
-  coatingType: Epoxy
-  defaultCoverageSqFt: 100
-  unit: gal
-  displayorder: 80
-  price: 66.40
 #70714/70715 - epoxy                                   $56.30/gal
 #70714/70715=09 general purpose urethane    $50.38/gal  
 #70734/70735 - floor brite epoxy                     $77.45/gal
