@@ -102,9 +102,43 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
-    item.description=req.body.description;
-    item.lengthFeet=req.body.lengthFeet;
-    item.widthFeet=req.body.widthFeet;
+    item.areas = [];
+    item.areas.push({
+    "description": req.body.description,
+    "widthFeet": req.body.widthFeet,
+    "lengthFeet": req.body.lengthFeet,
+    "squarefootage": req.body.widthFeet*req.body.lengthFeet 
+});
+item.miscellaneousEntries=[];
+item.miscellaneousEntries.push({
+    "description":req.body.miscdescription1,
+    "cost":req.body.cost,
+    "Total":req.body.cost
+});
+item.laborEntries=[];
+item.laborEntries.push({
+    "description":req.body.labourdescription,
+    "count":req.body.count,
+"hoursPerPerson":req.body.hoursPerPerson,
+"dollarsPerHour":req.body.dollarsPerHour,
+"nightsPerPerson":req.body.nightsPerPerson,
+"roomCost":req.body.roomCost
+});
+item.usesPrimer=req.body.usesPrimer;
+item.primerSelection=req.body.primerSelection;
+item.primerCoverageSqFt=req.body.primerCoverageSqFt;
+item.usesTopcoat=req.body.usesTopcoat;
+item.topcoatSelection=req.body.topcoatSelection;
+item.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
+item.mileageEntries=[];
+item.mileageEntries.push({
+    "description": req.body.mileagedescription,
+        "numberOfVehicles": req.body.numberOfVehicles,
+        "milesPerDrive": req.body.milesPerDrive,
+        "dollarsPerMile": req.body.dollarsPerMile,
+        "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
+});
+    
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');

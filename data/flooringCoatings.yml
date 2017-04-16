@@ -1,6 +1,7 @@
 # P2-8
 # ShivaTeja Miyapuram, Manohar Sriram
 ---
+  
 - name: 70714/70715 - epoxy
   _id: 1
   coatingType: Epoxy
@@ -9,7 +10,7 @@
   displayorder: 10
   price: 56.30
 
-- name: 70714/70715=09 general purpose urethane
+- name: 70714/70715 - 09 general purpose urethane
   _id: 2
   coatingType: Urethane
   defaultCoverageSqFt: 100

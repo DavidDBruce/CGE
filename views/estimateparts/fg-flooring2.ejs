@@ -5,6 +5,7 @@
 <div class="form-group">
   <label for="epoxyProductSelection" id="epoxyProductSelectionlabel">Epoxy Product Selection</label>
   <select class="form-control" name="epoxyProductSelection" id="epoxyProductSelection"  >
+      <option selected disabled>Select</option>
     <%  var data = flooringCoatings.query; for( var i=0; i<data.length; i++){ %>
     <option value="<%= data[i]._id %>" <%= (estimate.flooring.epoxyProductSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
     <% } %>
@@ -20,13 +21,13 @@
 }
    function checkchange()  {
      if (document.getElementById('usesEpoxy').checked) {
-        alert('is checked');
+        //alert('is checked');
          document.getElementById('epoxyProductSelection').style.display = "block";
          document.getElementById('epoxyCoverageSqFt').style.display = "block";
 
      }
  else {
-     alert("now it's not checked");
+     //alert("now it's not checked");
      document.getElementById('epoxyProductSelection').style.display = "none";
       document.getElementById('epoxyCoverageSqFt').style.display = "none";
      document.getElementById('epoxyProductSelectionlabel').style.display = "none";
