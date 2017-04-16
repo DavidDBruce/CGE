@@ -112,8 +112,7 @@ api.post('/save', function(req, res) {
 item.miscellaneousEntries=[];
 item.miscellaneousEntries.push({
     "description":req.body.miscdescription1,
-    "cost":req.body.cost,
-    "Total":req.body.cost
+    "cost":req.body.cost
 });
 item.laborEntries=[];
 item.laborEntries.push({
@@ -138,7 +137,7 @@ item.mileageEntries.push({
         "dollarsPerMile": req.body.dollarsPerMile,
         "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
 });
-    
+    item.comment = req.body.comment;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
