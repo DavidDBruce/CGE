@@ -6,6 +6,7 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/mileageRate.js');
 const notfoundstring = 'No such mileage rate';
+var findIndex = require('lodash.findindex');
 
 // see app.js for the root request this controller handles
 // See app.js to find default view folder (e.g.,"views")
@@ -134,8 +135,9 @@ api.post('/delete/:id', function(req, res, next) {
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
     var data = req.app.locals.mileageRates.query;
-    var item = remove(data, { '_id': id });
-    if (!item) { return res.end(notfoundstring); }
+    var item = findIndex(data, { '_id': id });
+    if (item == -1) { return res.end(notfoundstring); }
+    data[item].isDeleted=true;
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/mileageRate');
 });

@@ -5,7 +5,8 @@ var mongoose = require('mongoose')
 var MileageRateSchema = new Schema({
   _id: { type: Number, required: true },
   startDate: {type: Date, default: Date.now, required: true},
-  dollarsPerMile: { type: Number, required: true }
+  dollarsPerMile: { type: Number, required: true },
+  isDeleted: {type: Boolean, default: false, required: true}
 })
 
 var mileageRate = mongoose.model('MilegeRate', MileageRateSchema)
