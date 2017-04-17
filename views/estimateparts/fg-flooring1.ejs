@@ -6,6 +6,7 @@
 <div class="form-group" id="form1" id = "onloading1">
   <label for="urethaneProductSelection">Urethane Product Selection</label>
   <select class="form-control" name="urethaneProductSelection" id="urethaneProductSelection">
+      <option selected disabled>Select</option>
     <%  var data = flooringCoatings.query; for( var i=0; i<data.length; i++){ %>
       if (data[i].name.toLowerCase().includes("urethane")){
       %>

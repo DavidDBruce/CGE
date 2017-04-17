@@ -103,8 +103,16 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.latitude = req.body.latitude;
+    item.longitude = req.body.longitude;
     item.roofing.roofType = roofTypeClassifier(req.body);
-    console.log("look, ma, it's a roof: " + item.roofing);
+    var desc = req.body.description;
+    var width = req.body.widthFeet;
+    var length = req.body.lengthFeet;
+    for (count = 0; count < req.body.description.length - 1; count++){
+        item.areas.push([desc[count], parseInt(width[count]), parseInt(length[count])]);
+    }
+    item.comment = req.body.comment;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
@@ -136,6 +144,17 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.latitude = req.body.latitude;
+    item.longitude = req.body.longitude;
+    var desc = req.body.description;
+    var width = req.body.widthFeet;
+    var length = req.body.lengthFeet;
+    item.areas = [];
+    for (count = 0; count < req.body.description.length - 1; count++){
+        item.areas.push([desc[count], parseInt(width[count]), parseInt(length[count])]);
+    }
+    item.roofing.roofType = roofTypeClassifier(req.body);
+    item.comment = req.body.comment;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/roofingEstimate');
 });

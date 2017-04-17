@@ -112,8 +112,7 @@ api.post('/save', function(req, res) {
 item.miscellaneousEntries=[];
 item.miscellaneousEntries.push({
     "description":req.body.miscdescription1,
-    "cost":req.body.cost,
-    "Total":req.body.cost
+    "cost":req.body.cost
 });
 item.laborEntries=[];
 item.laborEntries.push({
@@ -138,7 +137,7 @@ item.mileageEntries.push({
         "dollarsPerMile": req.body.dollarsPerMile,
         "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
 });
-    
+    item.comment = req.body.comment;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
@@ -159,6 +158,13 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.comment = req.body.comment;
+    item.usesPrimer=req.body.usesPrimer;
+item.primerSelection=req.body.primerSelection;
+item.primerCoverageSqFt=req.body.primerCoverageSqFt;
+item.usesTopcoat=req.body.usesTopcoat;
+item.topcoatSelection=req.body.topcoatSelection;
+item.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
 });

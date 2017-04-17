@@ -17,7 +17,8 @@
   <br/>
 </div>
 <script> removeSFootage  = function(fieldToRemove){
-  //alert("Delete pressed!");
+  alert(fieldToRemove);
+  document.getElementById(fieldToRemove).remove();
 }
 </script>
 
@@ -32,7 +33,6 @@
   document.getElementById("parent").appendChild(childDiv);
   document.getElementById("deleteButton").id = "deleteButton" + nextValue;
   document.getElementById("deleteButton" + nextValue).setAttribute("value","Area" + nextValue);
-  document.getElementById("deleteButton" + nextValue).onclick = function(){var a = " area" + nextValue; document.getElementById(a).remove;}
 }
 </script>
 
@@ -59,7 +59,7 @@
     <div class="form-group">
     <label for="buttons">Options</label>
       <div >
-        <button id="deleteButton" class="btn btn-danger" onclick="removeSFootage()">Delete</button>
+        <button id="deleteButton" class="btn btn-danger" onclick="removeSFootage(this.value)">Delete</button>
       </div>
     </div>
   </div>

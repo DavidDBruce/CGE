@@ -22,7 +22,7 @@ const RoofingEstimateSchema = new Schema({
   "latitude": { type: Number, required: false },
   "longitude": { type: Number, required: false },
   "areas": [{
-    "description": { type: String, required: true },
+    "description": { type: String, required: true, default: "derp" },
     "widthFeet": { type: Number, required: true, default: 10 },
     "lengthFeet": { type: Number, required: true, default: 100 },
     "squarefootage": { $mult: ['$widthFeet', '$lengthFeet' ] }
@@ -88,16 +88,16 @@ const RoofingEstimateSchema = new Schema({
     roomCost:{ type: Number, required: true, default:80}
   }],
   "mileageEntries": [{
-    description: { type: String, required: true },
+    description: { type: String, required: true, default: "derp" },
     numberOfVehicles: { type: Number, required: true, default:1 },
     milesPerDrive: { type: Number, required: true, default: 100 },
-    dollarsPerMile: { type: Number, required: true, default: 0.50 }
+    dollarsPerMile: { type: Number, required: true, default: 1 }
   }],
   "miscellaneousEntries": [{ 
     description: { type: String, required: true },
     cost: { type: Number, required: true, default: 0 }
   }],
-  "comment": { type: String },
+  "comment": { type: String, default: "derp" },
   "margin": { type: Number, default: 0.50 },
   "lastUpdated": { type: Date, default: Date.now },
   "sqft": {$sum: ['areas.squarefootage']}
