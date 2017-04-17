@@ -158,6 +158,13 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.comment = req.body.comment;
+    item.usesPrimer=req.body.usesPrimer;
+item.primerSelection=req.body.primerSelection;
+item.primerCoverageSqFt=req.body.primerCoverageSqFt;
+item.usesTopcoat=req.body.usesTopcoat;
+item.topcoatSelection=req.body.topcoatSelection;
+item.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
 });
