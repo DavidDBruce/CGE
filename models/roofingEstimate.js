@@ -22,80 +22,51 @@ const RoofingEstimateSchema = new Schema({
   "latitude": { type: Number, required: false },
   "longitude": { type: Number, required: false },
   "areas": [{
-    "description": { type: String, required: true },
+    "description": { type: String, required: true, default: "derp" },
     "widthFeet": { type: Number, required: true, default: 10 },
     "lengthFeet": { type: Number, required: true, default: 100 },
     "squarefootage": { $mult: ['$widthFeet', '$lengthFeet' ] }
   }],
-  "flooring": {
-    "floorSystemType": { type: String, required: true, default: "Epoxy", enum: ["Epoxy", "Decorative Epoxy", "Urethane"] },
-    "usesUrethane": { type: Boolean, required: true, default: false },
-    "urethaneProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-    "urethaneCoverageSqFt": { type: Number, required: true },
-    "usesEpoxy": { type: Boolean, required: true, default: false },
-    "epoxyProductSelection": [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-    "epoxyCoverageSqFt": { type: Number, required: false }
-  },
   "roofing": {
-    roofType: { type: String, required: true, default: "Metal", enum: ["Metal", "Mod Bit", "Single Ply"] },
-    processType: { type: String, required: true, default: "Roof Coatings", enum: ["Roof Coatings", "Polyurethane Foam and Coatings"] },
-    coatingType: { type: String, required: true, default: "Urethane", enum: ["Urethane", "Silicone", "Acrylic"] },
-    coatingSelection: [{ type: Schema.Types.ObjectId, ref: RoofingCoating, required: false }],
-    coatingCoverageSqFt: { type: Number, required: false },
-    usesBasecoat: { type: Boolean, required: true, default: false },
-    basecoatSelection: [{ type: Schema.Types.ObjectId, ref: RoofingBasecoat, required: false }],
-    basecoatCoverageSqFt: { type: Number, required: false },
-    usesPrimer: { type: Boolean, required: true, default: false },
-    primerSelection: [{ type: Schema.Types.ObjectId, ref: RoofingPrimer, required: false }],
-    primerCoverageSqFt: { type: Number, required: false },
-    usesTopcoat: { type: Boolean, required: true, default: false },
-    topcoatSelection: [{ type: Schema.Types.ObjectId, ref: RoofingTopcoat, required: false }],
-    topcoatCoverageSqFt: { type: Number, required: false }
+    "roofType": { type: String, required: true, default: "Metal", enum: ["Metal", "Mod Bit", "Single Ply"] },
+    "processType": { type: String, required: true, default: "Roof Coatings", enum: ["Roof Coatings", "Polyurethane Foam and Coatings"] },
+    "coatingType": { type: String, required: true, default: "Urethane", enum: ["Urethane", "Silicone", "Acrylic"] },
+    "coatingSelection": [{ type: Schema.Types.ObjectId, ref: RoofingCoating, required: false }],
+    "coatingCoverageSqFt": { type: Number, required: false },
+    "usesBasecoat": { type: Boolean, required: true, default: false },
+    "basecoatSelection": [{ type: Schema.Types.ObjectId, ref: RoofingBasecoat, required: false }],
+    "basecoatCoverageSqFt": { type: Number, required: false },
+    "usesPrimer": { type: Boolean, required: true, default: false },
+    "primerSelection": [{ type: Schema.Types.ObjectId, ref: RoofingPrimer, required: false }],
+    "primerCoverageSqFt": { type: Number, required: false },
+    "usesTopcoat": { type: Boolean, required: true, default: false },
+    "topcoatSelection": [{ type: Schema.Types.ObjectId, ref: RoofingTopcoat, required: false }],
+    "topcoatCoverageSqFt": { type: Number, required: false }
   },
-  "waterproofing": {
-     productType: { type: String, required: true, default: "Urethane", enum: ["Urethane", "Cementicious Overlay"] },
-     usesUrethane: { type: Boolean, required: true, default: false },
-     urethaneSelection: [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-     urethaneCoverageSqFt: { type: Number, required: true },
-     usesExpoxy: { type: Boolean, required: true, default: false },
-     epoxySelection: [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-     epoxyCoverageSqFt: { type: Number, required: true },
-     usesUrethanePrimer: { type: Boolean, required: true, default: false },
-     urethanePrimerSelection: [{ type: Schema.Types.ObjectId, ref: FlooringCoating, required: false }],
-     urethanePrimerCoverageSqFt: { type: Number, required: true },
-     usesBasecoat: { type: Boolean, required: true, default: false },
-     basecoatSelection: [{ type: Schema.Types.ObjectId, ref: WaterproofingBasecoat, required: false }],
-     basecoatCoverageSqFt: { type: Number, required: true },
-     usesPrimer: { type: Boolean, required: true, default: false },
-     primerSelection: [{ type: Schema.Types.ObjectId, ref: WaterproofingPrimer, required: false }],
-     primerCoverageSqFt: { type: Number, required: true },
-     usesTopcoat: { type: Boolean, required: true, default: false },
-     topcoatSelection: [{ type: Schema.Types.ObjectId, ref: WaterproofingTopcoat, required: false }],
-     topcoatCoverageSqFt: { type: Number, required: true }
-  },
-  "aggregate": { 
-    isUsed: { type: Boolean, required: true, default: false },
-    aggregateTypeSelection: { type: String, required: true, default: "Sand",  enum: ["Sand", "Quartz", "Flake", "Glass Beads"]  },
-    aggregateMaterialSelection: [{ type: Number, ref: AggregateMaterial, required: false}],
-    coverageSqFt:  { type: Number, required: true}
+   "aggregate": {
+    "isUsed": { type: Boolean, required: true, default: false },
+    "aggregateTypeSelection": { type: String, required: false, default: "Sand", enum: ["Sand", "Quartz", "Flake", "Glass Beads"] },
+    "aggregateMaterialSelection": { type: Number, ref: AggregateMaterial, required: false },
+    "coverageSqFt": { type: Number, required: false }
   },
   "laborEntries": [{
-    description: { type: String, required: true },
-    count: { type: Number, required: true, default:1 },
-    hoursPerPerson: { type: Number, required: true, default:8},
-    dollarsPerHour: { type: Number, required: true, default:15},
-    nightsPerPerson:{ type: Number, required: true, default:1},
-    roomCost:{ type: Number, required: true, default:80}
+    "description": { type: String, required: true },
+    "count": { type: Number, required: true, default: 1 },
+    "hoursPerPerson": { type: Number, required: true, default: 8 },
+    "dollarsPerHour": { type: Number, required: true, default: 15 },
+    "nightsPerPerson": { type: Number, required: true, default: 1 },
+    "roomCost": { type: Number, required: true, default: 80 }
   }],
   "mileageEntries": [{
-    description: { type: String, required: true },
-    numberOfVehicles: { type: Number, required: true, default:1 },
-    milesPerDrive: { type: Number, required: true, default: 100 },
-    dollarsPerMile: { type: Number, required: true, default: 0.50 }
+    "description": { type: String, required: true },
+    "numberOfVehicles": { type: Number, required: true, default: 1 },
+    "milesPerDrive": { type: Number, required: true, default: 100 },
+    "dollarsPerMile": { type: Number, required: true, default: 0.50 }
   }],
-  "miscellaneousEntries": [{ 
-    description: { type: String, required: true },
-    cost: { type: Number, required: true, default: 0 }
+  "miscellaneousEntries": [{
+    "_id": {type: Number},
+    "miscdescription": { type: String, required: false },
+    "cost": { type: Number, required: false, default: 0 }
   }],
   "comment": { type: String },
   "margin": { type: Number, default: 0.50 },

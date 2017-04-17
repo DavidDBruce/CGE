@@ -1,31 +1,30 @@
-<div class="col-xs-3">
-  <div class="form-group">
-    <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" name="description" value="<%= e.description %>" placeholder="Description" required>
+<div id = "Area<%=i%>">
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description" value="<%= e.description %>" placeholder="Description" required>
+    </div>
   </div>
-</div>
-<div class="col-xs-3">
-  <div class="form-group">
-    <label for="lengthFeet">Length (ft)</label>
-    <input type="number" class="form-control" id="lengthFeet" name="lengthFeet" value="<%= e.lengthFeet %>" min=0 max=50000 required>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="lengthFeet">Length (ft)</label>
+      <input type="number" class="form-control" id="lengthFeet" name="lengthFeet" value="<%= e.lengthFeet %>" min=0 max=50000 required>
+    </div>
   </div>
-</div>
-<div class="col-xs-3">
-  <div class="form-group">
-    <label for="widthFeet">Width (ft)</label>
-    <input type="number" class="form-control" id="widthFeet" name="widthFeet" value="<%= e.widthFeet %>" min=0 max=50000 required>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="widthFeet">Width (ft)</label>
+      <input type="number" class="form-control" id="widthFeet" name="widthFeet" value="<%= e.widthFeet %>" min=0 max=50000 required>
+    </div>
   </div>
-</div>
-<div class="col-xs-3">
-  <div class="form-group">
-  <label for="buttons">Options</label>
-    <div >
-      <button class="btn btn-danger" onclick="removeSFootage()">Delete</button>
+  <div class="col-xs-3">
+    <div class="form-group">
+    <label for="buttons">Options</label>
+      <div >
+        <button id="deleteButton<%=i%>" class="btn btn-danger" onclick="removeSFootage(this.value)" value="Area<%=i%>">Delete</button>
+      </div>
     </div>
   </div>
 </div>
-<script> removeSFootage  = function(){
-  alert("Delete pressed!");
-}
-</script>
+
 <!-- P2-1 David Bruce, Cassandra Baldus -->
