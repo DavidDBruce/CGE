@@ -54,7 +54,7 @@ const WaterproofingEstimateSchema = new Schema({
    "aggregate": {
     "isUsed": { type: Boolean, required: true, default: false },
     "aggregateTypeSelection": { type: String, required: false, default: "Sand", enum: ["Sand", "Quartz", "Flake", "Glass Beads"] },
-    "aggregateMaterialSelection": [{ type: Number, ref: AggregateMaterial, required: false }],
+    "aggregateMaterialSelection": { type: Number, ref: AggregateMaterial, required: false },
     "coverageSqFt": { type: Number, required: false }
   },
   "laborEntries": [{

@@ -134,7 +134,7 @@ api.post('/save', function (req, res) {
         "coverageSqFt": req.body.coverageSqFt
     };
     item.laborEntries = [];
-    if (req.body.hoursPerPerson.length > 1) {
+    if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
         for (i = 0; i < req.body.hoursPerPerson.length - 1; i++) {
             item.laborEntries.push(
                 {

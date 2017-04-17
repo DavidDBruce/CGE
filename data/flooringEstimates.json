@@ -35,8 +35,8 @@
     },
     "aggregate": {
       "isUsed": true,
-      "aggregateTypeSelection": "Sand",
-      "aggregateMaterialSelection": 1,
+      "aggregateTypeSelection": "Quartz",
+      "aggregateMaterialSelection": 2,
       "coverageSqFt": 100
     },
     "laborEntries": [
