@@ -43,7 +43,7 @@ Vaishnavi Kalvakota s528803
                                     <%=  roofingPrimers.query[i].unit %>
                                 </td>
                                 <td id="stat">
-						            <%=  roofingPrimers.query[i].isactive %>
+						            <%=  roofingPrimers.query[i].isactive?"Active":"Inactive" %>
 						        </td>
                                 <td>
                                     <a href="roofingPrimer/active/<%=  count%>/<%=  roofingPrimers.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingPrimers.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingPrimers.query[i].isactive?"Deactivate":"Activate" %></button></a>

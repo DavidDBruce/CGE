@@ -1,4 +1,4 @@
-<div id = parent>
+<div id = "Area<%=i%>">
   <div class="col-xs-3">
     <div class="form-group">
       <label for="description">Description</label>
@@ -21,25 +21,10 @@
     <div class="form-group">
     <label for="buttons">Options</label>
       <div >
-        <button class="btn btn-danger" onclick="removeSFootage()">Delete</button>
+        <button id="deleteButton<%=i%>" class="btn btn-danger" onclick="removeSFootage(this.value)" value="Area<%=i%>">Delete</button>
       </div>
     </div>
   </div>
 </div>
-<div>
-  <input type="button" class="btn btn-primary" value="Add Area" onclick="addSFootage()"/>
-  <br/>
-</div>
-<script> removeSFootage  = function(){
-  alert("Delete pressed!");
-}
-</script>
 
-<script> addSFootage = function(){
-  alert("Add pressed!");
-  var childDiv = document.createElement("div");
-  childDiv.innerHTML = document.getElementById("parent").innerHTML;
-  document.getElementById("parent").appendChild(childDiv);
-}
-</script>
 <!-- P2-1 David Bruce, Cassandra Baldus -->
