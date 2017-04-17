@@ -162,7 +162,7 @@ item.mileageEntries=[];
         for (i = 0; i < req.body.milesPerDrive.length - 1; i++) {
             item.mileageEntries.push(
                 {
-                  "description": req.body.mileagedescription,
+                  "description": req.body.mileagedescription[i],
                     "numberOfVehicles": parseInt(req.body.numberOfVehicles[i]),
                     "milesPerDrive": parseInt(req.body.milesPerDrive[i]),
                     "dollarsPerMile": parseFloat(req.body.dollarsPerMile[i]),
@@ -171,6 +171,7 @@ item.mileageEntries=[];
             )
         }
     };
+    item.comment = req.body.comment;
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
