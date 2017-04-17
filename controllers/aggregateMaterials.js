@@ -99,7 +99,7 @@ api.get('/active/:id/:ison', function(req,res){
     console.log("Handling POST /active/:id/:ison " + req);
     var id = parseInt(req.params.id);
     var ison = req.params.ison=="true"?true:false;
-    var data = req.app.locals.roofingTopcoats.query;
+    var data = req.app.locals.aggregateMaterials.query;
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("RETURNING VIEW FOR" + JSON.stringify(item));
