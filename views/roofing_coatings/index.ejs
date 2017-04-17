@@ -39,7 +39,7 @@ Vaishnavi Kalvakota s528803
 							<%=  roofingCoatings.query[i].unit %>
 						</td>
 						<td id="stat">
-						<%=  roofingCoatings.query[i].isactive %>
+						<%=  roofingCoatings.query[i].isactive?"Active":"In Active"  %>
 						</td>
 						<td>
 							<a href="roofingCoating/active/<%=  count%>/<%=  roofingCoatings.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingCoatings.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingCoatings.query[i].isactive?"Deactivate":"Activate" %></button></a>			
