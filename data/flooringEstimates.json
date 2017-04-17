@@ -30,11 +30,9 @@
       "urethaneProductSelection": 4,
       "urethaneCoverageSqFt": 107,
       "usesEpoxy": true,
-      "epoxyProductSelection": 8,
+      "epoxyProductSelection": 6,
       "epoxyCoverageSqFt": 117
     },
-    "roofing": {},
-    "waterproofing": {},
     "aggregate": {
       "isUsed": true,
       "aggregateTypeSelection": "Sand",
@@ -67,11 +65,11 @@
     ],
     "miscellaneousEntries": [
       {
-        "description": "Misc 1",
+        "miscdescription": "Misc 1",
         "cost": 150
       },
       {
-        "description": "Misc 2",
+        "miscdescription": "Misc 2",
         "cost": 200
       }
     ],

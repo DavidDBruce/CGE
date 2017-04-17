@@ -93,6 +93,7 @@ api.get('/edit/:id', function(req, res) {
 // POST new
 api.post('/save', function(req, res) {
     console.log("Handling POST " + req);
+    console.log("SAVING REQUEST BODY " + JSON.stringify(req.body)) // addl debugging info
     var data = req.app.locals.waterproofingEstimates.query;
     var item = new Model;
     console.log("NEW ID " + req.body._id);
@@ -102,28 +103,54 @@ api.post('/save', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.latitude = req.body.latitude;
+    item.longitude = req.body.longitude;
     item.areas = [];
-    item.areas.push({
-    "description": req.body.description,
-    "widthFeet": req.body.widthFeet,
-    "lengthFeet": req.body.lengthFeet,
-    "squarefootage": req.body.widthFeet*req.body.lengthFeet 
-});
-item.miscellaneousEntries=[];
-item.miscellaneousEntries.push({
-    "description":req.body.miscdescription1,
-    "cost":req.body.cost,
-    "Total":req.body.cost
-});
+     if (req.body.description.length > 1) {
+        for (count = 0; count < req.body.description.length - 1; count++) {
+            item.areas.push({
+                    "description": req.body.description[count],
+                    "lengthFeet": parseInt(req.body.lengthFeet[count]),
+                    "widthFeet": parseInt(req.body.widthFeet[count]),
+                    "squarefootage": req.body.widthFeet*req.body.lengthFeet 
+                }
+            )
+        }
+    };
+    item.isDeleted = false;
+  item.miscellaneousEntries = [
+        {
+            "miscdescription": req.body.miscdescription1,
+            "cost": parseFloat(req.body.cost[0])
+        },
+        {
+            "miscdescription": req.body.miscdescription2,
+            "cost": parseFloat(req.body.cost[1])
+        },
+        {
+            "miscdescription": req.body.miscdescription3,
+            "cost": parseFloat(req.body.cost[2])
+        },
+        {
+            "miscdescription": req.body.miscdescription4,
+            "cost": parseFloat(req.body.cost[3])
+        }
+    ],
 item.laborEntries=[];
-item.laborEntries.push({
-    "description":req.body.labourdescription,
-    "count":req.body.count,
-"hoursPerPerson":req.body.hoursPerPerson,
-"dollarsPerHour":req.body.dollarsPerHour,
-"nightsPerPerson":req.body.nightsPerPerson,
-"roomCost":req.body.roomCost
-});
+if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
+        for (i = 0; i < req.body.hoursPerPerson.length - 1; i++) {
+            item.laborEntries.push(
+                {
+                   "description": req.body.labourdescription,
+                    "count": parseInt(req.body.count[i]),
+                    "hoursPerPerson": parseFloat(req.body.hoursPerPerson[i]),
+                    "dollarsPerHour": parseFloat(req.body.dollarsPerHour[i]),
+                    "nightsPerPerson": parseInt(req.body.nightsPerPerson[i]),
+                    "roomCost": parseFloat(req.body.roomCost[i])
+                }
+            )
+        }
+    };
 item.usesPrimer=req.body.usesPrimer;
 item.primerSelection=req.body.primerSelection;
 item.primerCoverageSqFt=req.body.primerCoverageSqFt;
@@ -131,14 +158,19 @@ item.usesTopcoat=req.body.usesTopcoat;
 item.topcoatSelection=req.body.topcoatSelection;
 item.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
 item.mileageEntries=[];
-item.mileageEntries.push({
-    "description": req.body.mileagedescription,
-        "numberOfVehicles": req.body.numberOfVehicles,
-        "milesPerDrive": req.body.milesPerDrive,
-        "dollarsPerMile": req.body.dollarsPerMile,
-        "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
-});
-    
+ if (req.body.milesPerDrive && req.body.milesPerDrive.length > 1) {
+        for (i = 0; i < req.body.milesPerDrive.length - 1; i++) {
+            item.mileageEntries.push(
+                {
+                  "description": req.body.mileagedescription,
+                    "numberOfVehicles": parseInt(req.body.numberOfVehicles[i]),
+                    "milesPerDrive": parseInt(req.body.milesPerDrive[i]),
+                    "dollarsPerMile": parseFloat(req.body.dollarsPerMile[i]),
+                    "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
+                }
+            )
+        }
+    };
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
@@ -159,6 +191,85 @@ api.post('/save/:id', function(req, res) {
     item.city = req.body.city;
     item.state = req.body.state;
     item.zipcode = req.body.zipcode;
+    item.latitude = req.body.latitude;
+    item.longitude = req.body.longitude;
+    item.areas = [];
+    if (req.body.description.length > 1) {
+        for (count = 0; count < req.body.description.length - 1; count++) {
+            item.areas.push({
+                    "description": req.body.description[count],
+                    "lengthFeet": parseInt(req.body.lengthFeet[count]),
+                    "widthFeet": parseInt(req.body.widthFeet[count]),
+                    "squarefootage": req.body.widthFeet*req.body.lengthFeet 
+                }
+            )
+        }
+    };
+    item.isDeleted = false;
+    item.flooring = {
+        "floorSystemType": req.body.floorSystemType == 'on' ? true : false,
+        "usesUrethane": req.body.usesUrethane == 'on' ? true : false,
+        "urethaneProductSelection": req.body.urethaneProductSelection,
+        "urethaneCoverageSqFt": req.body.urethaneCoverageSqFt,
+        "usesEpoxy": req.body.usesEpoxy == 'on' ? true : false,
+        "epoxyProductSelection": req.body.epoxyProductSelection,
+        "epoxyCoverageSqFt": req.body.epoxyCoverageSqFt
+    };
+    item.aggregate = {
+        "isUsed": req.body.usesAggregate == 'on' ? true : false,
+        "aggregateTypeSelection": req.body.aggregateTypeSelection,
+        "aggregateMaterialSelection": req.body.aggregateMaterialSelection,
+        "coverageSqFt": req.body.coverageSqFt
+    };
+    item.laborEntries = [];
+    if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
+        for (i = 0; i < req.body.hoursPerPerson.length - 1; i++) {
+            item.laborEntries.push(
+                {
+                  "description": req.body.labourdescription,
+                    "count": parseInt(req.body.count[i]),
+                    "hoursPerPerson": parseFloat(req.body.hoursPerPerson[i]),
+                    "dollarsPerHour": parseFloat(req.body.dollarsPerHour[i]),
+                    "nightsPerPerson": parseInt(req.body.nightsPerPerson[i]),
+                    "roomCost": parseFloat(req.body.roomCost[i])
+                }
+            )
+        }
+    };
+    item.mileageEntries = [];
+    if (req.body.milesPerDrive && req.body.milesPerDrive.length > 1) {
+        for (i = 0; i < req.body.milesPerDrive.length - 1; i++) {
+            item.mileageEntries.push(
+                {
+                    "description": req.body.mileagedescription,
+                    "numberOfVehicles": parseInt(req.body.numberOfVehicles[i]),
+                    "milesPerDrive": parseInt(req.body.milesPerDrive[i]),
+                    "dollarsPerMile": parseFloat(req.body.dollarsPerMile[i]),
+                    "Total":req.body.numberOfVehicles*req.body.milesPerDrive*req.body.dollarsPerMile
+                }
+            )
+        }
+    };
+    item.miscellaneousEntries = [
+        {
+            "miscdescription": req.body.miscdescription1,
+            "cost": parseFloat(req.body.cost[0])
+        },
+        {
+            "miscdescription": req.body.miscdescription2,
+            "cost": parseFloat(req.body.cost[1])
+        },
+        {
+            "miscdescription": req.body.miscdescription3,
+            "cost": parseFloat(req.body.cost[2])
+        },
+        {
+            "miscdescription": req.body.miscdescription4,
+            "cost": parseFloat(req.body.cost[3])
+        }
+    ],
+    item.comment = req.body.comment;
+    item.margin = 0.75 // req.body.margin;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/waterproofingEstimate');
 });
