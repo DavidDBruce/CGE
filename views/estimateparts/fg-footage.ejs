@@ -2,7 +2,7 @@
 <h2>Square Footage</h2>
 <hr>
 <div id="sqrFootage">
-  <div id = parent>
+  <div id = squareFootageParent>
 <% for(var i=0; i<estimate.areas.length; i++) { e = estimate.areas[i];  %>
    <% include fg-footage-entry.ejs %>
    <%if(i === estimate.areas.length - 1){%>
@@ -22,14 +22,13 @@
 </script>
 
 <script> addSFootage = function(){
-  //alert("Add pressed!");
   var childDiv = document.createElement("div");
   childDiv.innerHTML = document.getElementById("blankChild").innerHTML;
   var previousValue = parseInt(document.getElementById("numberOfFields").innerHTML);
   var nextValue = previousValue + 1;
   document.getElementById("numberOfFields").innerHTML = nextValue;
   childDiv.id = "Area" + nextValue;
-  document.getElementById("parent").appendChild(childDiv);
+  document.getElementById("squareFootageParent").appendChild(childDiv);
   document.getElementById("deleteButton").id = "deleteButton" + nextValue;
   document.getElementById("deleteButton" + nextValue).setAttribute("value","Area" + nextValue);
 }
