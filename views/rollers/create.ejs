@@ -1,26 +1,21 @@
-<!--Dev Team-p4-6
-Jyothsna Pala
-Bhavishya Arelli 
--->
 <br/>
 
 <br/>
-
-<h2>Create a new waterproofing Basecoat product</h2>
+<h2>Create a new roller</h2>
 <p>There are currently
-	<%= waterproofingBasecoats.query.length %> waterproofing Basecoat. </p>
+	<%= roller.query.length %> rollers </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<waterproofingBasecoats.query.length; i++) {
-    if(waterproofingBasecoats.query[i]._id > maxID) {
-        maxID=waterproofingBasecoats.query[i]._id;
+for (var i=0; i<roller.query.length; i++) {
+    if(roller.query[i]._id > maxID) {
+        maxID=roller.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<waterproofingBasecoats.query.length; i++) {
-    if(waterproofingBasecoats.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=waterproofingBasecoats.query[i].displayorder;
+for (var i=0; i<roller.query.length; i++) {
+    if(roller.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=roller.query[i].displayorder;
         }
 }
 %>
@@ -30,16 +25,21 @@ for (var i=0; i<waterproofingBasecoats.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="waterproofingPrimer" method="POST" action="/waterproofingBasecoat/save" + _id.value>
+			<form name="nozzle" method="POST" action="/nozzle/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
-					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required >
+					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
 				</div>
 
 				<div class="form-group">
 					<label for="name">Name</label>
 					<input type="text" class="form-control" id="name" name="name" value="Name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="status">status</label>
+					<input type="text" class="form-control" id="status" name="status" value="active" required>
 				</div>
 
 				<div class="form-group">
@@ -49,12 +49,12 @@ for (var i=0; i<waterproofingBasecoats.query.length; i++) {
 
 				<div class="form-group">
 					<label for="price">Price</label>
-					<input type="text" class="form-control" id="price" name="price" value="30" min = "40" max="100" required>
+					<input type="number" class="form-control" id="price" name="price" value="30" min="0" required>
 				</div>
 
 				<div class="form-group">
 					<label for="displayorder">Display Order</label>
-					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>					
+					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>
 				</div>
 
 				<div class="form-group">
@@ -62,7 +62,7 @@ for (var i=0; i<waterproofingBasecoats.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/waterproofingBasecoat">
+			<form method="get" action="/nozzle">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>

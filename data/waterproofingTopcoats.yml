@@ -6,7 +6,9 @@
   unit: gal
   displayorder: 10
   price: 41.00
-  isdeleted: false
+  status: active
+  isactive: true
+  
 
 - name: 7430 T - textured urethane
   _id: 2
@@ -14,7 +16,9 @@
   unit: gal
   displayorder: 20
   price: 44.40
-  isdeleted: false
+  status: active
+  isactive: true
+  
 
 - name: 7470 - aliphatic urethane
   _id: 3
@@ -22,7 +26,9 @@
   unit: gal
   displayorder: 30
   price: 54.65
-  isdeleted: false
+  status: active
+  isactive: true
+  
 
 - name: 70420 - aromatic w/aggregate 
   _id: 4
@@ -30,7 +36,9 @@
   unit: gal
   displayorder: 40
   price: 44.30
-  isdeleted: false
+  status: active
+  isactive: true
+  
 
 - name: FC7510/7763 - fast cure urethane 
   _id: 5
@@ -38,7 +46,9 @@
   unit: gal
   displayorder: 50
   price: 50.05
-  isdeleted: false
+  status: active
+  isactive: true
+  
 
 - name: FC7530/7963 fast cure aliphatic urethane
   _id: 6
@@ -46,7 +56,9 @@
   unit: gal
   displayorder: 60
   price: 73.45
-  isdeleted: false
+  status: active
+  isactive: true
+  
 
 
 

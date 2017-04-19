@@ -11,6 +11,8 @@ body {
     position: relative;
 }
 
+
+
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;
@@ -170,6 +172,11 @@ body {
 .funkyradio-info input[type="checkbox"]:checked ~ label:before {
   color: #fff;
   background-color: #5bc0de;
+}
+
+.modd{
+  width: 100px;
+  margin-bottom: 5px;
 }
 
 

@@ -14,6 +14,7 @@ module.exports = {
         console.log(Object.keys(waterproofingEstimates).length+ " waterproofingEstimates");
         console.log(Object.keys(waterproofingPrimers).length+ " waterproofingPrimers");
         console.log(Object.keys(waterproofingTopcoats).length+ " waterproofingTopcoats");
+        
     }
 }
 

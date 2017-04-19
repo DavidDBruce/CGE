@@ -1,10 +1,4 @@
-<!--Dev Team-p4-6
-Jyothsna Pala
-Bhavishya Arelli 
--->
-<br/>
-<br/>
-<h2>Details for waterproofing Basecoat product</h2>
+<h2>Confirm deletion of Boots entry</h2>
 <br/>
 <br/>
 <table class="table" border="1">
@@ -17,29 +11,32 @@ Bhavishya Arelli
 				</tr>
 			</thead>
 			<tbody>
-
 <tr>
 <td>
 <p>Item
-	<%= waterproofingBasecoat._id %>
+	<%=  boots._id %>
 </p>
 </td>
 <td>
 <p>
-	<%=  waterproofingBasecoat.name %>
+	<%=  boots.name %>
 </p>
 </td>
 <td>
 <p>
-	<%=  waterproofingBasecoat.price %> per
-		<%=  waterproofingBasecoat.unit %>
+	<%=  boots.price %> per
+		<%=  boots.unit %>
 </p>
 </td>
 </tr>
 </tbody>
+</thead>
 </table>
 <br/>
-
-<form method="get" action="/waterproofingBasecoat">
+<form method="get" action="/boots">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/boots/delete/<%= boots._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
 </form>
