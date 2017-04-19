@@ -100,7 +100,7 @@ module.exports = {
         // app.locals.rollers = db.find(rollers);
         // app.locals.buckets = db.find(buckets);
         // app.locals.hoses = db.find(hoses);
-        // app.locals.brooms = db.find(brooms);
+         app.locals.brooms = db.find(brooms);
 
         // app.locals.ladders = db.find(ladders);
         // app.locals.hammers = db.find(hammers);
