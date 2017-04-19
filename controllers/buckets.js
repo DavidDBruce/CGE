@@ -5,8 +5,8 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/nozzle.js');
-const notfoundstring = 'No such nozzle';
+var Model = require('../models/buckets.js');
+const notfoundstring = 'No such bucket';
 
 
 // see app.js for the root request this controller handles
