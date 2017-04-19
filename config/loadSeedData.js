@@ -24,6 +24,23 @@ module.exports = {
         global.waterproofingEstimates = require('../data/waterproofingEstimates.json');
         global.waterproofingPrimers = require('../data/waterproofingPrimers.json');
         global.waterproofingTopcoats = require('../data/waterproofingTopcoats.yml');
+        
+        // global.rollers = require('../data/waterproofingTopcoats.yml');
+        // global.buckets = require('../data/waterproofingTopcoats.yml');
+        // global.hoses = require('../data/waterproofingTopcoats.yml');
+        // global.brooms = require('../data/waterproofingTopcoats.yml');
+
+        // global.ladders = require('../data/waterproofingTopcoats.yml');
+        // global.hammers = require('../data/waterproofingTopcoats.yml');
+        global.nozzles = require('../data/waterproofingTopcoats.yml');
+        // global.dropsheets = require('../data/waterproofingTopcoats.yml');
+        
+        // global.tapes = require('../data/waterproofingTopcoats.yml');
+        // global.compressors = require('../data/waterproofingTopcoats.yml');
+        // global.masks = require('../data/waterproofingTopcoats.yml');
+        // global.boots = require('../data/waterproofingTopcoats.yml');
+        // global.tapemeasures = require('../data/waterproofingTopcoats.yml');
+
 
         // insert the sample data into our data store
         db.insert(aggregateMaterials);
@@ -41,6 +58,24 @@ module.exports = {
         db.insert(waterproofingPrimers);
         db.insert(waterproofingTopcoats);
 
+        // db.insert(rollers);
+        // db.insert(buckets);
+        // db.insert(hoses);
+        // db.insert(brooms);
+
+        // db.insert(ladders);
+        // db.insert(hammers);
+        db.insert(nozzles);
+        // db.insert(dropsheets);
+
+        // db.insert(tapes);
+        // db.insert(compressors);
+        // db.insert(masks);
+        // db.insert(boots);
+        // db.insert(tapemeasures);
+
+
+
         // intialize app.locals (these objects will be available to our controllers)
         app.locals.aggregateMaterials = db.find(aggregateMaterials);
         app.locals.flooringCoatings = db.find(flooringCoatings);
@@ -56,6 +91,23 @@ module.exports = {
         app.locals.waterproofingEstimates = db.find(waterproofingEstimates);
         app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
+
+        // app.locals.rollers = db.find(rollers);
+        // app.locals.buckets   = db.find(buckets);
+        // app.locals.hoses  = db.find(hoses);
+        // app.locals.brooms       = db.find(brooms);
+
+        // app.locals.ladders          = db.find(ladders);
+        // app.locals.hammers   = db.find(hammers);
+        app.locals.nozzles     = db.find(nozzles);
+        // app.locals.dropsheets   = db.find(dropsheets);
+
+        // app.locals.tapes     = db.find(tapes);
+        // app.locals.compressors     = db.find(compressors);
+        // app.locals.masks = db.compressors(masks);
+        // app.locals.boots = db.find(boots);
+        // app.locals.tapemeasures = db.find(tapemeasures);
+      
 
         //users
         const userController = require('../controllers/user');
