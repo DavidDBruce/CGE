@@ -1,27 +1,27 @@
 <br/>
 <br/>
-<h2>Confirm deletion of tapemeasure</h2>
+<h2>Confirm deletion of tapemeasures</h2>
 <br/>
 <br/>
 <p>Item
-	<%=  tapemeasure._id %>
+	<%=  tapemeasures._id %>
 </p>
 <p>
-	<%=  tapemeasure.name %>
+	<%=  tapemeasures.name %>
 </p>
 <p>
-	<%=  tapemeasure.price %> per
-		<%=  tapemeasure.unit %>
+	<%=  tapemeasures.price %> per
+		<%=  tapemeasures.unit %>
 </p>
 <p>
-	Status: <%=  tapemeasure.status %>
+	Status: <%=  tapemeasures.status %>
 </p>
 
 <br/>
-<form method="get" action="/tapemeasure">
+<form method="get" action="/tapemeasures">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
 <br/>
-<form method="POST" action="/tapemeasure/delete/<%= tapemeasure._id %>">
+<form method="POST" action="/tapemeasures/delete/<%= tapemeasures._id %>">
 	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
 </form>
