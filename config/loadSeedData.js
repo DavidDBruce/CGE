@@ -98,6 +98,7 @@ module.exports = {
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
         // app.locals.rollers = db.find(rollers);
+        
 
          app.locals.buckets   = db.find(buckets);
 

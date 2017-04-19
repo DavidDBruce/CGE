@@ -1,12 +1,19 @@
+<<<<<<< HEAD
+=======
 //Team Hoses!
 
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/hoses.js');
+<<<<<<< HEAD
+const notfoundstring = 'No such nozzle';
+=======
 const notfoundstring = 'No such hose';
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
 
 
 // see app.js for the root request this controller handles
@@ -50,7 +57,11 @@ api.get('/delete/:id', function (req, res) {
         {
             title: "RT",
             layout: "layout.ejs",
+<<<<<<< HEAD
+            nozzles: item
+=======
             hoses: item
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
         });
 });
 
@@ -66,7 +77,11 @@ api.get('/details/:id', function (req, res) {
         {
             title: "RT",
             layout: "layout.ejs",
+<<<<<<< HEAD
+            nozzles: item
+=======
             hoses: item
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
         });
 });
 
@@ -105,7 +120,11 @@ api.get('/active/:id/:ison', function(req,res){
 // POST new
 api.post('/save', function (req, res) {
     console.log("Handling POST " + req);
+<<<<<<< HEAD
+    var data = req.app.locals.nozzles.query;
+=======
     var data = req.app.locals.hoses.query;
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
@@ -123,7 +142,11 @@ api.post('/save/:id', function (req, res) {
     console.log("Handling SAVE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling SAVING ID=" + id);
+<<<<<<< HEAD
+    var data = req.app.locals.nozzles.query;
+=======
     var data = req.app.locals.hoses.query;
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
     var item = find(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
@@ -141,7 +164,11 @@ api.post('/delete/:id', function (req, res, next) {
     console.log("Handling DELETE request" + req);
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
+<<<<<<< HEAD
+    var data = req.app.locals.nozzles.query;
+=======
     var data = req.app.locals.hoses.query;
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
@@ -151,6 +178,28 @@ api.post('/delete/:id', function (req, res, next) {
 module.exports = api;
 /* 10 controller methods handled by controller:
 
+<<<<<<< HEAD
+controllers/nozzles.js
+
+2 Respond with JSON:
+
+http://127.0.0.1:8081/nozzles/findall [WORKING]
+http://127.0.0.1:8081/nozzles/findone/1 [WORKING]
+
+5 Respond with CRUD Views:
+
+http://127.0.0.1:8081/nozzles [WORKING]
+http://127.0.0.1:8081/nozzles/create [WORKING]
+http://127.0.0.1:8081/nozzles/delete/1 [WORKING]
+http://127.0.0.1:8081/nozzles/details/1 [WORKING]
+http://127.0.0.1:8081/nozzles/edit/1 [WORKING]
+
+3 Respond by executing CRUD actions:
+
+http://127.0.0.1:8081/nozzles/save [WORKING]
+http://127.0.0.1:8081/nozzles/save/1 [WORKING]
+http://127.0.0.1:8081/nozzles/delete/1 [WORKING]
+=======
 controllers/hoses.js
 
 2 Respond with JSON:
@@ -171,4 +220,5 @@ http://127.0.0.1:8081/hoses/edit/1 [WORKING]
 http://127.0.0.1:8081/hoses/save [WORKING]
 http://127.0.0.1:8081/hoses/save/1 [WORKING]
 http://127.0.0.1:8081/hoses/delete/1 [WORKING]
+>>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
 */
