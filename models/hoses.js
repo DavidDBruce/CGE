@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
-var LadderSchema = new Schema({
+var HosesSchema = new Schema({
    _id: { type: Number, required: true },
     name:  { type: String, required: true },
     unit:  { type: String, required: true },

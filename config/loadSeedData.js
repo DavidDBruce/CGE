@@ -3,7 +3,7 @@ const Datastore = require('nedb');
 //var dbtoexpress = require("db-to-express-rest");
 
 module.exports = {
-    load: function(){
+    load: function () {
 
         var db = new Datastore();
         db.loadDatabase();
@@ -24,10 +24,10 @@ module.exports = {
         global.waterproofingEstimates = require('../data/waterproofingEstimates.json');
         global.waterproofingPrimers = require('../data/waterproofingPrimers.json');
         global.waterproofingTopcoats = require('../data/waterproofingTopcoats.yml');
-        
-        
+
+
         // global.rollers = require('../data/waterproofingTopcoats.yml');
-         global.buckets = require('../data/buckets.yml');
+        global.buckets = require('../data/buckets.yml');
 
         global.hoses = require('../data/waterproofingTopcoats.yml');
 
@@ -37,7 +37,7 @@ module.exports = {
         // global.hammers = require('../data/waterproofingTopcoats.yml');
         global.nozzles = require('../data/waterproofingTopcoats.yml');
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
-        
+
         // global.tapes = require('../data/waterproofingTopcoats.yml');
         // global.compressors = require('../data/waterproofingTopcoats.yml');
         // global.masks = require('../data/waterproofingTopcoats.yml');
@@ -63,7 +63,7 @@ module.exports = {
 
         // db.insert(rollers);
 
-         db.insert(buckets);
+        db.insert(buckets);
 
         db.insert(hoses);
         // db.insert(brooms);
@@ -98,47 +98,27 @@ module.exports = {
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
         // app.locals.rollers = db.find(rollers);
-<<<<<<< HEAD
+        // app.locals.buckets = db.find(buckets);
+        // app.locals.hoses = db.find(hoses);
+        // app.locals.brooms = db.find(brooms);
 
-        // app.locals.buckets   = db.find(buckets);
+        // app.locals.ladders = db.find(ladders);
+        // app.locals.hammers = db.find(hammers);
+         app.locals.nozzles = db.find(nozzles);
+        // app.locals.dropsheets = db.find(dropsheets);
 
-        app.locals.hoses  = db.find(hoses);
-
-         app.locals.hoses  = db.find(hoses);
-
-
-=======
-        
->>>>>>> a7196cb80a7ce665b9901a68662e4f18936fa9ae
-
-         app.locals.buckets   = db.find(buckets);
-
-
-
-         app.locals.hoses  = db.find(hoses);
-<<<<<<< HEAD
-
-=======
->>>>>>> a7196cb80a7ce665b9901a68662e4f18936fa9ae
-        // app.locals.brooms       = db.find(brooms);
-
-        // app.locals.ladders          = db.find(ladders);
-        // app.locals.hammers   = db.find(hammers);
-        app.locals.nozzles     = db.find(nozzles);
-        // app.locals.dropsheets   = db.find(dropsheets);
-
-        // app.locals.tapes     = db.find(tapes);
-        // app.locals.compressors     = db.find(compressors);
+        // app.locals.tapes = db.find(tapes);
+        // app.locals.compressors = db.find(compressors);
         // app.locals.masks = db.compressors(masks);
         // app.locals.boots = db.find(boots);
         // app.locals.tapemeasures = db.find(tapemeasures);
-      
+
 
         //users
         const userController = require('../controllers/user');
         var users = require('../data/users.json');
-        users.data.forEach(function(user){
-            userController.newUser(user)    
+        users.data.forEach(function (user) {
+            userController.newUser(user)
         });
     }
 }
