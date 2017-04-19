@@ -1,0 +1,20 @@
+[
+    {
+        "_id": 1,
+        "_type": "mask",
+        "name": "Dust Mask",
+        "displayorder": 10,
+        "price": 1.45,
+        "status": "active",
+        "isactive": true
+    },
+    {
+        "_id": 2,
+        "_type": "mask",
+        "name": "Respirator Mask",
+        "displayorder": 20,
+        "price": 38.50,
+        "status": "active",
+        "isactive": true
+    }
+]
