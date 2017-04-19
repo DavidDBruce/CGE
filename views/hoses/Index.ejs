@@ -1,10 +1,10 @@
 
-<% console.log(nozzles.query); %>
+<% console.log(hoses.query); %>
 <div class="container">
  <h2>Hoses</h2>
 
-<!--<p>There are  <%= nozzles.query.length %> nozzles. <br/>-->
-<a href="nozzle/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+<!--<p>There are  <%= hoses.query.length %> hoses. <br/>-->
+<a href="hoses/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
 
 <table class="table" border="1" id="t13">
     <thead>
@@ -20,19 +20,19 @@
     </thead>
     <tbody>
     <% count=0; %>
-<% for (var i = 0; i < nozzles.query.length; i++) { %>
+<% for (var i = 0; i < hoses.query.length; i++) { %>
          <tr> <% count++; %>
-            <td><%=  nozzles.query[i]._id %></td>
-            <td><%=  nozzles.query[i].name %></td>
-            <td><%=  nozzles.query[i].displayorder %></td>
-            <td><%=  nozzles.query[i].price %></td>   
-            <td><%=  nozzles.query[i].unit %></td>
-            <td id="stat"><%=  nozzles.query[i].isactive?"Active":"Inactive" %></td>
+            <td><%=  hoses.query[i]._id %></td>
+            <td><%=  hoses.query[i].name %></td>
+            <td><%=  hoses.query[i].displayorder %></td>
+            <td><%=  hoses.query[i].price %></td>   
+            <td><%=  hoses.query[i].unit %></td>
+            <td id="stat"><%=  hoses.query[i].isactive?"Active":"Inactive" %></td>
             <td>
-            <a href="nozzle/active/<%=  nozzles.query[i]._id %>/<%=  nozzles.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  nozzles.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  nozzles.query[i].isactive?"Deactivate":"Activate" %></button></a>
-            <a href="nozzle/details/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
+            <a href="hoses/active/<%=  hoses.query[i]._id %>/<%=  hoses.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  hoses.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  hoses.query[i].isactive?"Deactivate":"Activate" %></button></a>
+            <a href="hoses/details/<%=  hoses.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
 						<a href="nozzle/edit/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
-            <a href="nozzle/delete/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
+            <a href="hoses/delete/<%=  hoses.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
 						</td>
          </tr>
          <% } %>
