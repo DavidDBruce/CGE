@@ -12,4 +12,4 @@ var compressorSchema = new Schema({
 
 var compressor = mongoose.model('compressor', compressorSchema)
 module.exports = compressor
-// Team Compressor (Venkatesh Darshan Yadav,Kolla Venkata Naveen Kumar, Nithya )
+// Team Compressor (Venkatesh Darshan Yadav,Kolla Venkata Naveen Kumar, Kamareddy Srinithya )
