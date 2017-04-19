@@ -24,6 +24,7 @@ module.exports = {
         global.waterproofingEstimates = require('../data/waterproofingEstimates.json');
         global.waterproofingPrimers = require('../data/waterproofingPrimers.json');
         global.waterproofingTopcoats = require('../data/waterproofingTopcoats.yml');
+        
 
 
         // global.rollers = require('../data/waterproofingTopcoats.yml');
@@ -39,7 +40,7 @@ module.exports = {
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
 
         // global.tapes = require('../data/waterproofingTopcoats.yml');
-        // global.compressors = require('../data/waterproofingTopcoats.yml');
+        global.compressors = require('../data/compressor.json');
         // global.masks = require('../data/waterproofingTopcoats.yml');
         // global.boots = require('../data/waterproofingTopcoats.yml');
         // global.tapemeasures = require('../data/waterproofingTopcoats.yml');
