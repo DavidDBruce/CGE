@@ -1,0 +1,20 @@
+---
+- name: cheap 
+  _id: 1
+  --name: 1measure
+  displayorder: 10
+  price: 5.00
+  isDeleted: false
+- name: medium
+  _id: 2
+  --name: 2measure
+  displayorder: 20
+  price: 7.15
+  isDeleted: false
+- name: Expensive
+  _id: 3
+  --name: 3measure
+  disc: 
+  displayorder: 30
+  price: 9.00
+  isdeleted: false
