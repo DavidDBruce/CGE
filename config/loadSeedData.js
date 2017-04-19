@@ -25,6 +25,7 @@ module.exports = {
         global.waterproofingPrimers = require('../data/waterproofingPrimers.json');
         global.waterproofingTopcoats = require('../data/waterproofingTopcoats.yml');
         
+        
         // global.rollers = require('../data/waterproofingTopcoats.yml');
          global.buckets = require('../data/buckets.yml');
 
@@ -99,6 +100,8 @@ module.exports = {
         // app.locals.rollers = db.find(rollers);
 
          app.locals.buckets   = db.find(buckets);
+
+
 
          app.locals.hoses  = db.find(hoses);
         // app.locals.brooms       = db.find(brooms);
