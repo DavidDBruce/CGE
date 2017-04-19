@@ -33,7 +33,7 @@ module.exports = {
 
         // global.brooms = require('../data/waterproofingTopcoats.yml');
 
-        // global.ladders = require('../data/waterproofingTopcoats.yml');
+         global.ladders = require('../data/ladders.yml');
         // global.hammers = require('../data/waterproofingTopcoats.yml');
         global.nozzles = require('../data/waterproofingTopcoats.yml');
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
@@ -68,7 +68,7 @@ module.exports = {
         db.insert(hoses);
         // db.insert(brooms);
 
-        // db.insert(ladders);
+        db.insert(ladders);
         // db.insert(hammers);
         db.insert(nozzles);
         // db.insert(dropsheets);
@@ -102,7 +102,7 @@ module.exports = {
         // app.locals.hoses = db.find(hoses);
         // app.locals.brooms = db.find(brooms);
 
-        // app.locals.ladders = db.find(ladders);
+        app.locals.ladders = db.find(ladders);
         // app.locals.hammers = db.find(hammers);
          app.locals.nozzles = db.find(nozzles);
         // app.locals.dropsheets = db.find(dropsheets);
