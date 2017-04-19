@@ -1,21 +1,21 @@
 <br/>
 
 <br/>
-<h2>Create a new roller</h2>
+<h2>Create a new Hoses</h2>
 <p>There are currently
-	<%= roller.query.length %> rollers </p>
+	<%= nozzles.query.length %> Hoses </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<roller.query.length; i++) {
-    if(roller.query[i]._id > maxID) {
-        maxID=roller.query[i]._id;
+for (var i=0; i<nozzles.query.length; i++) {
+    if(nozzles.query[i]._id > maxID) {
+        maxID=nozzles.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<roller.query.length; i++) {
-    if(roller.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=roller.query[i].displayorder;
+for (var i=0; i<nozzles.query.length; i++) {
+    if(nozzles.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=nozzles.query[i].displayorder;
         }
 }
 %>

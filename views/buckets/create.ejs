@@ -1,21 +1,21 @@
 <br/>
 
 <br/>
-<h2>Create a new nozzle</h2>
+<h2>Create a new bucket</h2>
 <p>There are currently
-	<%= nozzles.query.length %> nozzles </p>
+	<%= buckets.query.length %> buckets </p>
 <br/>
-<% 
-maxID=0; 
-for (var i=0; i<nozzles.query.length; i++) {
-    if(nozzles.query[i]._id > maxID) {
-        maxID=nozzles.query[i]._id;
+<%
+maxID=0;
+for (var i=0; i<buckets.query.length; i++) {
+    if(buckets.query[i]._id > maxID) {
+        maxID=buckets.query[i]._id;
         }
 }
-maxDisplayorder=0; 
-for (var i=0; i<nozzles.query.length; i++) {
-    if(nozzles.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=nozzles.query[i].displayorder;
+maxDisplayorder=0;
+for (var i=0; i<buckets.query.length; i++) {
+    if(buckets.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=buckets.query[i].displayorder;
         }
 }
 %>
@@ -25,7 +25,7 @@ for (var i=0; i<nozzles.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="nozzle" method="POST" action="/nozzle/save" + _id.value>
+			<form name="bucket" method="POST" action="/bucket/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
@@ -62,7 +62,7 @@ for (var i=0; i<nozzles.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/nozzle">
+			<form method="get" action="/bucket">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>
