@@ -1,0 +1,21 @@
+---
+  
+- name: Cheap Broom
+  _id: 1
+  displayorder: 10
+  price: 2.30
+
+
+- name: Medium Broom
+  _id: 2
+  EqpType: Medium
+  displayorder: 20
+  price: 5.50
+  
+- name: Super Broom
+  _id: 3
+  displayorder: 30
+  price: 9.5
+  
+  
+  
