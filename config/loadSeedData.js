@@ -32,7 +32,7 @@ module.exports = {
 
         // global.ladders = require('../data/waterproofingTopcoats.yml');
         // global.hammers = require('../data/waterproofingTopcoats.yml');
-        // global.nozzles = require('../data/waterproofingTopcoats.yml');
+        // global.nozzles = require('../data/nozzles.yml');
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
         
         // global.tapes = require('../data/waterproofingTopcoats.yml');
