@@ -3,7 +3,11 @@
 <div class="container">
  <h2>Hoses</h2>
 
+<<<<<<< HEAD
+<!--<p>There are  <%= hoses.query.length %> hoses. <br/>-->
+=======
 <!--<p>There are  <%= nozzles.query.length %> nozzles. <br/>-->
+>>>>>>> 3063c16a704046cc88c94822d686fc4d3e85f4fc
 <a href="hoses/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
 
 <table class="table" border="1" id="t13">
@@ -31,7 +35,11 @@
             <td>
             <a href="hoses/active/<%=  hoses.query[i]._id %>/<%=  hoses.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  hoses.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  hoses.query[i].isactive?"Deactivate":"Activate" %></button></a>
             <a href="hoses/details/<%=  hoses.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
+<<<<<<< HEAD
+						<a href="nozzle/edit/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+=======
 						<a href="hoses/edit/<%=  hoses.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+>>>>>>> 3063c16a704046cc88c94822d686fc4d3e85f4fc
             <a href="hoses/delete/<%=  hoses.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
 						</td>
          </tr>

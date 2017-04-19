@@ -1,0 +1,41 @@
+
+<% console.log(brooms.query); %>
+<div class="container">
+ <h2>brooms</h2>
+
+<!--<p>There are  <%= brooms.query.length %> brooms. <br/>-->
+<a href="brooms/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+<table class="table" border="1" id="t13">
+    <thead>
+      <tr>
+      <th>ID</th>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+        <th>Status</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% count=0; %>
+<% for (var i = 0; i < brooms.query.length; i++) { %>
+         <tr> <% count++; %>
+            <td><%=  brooms.query[i]._id %></td>
+            <td><%=  brooms.query[i].name %></td>
+            <td><%=  brooms.query[i].displayorder %></td>
+            <td><%=  brooms.query[i].price %></td>   
+            <td><%=  brooms.query[i].unit %></td>
+            <td id="stat"><%=  brooms.query[i].isactive?"Active":"Inactive" %></td>
+            <td>
+            <a href="brooms/active/<%=  brooms.query[i]._id %>/<%=  brooms.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  nozzles.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  nozzles.query[i].isactive?"Deactivate":"Activate" %></button></a>
+            <a href="nozzle/details/<%=  brooms.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
+						<a href="nozzle/edit/<%=  brooms.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+            <a href="nozzle/delete/<%=  brooms.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
+						</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>
