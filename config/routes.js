@@ -37,7 +37,7 @@ module.exports = {
       //  app.use('/roller', require('../controllers/rollers.js'));
        // app.use('/bucket', require('../controllers/buckets.js'));
         // app.use('/hose', require('../controllers/hoses.js'));
-        // app.use('/broom', require('../controllers/brooms.js'));
+         app.use('/broom', require('../controllers/brooms.js'));
 
      //   app.use('/ladder', require('../controllers/ladders.js'));
      //   app.use('/hammer', require('../controllers/hammers.js'));
@@ -45,7 +45,7 @@ module.exports = {
      //   app.use('/dropsheet', require('../controllers/dropsheets.js'));
 
         // app.use('/tape', require('../controllers/tapes.js'));
-        // app.use('/compressor', require('../controllers/compressors.js'));
+        app.use('/compressor', require('../controllers/compressors.js'));
         // app.use('/mask', require('../controllers/masks.js'));
         // app.use('/boot', require('../controllers/boots.js'));
         // app.use('/tapemeasure', require('../controllers/tapemeasures.js'));
