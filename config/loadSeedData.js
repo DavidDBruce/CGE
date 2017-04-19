@@ -98,21 +98,13 @@ module.exports = {
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
         // app.locals.rollers = db.find(rollers);
-<<<<<<< HEAD
-        // app.locals.buckets   = db.find(buckets);
-
-        app.locals.hoses  = db.find(hoses);
-
-         app.locals.hoses  = db.find(hoses);
-
-=======
+        
 
          app.locals.buckets   = db.find(buckets);
 
 
 
          app.locals.hoses  = db.find(hoses);
->>>>>>> d40af4a6526263e56111a0a96c409e52c4a2d5b7
         // app.locals.brooms       = db.find(brooms);
 
         // app.locals.ladders          = db.find(ladders);
