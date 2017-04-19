@@ -63,7 +63,7 @@ module.exports = {
 
         // db.insert(rollers);
 
-         db.insert(bucket);
+         db.insert(buckets);
 
         db.insert(hoses);
         // db.insert(brooms);
