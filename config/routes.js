@@ -37,7 +37,7 @@ module.exports = {
       //  app.use('/roller', require('../controllers/rollers.js'));
        // app.use('/bucket', require('../controllers/buckets.js'));
         // app.use('/hose', require('../controllers/hoses.js'));
-        // app.use('/broom', require('../controllers/brooms.js'));
+         app.use('/broom', require('../controllers/brooms.js'));
 
      //   app.use('/ladder', require('../controllers/ladders.js'));
      //   app.use('/hammer', require('../controllers/hammers.js'));
