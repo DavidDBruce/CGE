@@ -1,0 +1,33 @@
+[
+    {
+        "_id": 1,
+        "_type": "boots",
+        "name": "boots1",
+        "unit": "size",
+        "displayorder": 10,
+        "price": 30,
+        "status": "active",
+        "isactive": true
+    },
+    {
+        "_id": 2,
+        "_type": "boots",
+        "name": "boots2",
+        "unit": "size",
+        "displayorder": 20,
+        "price": 38.50,
+        "status": "active",
+        "isactive": true
+    },
+    {
+        "_id": 3,
+        "_type": "boots",
+        "name": "boots3",
+        "unit": "size",
+        "displayorder": 30,
+        "price": 45.50,
+        "status": "active",
+        "isactive": true
+    }
+
+]
