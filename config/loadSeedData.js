@@ -109,7 +109,7 @@ module.exports = {
         // app.locals.dropsheets = db.find(dropsheets);
 
         // app.locals.tapes = db.find(tapes);
-        // app.locals.compressors = db.find(compressors);
+        app.locals.compressors = db.find(compressors);
         // app.locals.masks = db.compressors(masks);
         // app.locals.boots = db.find(boots);
         // app.locals.tapemeasures = db.find(tapemeasures);
