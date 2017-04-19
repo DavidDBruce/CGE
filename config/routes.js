@@ -33,6 +33,10 @@ module.exports = {
         app.use('/waterproofingEstimate', require('../controllers/waterproofingEstimate.js'));
         app.use('/waterproofingPrimer', require('../controllers/waterproofingPrimers.js'));
         app.use('/waterproofingTopcoat', require('../controllers/waterproofingTopcoats.js'));
+
+
+
+        
     },
 
 
