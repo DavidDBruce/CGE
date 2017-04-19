@@ -1,27 +1,27 @@
 <br/>
 <br/>
-<h2>Confirm deletion of nozzle</h2>
+<h2>Confirm deletion of bucket</h2>
 <br/>
 <br/>
 <p>Item
-	<%=  nozzle._id %>
+	<%=  bucket._id %>
 </p>
 <p>
-	<%=  nozzle.name %>
+	<%=  bucket.name %>
 </p>
 <p>
-	<%=  nozzle.price %> per
-		<%=  nozzle.unit %>
+	<%=  bucket.price %> per
+		<%=  bucket.unit %>
 </p>
 <p>
-	Status: <%=  nozzle.status %>
+	Status: <%=  bucket.status %>
 </p>
 
 <br/>
-<form method="get" action="/nozzle">
+<form method="get" action="/bucket">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
 <br/>
-<form method="POST" action="/nozzle/delete/<%= nozzle._id %>">
+<form method="POST" action="/bucket/delete/<%= bucket._id %>">
 	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
 </form>
