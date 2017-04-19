@@ -5,7 +5,7 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/nozzles.js');
+var Model = require('../models/nozzle.js');
 const notfoundstring = 'No such nozzle';
 
 
