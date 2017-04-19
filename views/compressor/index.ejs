@@ -1,0 +1,50 @@
+<% console.log(compressors.query); %>
+	<div class="container">
+		<h2>compressors</h2>
+
+		<p>There are
+			<%= compressors.query.length %> compressors. <br/>
+				<a href="compressor/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
+
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < compressors.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  compressors.query[i]._id %>
+						</td>
+						<td>
+							<%=  compressors.query[i].name %>
+						</td>
+						<td>
+							<%=  compressors.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  compressors.query[i].price %>
+						</td>
+						<td>
+							<%=  compressors.query[i].unit %>
+						</td>
+						<td>
+							<a href="compressor/delete/<%=  compressors.query[i]._id %>" class="btn btn-danger" >	 Delete </a>
+            <a href="compressor/details/<%=  compressors.query[i]._id %>" class="btn btn-info">	   Details </a>
+			      <a href="compressor/edit/<%=  compressors.query[i]._id %>" class="btn btn-warning">  Edit </a>
+			      <a href="compressor/edit/<%=  compressors.query[i]._id %>" class="btn btn-warning">  Edit </a>
+							
+						</td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>
+ <!--()-->
