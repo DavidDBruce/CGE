@@ -9,5 +9,5 @@ var HammerSchema = new Schema({
   isActive:{type: Boolean, required: true, default:true }
 })
 
-var hammer = mongoose.model('RoofingBasecoat', HammerSchema)
+var hammer = mongoose.model('hammer', HammerSchema)
 module.exports = hammer
