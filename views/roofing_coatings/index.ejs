@@ -39,13 +39,13 @@ Vaishnavi Kalvakota s528803
 							<%=  roofingCoatings.query[i].unit %>
 						</td>
 						<td id="stat">
-						<%=  roofingCoatings.query[i].isactive %>
+						<%=  roofingCoatings.query[i].isactive?"Active":"Inactive"  %>
 						</td>
 						<td>
-							<a href="roofingCoating/active/<%=  count%>/<%=  roofingCoatings.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingCoatings.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingCoatings.query[i].isactive?"Deactivate":"Activate" %></button></a>			
-							<a href="roofingCoating/details/<%= roofingCoatings.query[i]._id %>"class="btn btn-info">	   Details </a> 
-							<a href="roofingCoating/edit/<%=    roofingCoatings.query[i]._id %>"class="btn btn-warning">  Edit </a>
-							<a href="roofingCoating/delete/<%=  roofingCoatings.query[i]._id %>"class="btn btn-danger" >	 Delete </a> 							
+							<a href="roofingCoating/active/<%=  roofingCoatings.query[i]._id %>/<%=  roofingCoatings.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingCoatings.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingCoatings.query[i].isactive?"Deactivate":"Activate" %></button></a>			
+							<a href="roofingCoating/details/<%= roofingCoatings.query[i]._id %>" type="button" class="btn btn-info">   Details </a> 
+							<a href="roofingCoating/edit/<%=    roofingCoatings.query[i]._id %>" type="button" class="btn btn-warning">  Edit </a>
+							<a href="roofingCoating/delete/<%=  roofingCoatings.query[i]._id %>" type="button" class="btn btn-danger" >	 Delete </a> 							
 						</td>
 						
 					</tr>

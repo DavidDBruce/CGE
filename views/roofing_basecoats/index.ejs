@@ -24,14 +24,12 @@
     <% count=0; %>
 <% for (var i = 0; i < roofingBasecoats.query.length; i++) { %>
          <tr> <% count++; %>
-         <td>
-							<%=  roofingBasecoats.query[i]._id %>
-						</td>
+            <td><%=  roofingBasecoats.query[i]._id %></td>
             <td><%=  roofingBasecoats.query[i].name %></td>
             <td><%=  roofingBasecoats.query[i].displayorder %></td>
             <td><%=  roofingBasecoats.query[i].price %></td>   
             <td><%=  roofingBasecoats.query[i].unit %></td>
-            <td id="stat"><%=  roofingBasecoats.query[i].isactive %></td>
+            <td id="stat"><%=  roofingBasecoats.query[i].isactive?"Active":"Inactive" %></td>
             <td>
             <a href="roofingBasecoat/active/<%=  roofingBasecoats.query[i]._id %>/<%=  roofingBasecoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingBasecoats.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingBasecoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
             <a href="roofingBasecoat/details/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 

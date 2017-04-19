@@ -133,6 +133,7 @@ api.post('/delete/:id', function (req, res, next) {
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
     var data = req.app.locals.flooringCoatings.query;
+    
     var item = remove(data, { '_id': id });
     if (!item) { return res.end(notfoundstring); }
     console.log("Deleted item " + JSON.stringify(item));
