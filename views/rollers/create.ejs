@@ -3,19 +3,19 @@
 <br/>
 <h2>Create a new roller</h2>
 <p>There are currently
-	<%= rollers.query.length %> rollers </p>
+	<%= roller.query.length %> rollers </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<rollers.query.length; i++) {
-    if(rollers.query[i]._id > maxID) {
-        maxID=rollers.query[i]._id;
+for (var i=0; i<roller.query.length; i++) {
+    if(roller.query[i]._id > maxID) {
+        maxID=roller.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<rollers.query.length; i++) {
-    if(rollers.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=rollers.query[i].displayorder;
+for (var i=0; i<roller.query.length; i++) {
+    if(roller.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=roller.query[i].displayorder;
         }
 }
 %>

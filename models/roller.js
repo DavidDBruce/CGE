@@ -12,4 +12,4 @@ var RollerSchema = new Schema({
 })
 
 var roller = mongoose.model('Roller', RollerSchema)
-module.exports = ladder
+module.exports = roller
