@@ -5,8 +5,7 @@
 
 		<p>There are
 			<%= mileageRates.query.length %> mileage rates. <br/>
-				<a href="mileageRate/create">Add a new one.</a></p>
-
+				<a href="mileageRate/create">Add a new one.</a></p><br/>
 		<table class="table" border="1">
 			<thead>
 				<tr>
@@ -18,9 +17,13 @@
 			</thead>
 			<tbody>
 				<% for (var i = 0; i < mileageRates.query.length; i++) { %>
+				
 					<tr>
 						<td>
+						<% if (mileageRates.query[i].isDeleted){%> <strike> <%} %>
 							<%=  mileageRates.query[i]._id %>
+						<% if (mileageRates.query[i].isDeleted){%> </strike> <%} %>
+
 						</td>
 						<td>
 							<%= new Date(mileageRates.query[i].startDate).toISOString().substring(0,10) %>
@@ -32,6 +35,10 @@
 							<a href="mileageRate/delete/<%=  mileageRates.query[i]._id %>"class="btn btn-danger"> Delete </a> 
 							<a href="mileageRate/details/<%= mileageRates.query[i]._id %>"class="btn btn-info"> Details </a> 
 							<a href="mileageRate/edit/<%=    mileageRates.query[i]._id %>"class="btn btn-warning">  Edit </a>
+							<% if (mileageRates.query[i].isDeleted){%> 
+							Deleted
+							<%} %>
+
 						</td>
 					</tr>
 					<% } %>
