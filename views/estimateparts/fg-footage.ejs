@@ -2,7 +2,7 @@
 <h2>Square Footage</h2>
 <hr>
 <div id="sqrFootage">
-  <div id = parent>
+  <div id = squareFootageParent>
 <% for(var i=0; i<estimate.areas.length; i++) { e = estimate.areas[i];  %>
    <% include fg-footage-entry.ejs %>
    <%if(i === estimate.areas.length - 1){%>
@@ -17,22 +17,20 @@
   <br/>
 </div>
 <script> removeSFootage  = function(fieldToRemove){
-  //alert("Delete pressed!");
+  document.getElementById(fieldToRemove).remove();
 }
 </script>
 
 <script> addSFootage = function(){
-  //alert("Add pressed!");
   var childDiv = document.createElement("div");
   childDiv.innerHTML = document.getElementById("blankChild").innerHTML;
   var previousValue = parseInt(document.getElementById("numberOfFields").innerHTML);
   var nextValue = previousValue + 1;
   document.getElementById("numberOfFields").innerHTML = nextValue;
   childDiv.id = "Area" + nextValue;
-  document.getElementById("parent").appendChild(childDiv);
+  document.getElementById("squareFootageParent").appendChild(childDiv);
   document.getElementById("deleteButton").id = "deleteButton" + nextValue;
   document.getElementById("deleteButton" + nextValue).setAttribute("value","Area" + nextValue);
-  document.getElementById("deleteButton" + nextValue).onclick = function(){var a = " area" + nextValue; document.getElementById(a).remove;}
 }
 </script>
 
@@ -40,7 +38,7 @@
   <div class="col-xs-3">
     <div class="form-group">
       <label for="description">Description</label>
-      <input type="text" class="form-control" id="description" name="description" value="0" placeholder="Description" required>
+      <input type="text" class="form-control" id="description" name="description" value="Area" placeholder="Description" required>
     </div>
   </div>
   <div class="col-xs-3">
@@ -59,7 +57,7 @@
     <div class="form-group">
     <label for="buttons">Options</label>
       <div >
-        <button id="deleteButton" class="btn btn-danger" onclick="removeSFootage()">Delete</button>
+        <button id="deleteButton" class="btn btn-danger" onclick="removeSFootage(this.value)">Delete</button>
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@ var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/mileageRate.js');
 const notfoundstring = 'No such mileage rate';
+var findIndex = require('lodash.findindex');
 
 // see app.js for the root request this controller handles
 // See app.js to find default view folder (e.g.,"views")
@@ -36,7 +37,7 @@ api.get('/findone/:id', function(req, res){
 api.get('/', function(req, res) {
     console.log("Handling GET " + req);
     return res.render('mileage_rate/index.ejs',
-        { title: "WP Primers", layout: "layout.ejs" });
+        { title: "Mileage Rates", layout: "layout.ejs" });
 });
 
 // GET create
@@ -103,9 +104,8 @@ api.post('/save', function(req, res) {
     var item = new Model;
     console.log("NEW ID " + req.body._id);
     item._id = parseInt(req.body._id);
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
+    item.startDate = req.body.startDate;
+    item.dollarsPerMile = req.body.dollarsPerMile;
     item.displayorder = parseInt(req.body.displayorder);
     data.push(item);
     console.log("SAVING NEW ITEM " + JSON.stringify(item));
@@ -122,9 +122,8 @@ api.post('/save/:id', function(req, res) {
     if (!item) { return res.end(notfoundstring); }
     console.log("ORIGINAL VALUES " + JSON.stringify(item));
     console.log("UPDATED VALUES: " + JSON.stringify(req.body));
-    item.name = req.body.name;
-    item.unit = req.body.unit;
-    item.price = req.body.price;
+    item.startDate = req.body.startDate;
+    item.dollarsPerMile = req.body.dollarsPerMile;
     item.displayorder = req.body.displayorder;
     console.log("SAVING UPDATED ITEM " + JSON.stringify(item));
     return res.redirect('/mileageRate');
@@ -136,8 +135,9 @@ api.post('/delete/:id', function(req, res, next) {
     var id = parseInt(req.params.id);
     console.log("Handling REMOVING ID=" + id);
     var data = req.app.locals.mileageRates.query;
-    var item = remove(data, { '_id': id });
-    if (!item) { return res.end(notfoundstring); }
+    var item = findIndex(data, { '_id': id });
+    if (item == -1) { return res.end(notfoundstring); }
+    data[item].isDeleted=true;
     console.log("Deleted item " + JSON.stringify(item));
     return res.redirect('/mileageRate');
 });
