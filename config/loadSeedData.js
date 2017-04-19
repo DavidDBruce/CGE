@@ -32,7 +32,7 @@ module.exports = {
 
         // global.ladders = require('../data/waterproofingTopcoats.yml');
         // global.hammers = require('../data/waterproofingTopcoats.yml');
-        // global.nozzles = require('../data/waterproofingTopcoats.yml');
+        global.nozzles = require('../data/waterproofingTopcoats.yml');
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
         
         // global.tapes = require('../data/waterproofingTopcoats.yml');
@@ -65,7 +65,7 @@ module.exports = {
 
         // db.insert(ladders);
         // db.insert(hammers);
-        // db.insert(nozzles);
+        db.insert(nozzles);
         // db.insert(dropsheets);
 
         // db.insert(tapes);
@@ -99,7 +99,7 @@ module.exports = {
 
         // app.locals.ladders          = db.find(ladders);
         // app.locals.hammers   = db.find(hammers);
-        // app.locals.nozzles     = db.find(nozzles);
+        app.locals.nozzles     = db.find(nozzles);
         // app.locals.dropsheets   = db.find(dropsheets);
 
         // app.locals.tapes     = db.find(tapes);
