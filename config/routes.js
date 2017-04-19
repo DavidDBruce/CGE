@@ -9,7 +9,7 @@ const passportConfig = require('../config/passport');
 
 
 module.exports = {
-    defineRoutes : function(){
+    defineRoutes: function () {
         // Request to this URI will be handled by this CONTROLLER..........
         app.use('/', require('../controllers/index.js'));
         app.use('/about_2016_fall_03', require('../controllers/about_2016_fall_03.js'));
@@ -34,15 +34,15 @@ module.exports = {
         app.use('/waterproofingPrimer', require('../controllers/waterproofingPrimers.js'));
         app.use('/waterproofingTopcoat', require('../controllers/waterproofingTopcoats.js'));
 
-        // app.use('/roller', require('../controllers/rollers.js'));
-        // app.use('/bucket', require('../controllers/buckets.js'));
+      //  app.use('/roller', require('../controllers/rollers.js'));
+       // app.use('/bucket', require('../controllers/buckets.js'));
         // app.use('/hose', require('../controllers/hoses.js'));
         // app.use('/broom', require('../controllers/brooms.js'));
 
-        // app.use('/ladder', require('../controllers/ladders.js'));
-        // app.use('/hammer', require('../controllers/hammers.js'));
+     //   app.use('/ladder', require('../controllers/ladders.js'));
+     //   app.use('/hammer', require('../controllers/hammers.js'));
         app.use('/nozzle', require('../controllers/nozzles.js'));
-        // app.use('/dropsheet', require('../controllers/dropsheets.js'));
+     //   app.use('/dropsheet', require('../controllers/dropsheets.js'));
 
         // app.use('/tape', require('../controllers/tapes.js'));
         // app.use('/compressor', require('../controllers/compressors.js'));
@@ -50,11 +50,11 @@ module.exports = {
         // app.use('/boot', require('../controllers/boots.js'));
         // app.use('/tapemeasure', require('../controllers/tapemeasures.js'));
 
-        
+
     },
 
 
-    definePrimaryAppRoutes: function(){
+    definePrimaryAppRoutes: function () {
         app.get('/', homeController.index);
         app.get('/login', userController.getLogin);
         app.post('/login', userController.postLogin);
@@ -74,7 +74,7 @@ module.exports = {
         app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
     },
 
-    defineApiRoutes: function(){
+    defineApiRoutes: function () {
         app.get('/api', apiController.getApi);
         app.get('/api/lastfm', apiController.getLastfm);
         app.get('/api/nyt', apiController.getNewYorkTimes);
@@ -106,49 +106,49 @@ module.exports = {
         app.get('/api/google-maps', apiController.getGoogleMaps);
     },
 
-    defineAuthenticationRoutes : function(){
+    defineAuthenticationRoutes: function () {
         app.get('/auth/instagram', passport.authenticate('instagram'));
         app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
         app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'public_profile'] }));
         app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
         app.get('/auth/github', passport.authenticate('github'));
         app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
         app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
         app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
         app.get('/auth/twitter', passport.authenticate('twitter'));
         app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
         app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
         app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
     },
 
-    defineAuthorizationRoutes : function(){
+    defineAuthorizationRoutes: function () {
         app.get('/auth/foursquare', passport.authorize('foursquare'));
         app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureRedirect: '/api' }), (req, res) => {
-        res.redirect('/api/foursquare');
+            res.redirect('/api/foursquare');
         });
         app.get('/auth/tumblr', passport.authorize('tumblr'));
         app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), (req, res) => {
-        res.redirect('/api/tumblr');
+            res.redirect('/api/tumblr');
         });
         app.get('/auth/steam', passport.authorize('openid', { state: 'SOME STATE' }));
         app.get('/auth/steam/callback', passport.authorize('openid', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect(req.session.returnTo || '/');
+            res.redirect(req.session.returnTo || '/');
         });
         app.get('/auth/pinterest', passport.authorize('pinterest', { scope: 'read_public write_public' }));
         app.get('/auth/pinterest/callback', passport.authorize('pinterest', { failureRedirect: '/login' }), (req, res) => {
-        res.redirect('/api/pinterest');
+            res.redirect('/api/pinterest');
         });
     }
 }

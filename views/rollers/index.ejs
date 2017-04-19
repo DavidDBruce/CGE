@@ -1,0 +1,46 @@
+<!-- P2-8
+ ShivaTeja Miyapuram, Manohar Sriram -->
+<% console.log(roller.query); %>
+	<div class="container">
+		<h2>Rollers</h2>
+		<p>There are
+			<%= roller.query.length %> rollers. <br/>
+				<a href="roller/create"class="btn btn-info" role="button">Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < roller.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  roller.query[i]._id %>
+						</td>
+						<td>
+							<%=  roller.query[i].name %>
+						</td>
+						<td>
+							<%=  roller.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  roller.query[i].price %>
+						</td>
+						<td>
+							<%=  roller.query[i].unit %>
+						</td>
+						<td>
+							<a href="roller/delete/<%=  roller.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
+							<a href="roller/details/<%= roller.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
+							<a href="roller/edit/<%=    roller.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a></td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>
