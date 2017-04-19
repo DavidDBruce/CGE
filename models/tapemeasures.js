@@ -6,7 +6,7 @@ var TapemeasuresSchema = new Schema({
     name:  { type: String, required: true },
     displayorder:  { type: String, required: true },
     price:  { type: Number, required: true },
-    isDelete:{type: Boolean, required: true , default:true}
+    isDeleted:{type: Boolean, required: true , default:false}
 
 })
 
