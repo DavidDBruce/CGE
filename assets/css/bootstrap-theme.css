@@ -138,6 +138,8 @@
   background-color: #2aabd2;
   border-color: #28a4c9;
 }
+
+
 .btn-info:disabled,
 .btn-info[disabled] {
   background-color: #2aabd2;
@@ -278,7 +280,8 @@
 @media (max-width: 767px) {
   .navbar .navbar-nav .open .dropdown-menu > .active > a,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus,
+  .btn {
     color: #fff;
     background-image: -webkit-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
     background-image:      -o-linear-gradient(top, #337ab7 0%, #2e6da4 100%);
@@ -286,6 +289,8 @@
     background-image:         linear-gradient(to bottom, #337ab7 0%, #2e6da4 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
     background-repeat: repeat-x;
+    width:100%;
+
   }
 }
 .alert {

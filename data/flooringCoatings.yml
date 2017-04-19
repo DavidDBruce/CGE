@@ -34,21 +34,6 @@
   displayorder: 40
   price: 72.67
 
-- name: 70815/70816 - urethane Hi-solids
-  _id: 5
-  coatingType: Urethane
-  defaultCoverageSqFt: 100
-  unit: gal
-  displayorder: 50
-  price: 113.15
-
-- name: 70714/70715-01 fast cure epoxy
-  _id: 6
-  coatingType: Epoxy
-  defaultCoverageSqFt: 100
-  unit: gal
-  displayorder: 60
-  price: 66.40
 
 #70714/70715 - epoxy                                   $56.30/gal
 #70714/70715=09 general purpose urethane    $50.38/gal  
