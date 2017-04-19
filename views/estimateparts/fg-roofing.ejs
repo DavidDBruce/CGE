@@ -33,7 +33,23 @@
     </div>
   </div>
 </div>
+<div class="form-group">
+  <label for="Warranty">Warranty</label>
+</div>
+    <div class="funkyradio-success">
+      <input type="checkbox" name="5 Year Warranty" id="5 Year Warranty" <%= (estimate.roofing.processType =='5 Year Warranty') ? 'checked' : ' ' %> />
+      <label for="5 Year Warranty">5 Year Warranty</label>
+    
+    <div class="funkyradio-success">
+      <input type="checkbox" name="10 Year Warranty" id="10 Year Warranty" <%= (estimate.roofing.processType =='10 Year Warranty') ? 'checked' : ' ' %> />
+      <label for="10 Year Warranty">10 Year Warranty</label>
 
+    <div class="funkyradio-success">
+      <input type="checkbox" name="20 Year Warranty" id="20 Year Warranty" <%= (estimate.roofing.processType =='20 Year Warranty') ? 'checked' : ' ' %> />
+      <label for="20 Year Warranty">20 Year Warranty</label>
+    </div>
+  </div>
+</div>
 
   <% include ../estimateparts/fg-roofing1 %>
   <% include ../estimateparts/fg-roofing2 %>
