@@ -1,0 +1,41 @@
+
+<% console.log(tapemeasures.query); %>
+<div class="container">
+ <h2>tapemeasures</h2>
+
+<!--<p>There are  <%= tapemeasures.query.length %> tapemeasures. <br/>-->
+<a href="tapemeasure/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+<table class="table" border="1" id="t13">
+    <thead>
+      <tr>
+      <th>ID</th>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+        <th>Status</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% count=0; %>
+<% for (var i = 0; i < tapemeasures.query.length; i++) { %>
+         <tr> <% count++; %>
+            <td><%=  tapemeasures.query[i]._id %></td>
+            <td><%=  tapemeasures.query[i].name %></td>
+            <td><%=  tapemeasures.query[i].displayorder %></td>
+            <td><%=  tapemeasures.query[i].price %></td>
+            <td><%=  tapemeasures.query[i].unit %></td>
+            <td id="stat"><%=  tapemeasures.query[i].isactive?"Active":"Inactive" %></td>
+            <td>
+            <a href="tapemeasure/active/<%=  tapemeasures.query[i]._id %>/<%=  tapemeasures.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  tapemeasures.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  tapemeasures.query[i].isactive?"Deactivate":"Activate" %></button></a>
+            <a href="tapemeasure/details/<%=  tapemeasures.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a>
+						<a href="tapemeasure/edit/<%=  tapemeasures.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+            <a href="tapemeasure/delete/<%=  tapemeasures.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a>
+						</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

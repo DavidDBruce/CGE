@@ -1,0 +1,56 @@
+<div class="container">
+        <h2>Boots</h2>
+
+        <p>There are
+            <%= boots.query.length %> boots. <br/>
+                <a href="boots/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Display Order</th>
+                    <th>Price</th>
+                    <th>Unit</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% count=0; %>
+                    <% for (var i = 0; i < boots.query.length; i++) { %>
+                        <tr>
+                            <% count++; %>
+                                <td>
+                                    <%= boots.query[i]._id %>
+                                </td>
+                                <td>
+                                    <%=  boots.query[i].name %>
+                                </td>
+                                <td>
+                                    <%=  boots.query[i].displayorder %>
+                                </td>
+                                <td>
+                                    <%=  boots.query[i].price %>
+                                </td>
+                                <td>
+                                    <%=  boots.query[i].unit %>
+                                </td>
+                                <td id="stat">
+						            <%=  boots.query[i].isactive?"Active":"Inactive" %>
+						        </td>
+                                <td>
+                                    <a href="boots/active/<%=  count%>/<%=  boots.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  boots.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  boots.query[i].isactive?"Deactivate":"Activate" %></button></a>
+                                    <a href="boots/details/<%=  count%>"> <button type="button" class="btn btn-info">  Details </button></a>
+                                    <a href="boots/edit/<%=  count%>"> <button type="button" class="btn btn-warning">  Edit </button></a>
+                                    <a href="boots/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
+
+                                </td>
+                                
+                        </tr>
+                        <% } %>
+            </tbody>
+        </table>
+    </div>
