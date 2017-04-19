@@ -1,0 +1,20 @@
+
+---
+- name: Blue Bucket
+  _id: 1
+  unit: 1 bucket
+  displayorder: 10
+  price: 20.00
+  isactive: true
+- name: Red Bucket
+  _id: 2
+  unit: 1 bucket
+  displayorder: 20
+  price: 22.15
+  isactive: true
+- name: Yellow Bucket
+  _id: 3
+  unit: 2 bucket
+  displayorder: 30
+  price: 29.00
+  isactive: true
