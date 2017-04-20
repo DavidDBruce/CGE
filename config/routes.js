@@ -34,7 +34,7 @@ module.exports = {
         app.use('/waterproofingPrimer', require('../controllers/waterproofingPrimers.js'));
         app.use('/waterproofingTopcoat', require('../controllers/waterproofingTopcoats.js'));
 
-        //  app.use('/roller', require('../controllers/rollers.js'));
+        app.use('/roller', require('../controllers/rollers.js'));
         // app.use('/bucket', require('../controllers/buckets.js'));
         // app.use('/hose', require('../controllers/hoses.js'));
         //app.use('/broom', require('../controllers/brooms.js'));
