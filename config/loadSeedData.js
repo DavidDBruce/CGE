@@ -27,7 +27,7 @@ module.exports = {
 
 
 
-        // global.rollers = require('../data/waterproofingTopcoats.yml');
+        global.rollers = require('../data/waterproofingTopcoats.yml');
 
         // global.buckets = require('../data/waterproofingTopcoats.yml');
         // global.hoses = require('../data/waterproofingTopcoats.yml');
@@ -77,7 +77,7 @@ module.exports = {
         db.insert(waterproofingPrimers);
         db.insert(waterproofingTopcoats);
 
-        // db.insert(rollers);
+        db.insert(rollers);
         db.insert(buckets);
         //db.insert(hoses);
         // db.insert(brooms);
@@ -111,7 +111,7 @@ module.exports = {
         app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
-        //app.locals.rollers = db.find(rollers);
+        app.locals.rollers = db.find(rollers);
         app.locals.buckets = db.find(buckets);
         // app.locals.hoses = db.find(hoses);
         //app.locals.brooms = db.find(brooms);
