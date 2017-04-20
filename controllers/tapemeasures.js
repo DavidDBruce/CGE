@@ -134,3 +134,4 @@ api.post('/delete/:id', function (req, res, next) {
     return res.redirect('/tapemeasures');
 });
 
+module.exports = api;
