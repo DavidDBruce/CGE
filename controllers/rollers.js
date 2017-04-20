@@ -6,7 +6,7 @@ var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
-var Model = require('../models/rollers.js');
+var Model = require('../models/roller.js');
 
 const notfoundstring = 'No such roller';
 
