@@ -45,7 +45,7 @@ module.exports = {
         // global.tapemeasures = require('../data/waterproofingTopcoats.yml');
 
         global.buckets = require('../data/buckets.yml');
-        //global.hoses = require('../data/waterproofingTopcoats.yml');
+        //global.hoses = require('../data/hoses.yml');
         // global.brooms = require('../data/brooms.yml');
 
         global.ladders = require('../data/ladders.yml');
@@ -57,7 +57,7 @@ module.exports = {
         global.compressors = require('../data/compressor.json');
         global.masks = require('../data/masks.json');
         global.boots = require('../data/boots.json');
-        global.tapemeasures = require('../data/waterproofingTopcoats.yml');
+        global.tapemeasures = require('../data/tapemeasures.yml');
 
 
 
