@@ -48,7 +48,7 @@ module.exports = {
         //global.hoses = require('../data/waterproofingTopcoats.yml');
         // global.brooms = require('../data/brooms.yml');
 
-        global.ladders = require('../data/ladders.yml');
+        global.ladders = require('../data/ladders.json');
         // global.hammers = require('../data/hammers.yml');
         global.nozzles = require('../data/waterproofingTopcoats.yml');
         // global.dropsheets = require('../data/dropsheets.yml');
