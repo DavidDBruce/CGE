@@ -25,7 +25,7 @@ for (var i=0; i<roller.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="nozzle" method="POST" action="/nozzle/save" + _id.value>
+			<form name="roller" method="POST" action="/roller/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
@@ -62,7 +62,7 @@ for (var i=0; i<roller.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/nozzle">
+			<form method="get" action="/roller">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>
