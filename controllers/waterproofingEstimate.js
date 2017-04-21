@@ -160,6 +160,10 @@ item.waterproofing.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
 item.waterproofing.usesBasecoat=req.body.usesBasecoat;
 item.waterproofing.basecoatSelection=req.body.basecoatSelection;
 item.waterproofing.basecoatCoverageSqFt=req.body.basecoatCoverageSqFt;
+item.aggregate.isUsed=req.body.usesAggregate;
+item.aggregate.aggregateTypeSelection=req.body.aggregateTypeSelection;
+item.aggregate.aggregateMaterialSelection=req.body.aggregateMaterialSelection;
+item.aggregate.coverageSqFt=req.body.coverageSqFt;
 item.mileageEntries=[];
  if (req.body.milesPerDrive && req.body.milesPerDrive.length > 1) {
         for (i = 0; i < req.body.milesPerDrive.length - 1; i++) {
