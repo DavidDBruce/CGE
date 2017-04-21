@@ -1,0 +1,57 @@
+
+<% console.log(ladders.query); %>
+    <div class="container">
+        <h2>Ladders</h2>
+
+        <p>There are
+            <%= ladders.query.length %> Ladders. <br/>
+                <a href="ladder/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Display Order</th>
+                    <th>Price</th>
+                    <th>Unit</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% count=0; %>
+                    <% for (var i = 0; i < ladders.query.length; i++) { %>
+                        <tr>
+                            <% count++; %>
+                                <td>
+                                    <%= ladders.query[i]._id %>
+                                </td>
+                                <td>
+                                    <%=  ladders.query[i].name %>
+                                </td>
+                                <td>
+                                    <%=  ladders.query[i].displayorder %>
+                                </td>
+                                <td>
+                                    <%=  ladders.query[i].price %>
+                                </td>
+                                <td>
+                                    <%=  ladders.query[i].unit %>
+                                </td>
+                                <td id="stat">
+						            <%=  ladders.query[i].isactive?"Active":"Inactive" %>
+						        </td>
+                                <td>
+                                    <a href="ladder/active/<%=  count%>/<%=  ladders.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  ladders.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  ladders.query[i].isactive?"Deactivate":"Activate" %></button></a>
+                                    <a href="ladder/details/<%=  count%>"> <button type="button" class="btn btn-info">  Details </button></a>
+                                    <a href="ladder/edit/<%=  count%>"> <button type="button" class="btn btn-warning">  Edit </button></a>
+                                    <a href="ladder/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
+
+                                </td>
+                                
+                        </tr>
+                        <% } %>
+            </tbody>
+        </table>
+    </div>

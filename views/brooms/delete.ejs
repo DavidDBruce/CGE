@@ -1,0 +1,27 @@
+<br/>
+<br/>
+<h2>Confirm deletion of Brooms</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  brooms._id %>
+</p>
+<p>
+	<%=  brooms.name %>
+</p>
+<p>
+	<%=  brooms.price %> per
+		<%=  brooms.unit %>
+</p>
+<p>
+	Status: <%=  brooms.status %>
+</p>
+
+<br/>
+<form method="get" action="/brooms">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/brooms/delete/<%= hoses._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>

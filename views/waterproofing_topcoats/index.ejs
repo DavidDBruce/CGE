@@ -15,6 +15,7 @@
           <th>Display Order</th>
           <th>Price</th>
           <th>Unit</th>
+            <th>Status</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -36,7 +37,9 @@
             <td>
               <%=  waterproofingTopcoats.query[i].unit %>
             </td>
+              <td id="stat"><%=  waterproofingTopcoats.query[i].isactive?"Active":"Inactive" %></td>
             <td>
+                <a href="waterproofingTopcoat/active/<%=  waterproofingTopcoats.query[i]._id %>/<%=  waterproofingTopcoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  waterproofingTopcoats.query[i].isactive?'btn-danger':'btn-success' %> modd"> <%=  waterproofingTopcoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
               <a href="waterproofingTopcoat/delete/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-danger"> Delete </a>
               <a href="waterproofingTopcoat/details/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-info">  Details </a>
               <a href="waterproofingTopcoat/edit/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-warning">  Edit </a>

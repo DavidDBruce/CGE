@@ -1,12 +1,15 @@
 //Team Hoses!
 
+
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
 var remove = require('lodash.remove');
 var findIndex = require('lodash.findindex');
 var Model = require('../models/hoses.js');
+
 const notfoundstring = 'No such hose';
+
 
 
 // see app.js for the root request this controller handles
@@ -151,6 +154,7 @@ api.post('/delete/:id', function (req, res, next) {
 module.exports = api;
 /* 10 controller methods handled by controller:
 
+
 controllers/hoses.js
 
 2 Respond with JSON:
@@ -171,4 +175,5 @@ http://127.0.0.1:8081/hoses/edit/1 [WORKING]
 http://127.0.0.1:8081/hoses/save [WORKING]
 http://127.0.0.1:8081/hoses/save/1 [WORKING]
 http://127.0.0.1:8081/hoses/delete/1 [WORKING]
+
 */
