@@ -1,9 +1,9 @@
-
+<% console.log(nozzles.query); %>
 <div class="container">
  <h2>Hammers</h2>
 
-<!--<p>There are  <%= roofingBasecoats.query.length %> roofing basecoats. <br/>-->
-<a href="roofingBasecoat/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+<!--<p>There are  <%= nozzles.query.length %> hammers. <br/>-->
+<a href="hammer/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
 
 <table class="table" border="1" id="t13">
     <thead>
@@ -19,19 +19,19 @@
     </thead>
     <tbody>
     <% count=0; %>
-<% for (var i = 0; i < roofingBasecoats.query.length; i++) { %>
+<% for (var i = 0; i < nozzles.query.length; i++) { %>
          <tr> <% count++; %>
-            <td><%=  roofingBasecoats.query[i]._id %></td>
-            <td><%=  roofingBasecoats.query[i].name %></td>
-            <td><%=  roofingBasecoats.query[i].displayorder %></td>
-            <td><%=  roofingBasecoats.query[i].price %></td>   
-            <td><%=  roofingBasecoats.query[i].unit %></td>
-            <td id="stat"><%=  roofingBasecoats.query[i].isactive?"Active":"Inactive" %></td>
+            <td><%=  nozzles.query[i]._id %></td>
+            <td><%=  nozzles.query[i].name %></td>
+            <td><%=  nozzles.query[i].displayorder %></td>
+            <td><%=  nozzles.query[i].price %></td>   
+            <td><%=  nozzles.query[i].unit %></td>
+            <td id="stat"><%=  nozzles.query[i].isactive?"Active":"Inactive" %></td>
             <td>
-            <a href="roofingBasecoat/active/<%=  roofingBasecoats.query[i]._id %>/<%=  roofingBasecoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingBasecoats.query[i].isactive?'btn-danger':'btn-success' %> modd"> <%=  roofingBasecoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
-            <a href="roofingBasecoat/details/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-success modd">  Details </button></a> 
-						<a href="roofingBasecoat/edit/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-warning modd"> Edit </button></a>
-            <a href="roofingBasecoat/delete/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-danger modd"> Delete </button></a> 
+            <a href="nozzle/active/<%=  nozzles.query[i]._id %>/<%=  nozzles.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  nozzles.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  nozzles.query[i].isactive?"Deactivate":"Activate" %></button></a>
+            <a href="nozzle/details/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
+						<a href="nozzle/edit/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+            <a href="nozzle/delete/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
 						</td>
          </tr>
          <% } %>
