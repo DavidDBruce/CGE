@@ -1,4 +1,4 @@
-
+// P4-10 Haritha Kurla & Aswini Vadlamudi
 var express = require('express');
 var api = express.Router();
 var find = require('lodash.find');
@@ -203,7 +203,7 @@ api.post('/save/:id', function(req, res) {
     item.longitude = req.body.longitude;
     item.areas = [];
     if (req.body.description.length > 1) {
-        for (count = 0; count < req.body.description.length - 1; count++) {
+        for (count = 0; count <= req.body.description.length - 1; count++) {
             item.areas.push({
                     "description": req.body.description[count],
                     "lengthFeet": parseInt(req.body.lengthFeet[count]),
@@ -214,27 +214,25 @@ api.post('/save/:id', function(req, res) {
         }
     };
     item.isDeleted = false;
-    item.flooring = {
-        "floorSystemType": req.body.floorSystemType == 'on' ? true : false,
-        "usesUrethane": req.body.usesUrethane == 'on' ? true : false,
-        "urethaneProductSelection": req.body.urethaneProductSelection,
-        "urethaneCoverageSqFt": req.body.urethaneCoverageSqFt,
-        "usesEpoxy": req.body.usesEpoxy == 'on' ? true : false,
-        "epoxyProductSelection": req.body.epoxyProductSelection,
-        "epoxyCoverageSqFt": req.body.epoxyCoverageSqFt
-    };
-    item.aggregate = {
-        "isUsed": req.body.usesAggregate == 'on' ? true : false,
-        "aggregateTypeSelection": req.body.aggregateTypeSelection,
-        "aggregateMaterialSelection": req.body.aggregateMaterialSelection,
-        "coverageSqFt": req.body.coverageSqFt
-    };
+   item.waterproofing.usesPrimer=req.body.usesPrimer;
+item.waterproofing.primerSelection=req.body.primerSelection;
+item.waterproofing.primerCoverageSqFt=req.body.primerCoverageSqFt;
+item.waterproofing.usesTopcoat=req.body.usesTopcoat;
+item.waterproofing.topcoatSelection=req.body.topcoatSelection;
+item.waterproofing.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
+item.waterproofing.usesBasecoat=req.body.usesBasecoat;
+item.waterproofing.basecoatSelection=req.body.basecoatSelection;
+item.waterproofing.basecoatCoverageSqFt=req.body.basecoatCoverageSqFt;
+item.aggregate.isUsed=req.body.usesAggregate;
+item.aggregate.aggregateTypeSelection=req.body.aggregateTypeSelection;
+item.aggregate.aggregateMaterialSelection=req.body.aggregateMaterialSelection;
+item.aggregate.coverageSqFt=req.body.coverageSqFt;
     item.laborEntries = [];
     if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
         for (i = 0; i < req.body.hoursPerPerson.length - 1; i++) {
             item.laborEntries.push(
                 {
-                  "description": req.body.labourdescription,
+                  "description": req.body.labourdescription[i],
                     "count": parseInt(req.body.count[i]),
                     "hoursPerPerson": parseFloat(req.body.hoursPerPerson[i]),
                     "dollarsPerHour": parseFloat(req.body.dollarsPerHour[i]),
@@ -249,7 +247,7 @@ api.post('/save/:id', function(req, res) {
         for (i = 0; i < req.body.milesPerDrive.length - 1; i++) {
             item.mileageEntries.push(
                 {
-                    "description": req.body.mileagedescription,
+                    "description": req.body.mileagedescription[i],
                     "numberOfVehicles": parseInt(req.body.numberOfVehicles[i]),
                     "milesPerDrive": parseInt(req.body.milesPerDrive[i]),
                     "dollarsPerMile": parseFloat(req.body.dollarsPerMile[i]),
