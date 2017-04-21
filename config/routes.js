@@ -38,13 +38,15 @@ module.exports = {
         // app.use('/bucket', require('../controllers/buckets.js'));
         // app.use('/hose', require('../controllers/hoses.js'));
         //app.use('/broom', require('../controllers/brooms.js'));
-
+ app.use('/hoses', require('../controllers/hoses.js'));
      app.use('/ladder', require('../controllers/ladders.js'));
         //   app.use('/hammer', require('../controllers/hammers.js'));
         app.use('/nozzle', require('../controllers/nozzles.js'));
         //   app.use('/dropsheet', require('../controllers/dropsheets.js'));
 
          app.use('/tape', require('../controllers/tapes.js'));
+app.use('/hammer', require('../controllers/hammers.js'));
+        // app.use('/tape', require('../controllers/tapes.js'));
         app.use('/compressor', require('../controllers/compressors.js'));
         // app.use('/mask', require('../controllers/masks.js'));
         // app.use('/boot', require('../controllers/boots.js'));

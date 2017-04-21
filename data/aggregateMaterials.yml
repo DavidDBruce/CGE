@@ -21,34 +21,31 @@
   isactive: true
 - name: 86302 - uv stable quartz
   _id: 3
-  type: Quartz
+  aggregateType: Quartz
   unit: 50lb bag
   displayorder: 30
   price: 29.00
   status: active
   isactive: true
-
 - name: 86500 - glass beads
   _id: 4
-  type: Glass Beads
+  aggregateType: Glass Beads
   unit: 50lb bag
   displayorder: 40
   price: 77.65
   status: active
-  isactive: true
-  
+  isactive: true  
 - name: 86500 - glass beads
   _id: 5
-  type: Glass Beads
+  aggregateType: Glass Beads
   unit: 50lb bag
   displayorder: 50
   price: 77.65
   status: active
-  isactive: true
-  
+  isactive: true  
 - name: 86500 - glass beads
   _id: 6
-  type: Glass Beads
+  aggregateType: Glass Beads
   unit: 50lb bag
   displayorder: 60
   price: 77.65

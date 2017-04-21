@@ -38,14 +38,13 @@ module.exports = {
         // global.nozzles = require('../data/nozzles.yml');
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
         
-         global.tapes = require('../data/waterproofingTopcoats.json');
+         global.tapes = require('../data/tapes.json');
         // global.compressors = require('../data/waterproofingTopcoats.yml');
         // global.masks = require('../data/waterproofingTopcoats.yml');
         // global.boots = require('../data/waterproofingTopcoats.yml');
         // global.tapemeasures = require('../data/waterproofingTopcoats.yml');
-
         global.buckets = require('../data/buckets.yml');
-        //global.hoses = require('../data/hoses.yml');
+        global.hoses = require('../data/hoses.json');
         // global.brooms = require('../data/brooms.yml');
 
         global.ladders = require('../data/ladders.json');
@@ -79,7 +78,7 @@ module.exports = {
 
         db.insert(rollers);
         db.insert(buckets);
-        //db.insert(hoses);
+        db.insert(hoses);
         // db.insert(brooms);
 
         db.insert(ladders);
@@ -111,9 +110,27 @@ module.exports = {
         app.locals.waterproofingPrimers = db.find(waterproofingPrimers);
         app.locals.waterproofingTopcoats = db.find(waterproofingTopcoats);
 
+
+        // app.locals.rollers = db.find(rollers);
+
+
+        // app.locals.buckets   = db.find(buckets);
+
+      //app.locals.hoses  = db.find(hoses);
+
+        // app.locals.hoses  = db.find(hoses);
+
+
+         app.locals.buckets   = db.find(buckets);
+
+
+        // app.locals.hoses  = db.find(hoses);
+
+        // app.locals.brooms       = db.find(brooms);
+
         app.locals.rollers = db.find(rollers);
         app.locals.buckets = db.find(buckets);
-        // app.locals.hoses = db.find(hoses);
+      app.locals.hoses = db.find(hoses);
         //app.locals.brooms = db.find(brooms);
 
         app.locals.ladders = db.find(ladders);

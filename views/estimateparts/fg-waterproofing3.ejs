@@ -1,9 +1,10 @@
 <!-- Dev Team ID (P4-9) Varsha Basawapuram (S528735), Srinithya Kamareddy (S528740) -->
 <div class="form-group">
+  
+  <input type="checkbox" onchange="topcoatcheckchange()" id="usesTopcoat" name="usesTopcoat" <%= estimate.waterproofing.usesTopcoat ? ' ' : 'checked' %> />
   <label for="usesTopcoat">Uses Topcoat?</label>
-  <input type="checkbox" onchange="topcoatcheckchange()" class="form-control" id="usesTopcoat" name="usesTopcoat" <%= estimate.waterproofing.usesTopcoat ? 'checked' : ' ' %> />
 </div>
-<div id="SelectTopCoat">
+<div id="SelectTopCoat" style="display:none;">
 
 <div class="form-group">
   <label for="topcoatSelection">Topcoat Selection</label>

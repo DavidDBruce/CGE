@@ -1,0 +1,40 @@
+<% console.log(nozzles.query); %>
+<div class="container">
+ <h2>Hammers</h2>
+
+<!--<p>There are  <%= nozzles.query.length %> hammers. <br/>-->
+<a href="hammer/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+<table class="table" border="1" id="t13">
+    <thead>
+      <tr>
+      <th>ID</th>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+        <th>Status</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% count=0; %>
+<% for (var i = 0; i < nozzles.query.length; i++) { %>
+         <tr> <% count++; %>
+            <td><%=  nozzles.query[i]._id %></td>
+            <td><%=  nozzles.query[i].name %></td>
+            <td><%=  nozzles.query[i].displayorder %></td>
+            <td><%=  nozzles.query[i].price %></td>   
+            <td><%=  nozzles.query[i].unit %></td>
+            <td id="stat"><%=  nozzles.query[i].isactive?"Active":"Inactive" %></td>
+            <td>
+            <a href="nozzle/active/<%=  nozzles.query[i]._id %>/<%=  nozzles.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  nozzles.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  nozzles.query[i].isactive?"Deactivate":"Activate" %></button></a>
+            <a href="nozzle/details/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
+						<a href="nozzle/edit/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+            <a href="nozzle/delete/<%=  nozzles.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
+						</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>
