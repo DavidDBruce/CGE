@@ -1,8 +1,8 @@
 <!-- P2-8
- ShivaTeja Miyapuram, Manohar Sriram -->
+ Caleb Bertels -->
 <br/>
 <br/>
-<h2>Confirm deletion of flooring coating</h2>
+<h2>Confirm deletion of rollers</h2>
 <br/>
 <br/>
 <table class="table" border="1">
@@ -10,7 +10,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
-					<th>Price per Gallon</th>
+					<th>Price per Roller</th>
 					
 				</tr>
 			</thead>
@@ -18,28 +18,28 @@
 	<tr>
 		<td>
 			<p>
-				Item <%=  flooringCoating._id %>
+				Item <%=  rollers._id %>
 			</p>
 		</td>
 		<td>
 			<p>
-				Name <%=  flooringCoating.name %>
+				Name <%=  rollers.name %>
 			</p>
 		</td>		
 		<td>
 			<p>
-				<%=  flooringCoating.price %> per
-					<%=  flooringCoating.unit %>
+				<%=  rollers.price %> per
+					<%=  rollers.unit %>
 			</p>
 		</td>	
 	</tr>	
 	</tbody>
 </table>
 <br/>
-<form method="get" action="/flooringCoating">
+<form method="get" action="/rollers">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
 <br/>
-<form method="POST" action="/flooringCoating/delete/<%= flooringCoating._id %>">
+<form method="POST" action="/rollers/delete/<%= rollers._id %>">
 	<input type="submit" value="Delete this item" class="btn btn-danger" />
 </form>

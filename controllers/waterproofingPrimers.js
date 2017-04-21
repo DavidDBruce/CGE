@@ -91,6 +91,17 @@ api.get('/edit/:id', function(req, res) {
             waterproofingPrimer: item
         });
 });
+api.get('/active/:id/:ison', function(req,res){
+    console.log("Handling POST /active/:id/:ison " + req);
+    var id = parseInt(req.params.id);
+    var ison = req.params.ison=="true"?true:false;
+    var data = req.app.locals.waterproofingPrimers.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    item.isactive = ison;
+    res.redirect("/waterproofingPrimer");
+});
 
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 

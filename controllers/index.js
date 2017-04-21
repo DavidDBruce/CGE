@@ -3,7 +3,7 @@ var api = express.Router();
 
 /* GET default (home page) */
 api.get('/', function (request, response, next) {
-  response.render('index.ejs', { title: 'JCE' });
+  response.render('index.ejs', { title: 'CGE' });
 });
 
 // see more API controllers in the controllers folder

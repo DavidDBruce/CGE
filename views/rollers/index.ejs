@@ -1,11 +1,11 @@
 <!-- P2-8
  ShivaTeja Miyapuram, Manohar Sriram -->
-<% console.log(roller.query); %>
+<% console.log(rollers.query); %>
 	<div class="container">
 		<h2>Rollers</h2>
 		<p>There are
-			<%= roller.query.length %> rollers. <br/>
-				<a href="roller/create"class="btn btn-info" role="button">Add a new one.</a></p>
+			<%= rollers.query.length %> rollers. <br/>
+				<a href="rollers/create"class="btn btn-info" role="button">Add a new one.</a></p>
 		<table class="table" border="1">
 			<thead>
 				<tr>
@@ -18,27 +18,27 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% for (var i = 0; i < roller.query.length; i++) { %>
+				<% for (var i = 0; i < rollers.query.length; i++) { %>
 					<tr>
 						<td>
-							<%=  roller.query[i]._id %>
+							<%=  rollers.query[i]._id %>
 						</td>
 						<td>
-							<%=  roller.query[i].name %>
+							<%=  rollers.query[i].name %>
 						</td>
 						<td>
-							<%=  roller.query[i].displayorder %>
+							<%=  rollers.query[i].displayorder %>
 						</td>
 						<td>
-							<%=  roller.query[i].price %>
+							<%=  rollers.query[i].price %>
 						</td>
 						<td>
-							<%=  roller.query[i].unit %>
+							<%=  rollers.query[i].unit %>
 						</td>
 						<td>
-							<a href="roller/delete/<%=  roller.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
-							<a href="roller/details/<%= roller.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
-							<a href="roller/edit/<%=    roller.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a></td>
+							<a href="rollers/delete/<%=  rollers.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
+							<a href="rollers/details/<%= rollers.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
+							<a href="rollers/edit/<%=    rollers.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a></td>
 					</tr>
 					<% } %>
 			</tbody>
