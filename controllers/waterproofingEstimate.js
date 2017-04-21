@@ -141,7 +141,7 @@ if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
         for (i = 0; i < req.body.hoursPerPerson.length - 1; i++) {
             item.laborEntries.push(
                 {
-                   "description": req.body.labourdescription,
+                   "description": req.body.description[i],
                     "count": parseInt(req.body.count[i]),
                     "hoursPerPerson": parseFloat(req.body.hoursPerPerson[i]),
                     "dollarsPerHour": parseFloat(req.body.dollarsPerHour[i]),
