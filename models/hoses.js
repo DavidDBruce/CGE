@@ -12,4 +12,4 @@ var HosesSchema = new Schema({
 })
 
 var hoses = mongoose.model('hoses', HosesSchema)
-module.exports = ladder
+module.exports = hoses
