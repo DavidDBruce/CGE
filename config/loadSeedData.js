@@ -38,7 +38,7 @@ module.exports = {
         // global.nozzles = require('../data/nozzles.yml');
         // global.dropsheets = require('../data/waterproofingTopcoats.yml');
         
-        // global.tapes = require('../data/waterproofingTopcoats.yml');
+         global.tapes = require('../data/waterproofingTopcoats.json');
         // global.compressors = require('../data/waterproofingTopcoats.yml');
         // global.masks = require('../data/waterproofingTopcoats.yml');
         // global.boots = require('../data/waterproofingTopcoats.yml');
@@ -53,7 +53,7 @@ module.exports = {
         global.nozzles = require('../data/waterproofingTopcoats.yml');
         // global.dropsheets = require('../data/dropsheets.yml');
 
-        // global.tapes = require('../data/tapes.yml');
+   //      global.tapes = require('../data/tapes.yml');
         global.compressors = require('../data/compressor.json');
         global.masks = require('../data/masks.json');
         global.boots = require('../data/boots.json');
@@ -87,7 +87,7 @@ module.exports = {
         db.insert(nozzles);
         // db.insert(dropsheets);
 
-        // db.insert(tapes);
+         db.insert(tapes);
         db.insert(compressors);
         db.insert(masks);
         db.insert(boots);
@@ -121,7 +121,7 @@ module.exports = {
         app.locals.nozzles = db.find(nozzles);
         // app.locals.dropsheets = db.find(dropsheets);
 
-        // app.locals.tapes = db.find(tapes);
+         app.locals.tapes = db.find(tapes);
         app.locals.compressors = db.find(compressors);
         app.locals.masks = db.find(masks);
         app.locals.boots = db.find(boots);

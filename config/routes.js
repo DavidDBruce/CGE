@@ -44,7 +44,7 @@ module.exports = {
         app.use('/nozzle', require('../controllers/nozzles.js'));
         //   app.use('/dropsheet', require('../controllers/dropsheets.js'));
 
-        // app.use('/tape', require('../controllers/tapes.js'));
+         app.use('/tape', require('../controllers/tapes.js'));
         app.use('/compressor', require('../controllers/compressors.js'));
         // app.use('/mask', require('../controllers/masks.js'));
         // app.use('/boot', require('../controllers/boots.js'));
