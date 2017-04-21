@@ -107,7 +107,7 @@ api.post('/save', function(req, res) {
     item.longitude = req.body.longitude;
     item.areas = [];
      if (req.body.description.length > 1) {
-        for (count = 0; count < req.body.description.length - 1; count++) {
+        for (count = 0; count <= req.body.description.length - 1; count++) {
             item.areas.push({
                     "description": req.body.description[count],
                     "lengthFeet": parseInt(req.body.lengthFeet[count]),
@@ -141,7 +141,7 @@ if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
         for (i = 0; i < req.body.hoursPerPerson.length - 1; i++) {
             item.laborEntries.push(
                 {
-                   "description": req.body.description[i],
+                   "description": req.body.labourdescription[i],
                     "count": parseInt(req.body.count[i]),
                     "hoursPerPerson": parseFloat(req.body.hoursPerPerson[i]),
                     "dollarsPerHour": parseFloat(req.body.dollarsPerHour[i]),
