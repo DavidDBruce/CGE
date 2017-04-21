@@ -151,12 +151,15 @@ if (req.body.hoursPerPerson && req.body.hoursPerPerson.length > 1) {
             )
         }
     };
-item.usesPrimer=req.body.usesPrimer;
-item.primerSelection=req.body.primerSelection;
-item.primerCoverageSqFt=req.body.primerCoverageSqFt;
-item.usesTopcoat=req.body.usesTopcoat;
-item.topcoatSelection=req.body.topcoatSelection;
-item.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
+item.waterproofing.usesPrimer=req.body.usesPrimer;
+item.waterproofing.primerSelection=req.body.primerSelection;
+item.waterproofing.primerCoverageSqFt=req.body.primerCoverageSqFt;
+item.waterproofing.usesTopcoat=req.body.usesTopcoat;
+item.waterproofing.topcoatSelection=req.body.topcoatSelection;
+item.waterproofing.topcoatCoverageSqFt=req.body.topcoatCoverageSqFt;
+item.waterproofing.usesBasecoat=req.body.usesBasecoat;
+item.waterproofing.basecoatSelection=req.body.basecoatSelection;
+item.waterproofing.basecoatCoverageSqFt=req.body.basecoatCoverageSqFt;
 item.mileageEntries=[];
  if (req.body.milesPerDrive && req.body.milesPerDrive.length > 1) {
         for (i = 0; i < req.body.milesPerDrive.length - 1; i++) {
