@@ -1,21 +1,21 @@
 <br/>
 
 <br/>
-<h2>Create a new hoses</h2>
+<h2>Create a new roofing basecoat</h2>
 <p>There are currently
-	<%= hoses.query.length %> hoses </p>
+	<%= hammer.query.length %> roofing basecoats. </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<hoses.query.length; i++) {
-    if(hoses.query[i]._id > maxID) {
-        maxID=hoses.query[i]._id;
+for (var i=0; i<hammer.query.length; i++) {
+    if(hammer.query[i]._id > maxID) {
+        maxID=hammer.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<hoses.query.length; i++) {
-    if(hoses.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=hoses.query[i].displayorder;
+for (var i=0; i<hammer.query.length; i++) {
+    if(hammer.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=hammer.query[i].displayorder;
         }
 }
 %>
@@ -25,7 +25,7 @@ for (var i=0; i<hoses.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="hoses" method="POST" action="/hoses/save" + _id.value>
+			<form name="hammer" method="POST" action="/hammer/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
@@ -62,7 +62,7 @@ for (var i=0; i<hoses.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/hoses">
+			<form method="get" action="/hammer">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>

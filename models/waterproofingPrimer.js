@@ -6,7 +6,8 @@ var WaterproofingPrimerSchema = new Schema({
   name: { type: String, required: true },
   unit: { type: String, required: true },
   displayorder: { type: Number, required: true },
-  price: { type: Number, required: true }
+  price: { type: Number, required: true },
+  isActive:{type: Boolean, required: true, default:true }
 })
 
 var waterproofingPrimer = mongoose.model('WaterproofingPrimer', WaterproofingPrimerSchema)
