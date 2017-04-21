@@ -1,0 +1,52 @@
+<!--Team Tapes-->
+<% console.log(tapes.query); %>
+	<div class="container">
+		<h2>Tapes</h2>
+		<p>There are
+			<%= tapes.query.length %> tapes. <br/>
+				<a href="tapes/create"class="btn btn-info" role="button">Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < tapes.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  tapes.query[i]._id %>
+						</td>
+						<td>
+							<%=  tapes.query[i].name %>
+						</td>
+						<td>
+							<%=  tapes.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  tapes.query[i].price %>
+						</td>
+						<td>
+							<%=  tapes.query[i].unit %>
+						</td>
+						<td>
+							<%=  tapes.query[i].status %>
+						</td>
+						
+						<td>
+						<a href="tapes/active/<%=  tapes.query[i]._id %>/<%=  tapes.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  tapes.query[i].isactive?'btn-danger':'btn-success' %> modd"> <%= tapes.query[i].isactive?"Deactivate":"Activate" %></button></a>
+							<a href="tapes/delete/<%=  tapes.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
+							<a href="tapes/details/<%= tapes.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
+							<a href="tapes/edit/<%=    tapes.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a></td>
+					</td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>
