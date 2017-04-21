@@ -43,7 +43,7 @@ module.exports = {
         //   app.use('/hammer', require('../controllers/hammers.js'));
         app.use('/nozzle', require('../controllers/nozzles.js'));
         //   app.use('/dropsheet', require('../controllers/dropsheets.js'));
-
+app.use('/hammer', require('../controllers/hammers.js'));
         // app.use('/tape', require('../controllers/tapes.js'));
         app.use('/compressor', require('../controllers/compressors.js'));
         // app.use('/mask', require('../controllers/masks.js'));

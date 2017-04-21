@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema
 
-var RoofingBasecoatSchema = new Schema({
+var hammer = new Schema({
   _id: { type: Number, required: true },
   name: { type: String, required: true },
   unit: { type: String, required: true },
@@ -11,5 +11,5 @@ var RoofingBasecoatSchema = new Schema({
   isActive:{type: Boolean, required: true, default:true }
 })
 
-var roofingBasecoat = mongoose.model('hammer', RoofingBasecoatSchema)
+var hammer = mongoose.model('hammer', hammer)
 module.exports = hammer

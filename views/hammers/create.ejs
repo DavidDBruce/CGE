@@ -3,19 +3,19 @@
 <br/>
 <h2>Create a new roofing basecoat</h2>
 <p>There are currently
-	<%= roofingBasecoats.query.length %> roofing basecoats. </p>
+	<%= hammer.query.length %> roofing basecoats. </p>
 <br/>
 <% 
 maxID=0; 
-for (var i=0; i<roofingBasecoats.query.length; i++) {
-    if(roofingBasecoats.query[i]._id > maxID) {
-        maxID=roofingBasecoats.query[i]._id;
+for (var i=0; i<hammer.query.length; i++) {
+    if(hammer.query[i]._id > maxID) {
+        maxID=hammer.query[i]._id;
         }
 }
 maxDisplayorder=0; 
-for (var i=0; i<roofingBasecoats.query.length; i++) {
-    if(roofingBasecoats.query[i].displayorder > maxDisplayorder) {
-        maxDisplayorder=roofingBasecoats.query[i].displayorder;
+for (var i=0; i<hammer.query.length; i++) {
+    if(hammer.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=hammer.query[i].displayorder;
         }
 }
 %>
@@ -25,7 +25,7 @@ for (var i=0; i<roofingBasecoats.query.length; i++) {
 		<%= maxDisplayorder %>. </p><br/>
 	<div class="content">
 		<div>
-			<form name="roofingBasecoat" method="POST" action="/roofingBasecoat/save" + _id.value>
+			<form name="hammer" method="POST" action="/hammer/save" + _id.value>
 
 				<div class="form-group" id=frm>
 					<label for="_id">ID</label>
@@ -62,7 +62,7 @@ for (var i=0; i<roofingBasecoats.query.length; i++) {
 				</div>
 			</form>
 			<br/>
-			<form method="get" action="/roofingBasecoat">
+			<form method="get" action="/hammer">
 				<input type="submit" value="Return to list" class="btn btn-caution" />
 			</form>
 		</div>

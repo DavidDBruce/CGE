@@ -1,27 +1,27 @@
 <br/>
 <br/>
-<h2>Confirm deletion of roofing basecoat</h2>
+<h2>Confirm deletion of hammer</h2>
 <br/>
 <br/>
 <p>Item
-	<%=  roofingBasecoat._id %>
+	<%=  nozzle._id %>
 </p>
 <p>
-	<%=  roofingBasecoat.name %>
+	<%=  nozzle.name %>
 </p>
 <p>
-	<%=  roofingBasecoat.price %> per
-		<%=  roofingBasecoat.unit %>
+	<%=  nozzle.price %> per
+		<%=  nozzle.unit %>
 </p>
 <p>
-	Status: <%=  roofingBasecoat.status %>
+	Status: <%=  nozzle.status %>
 </p>
 
 <br/>
-<form method="get" action="/roofingBasecoat">
+<form method="get" action="/hammer">
 	<input type="submit" value="Return to list" class="btn btn-caution" />
 </form>
 <br/>
-<form method="POST" action="/roofingBasecoat/delete/<%= roofingBasecoat._id %>">
+<form method="POST" action="/nozzle/delete/<%= nozzle._id %>">
 	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
 </form>
