@@ -116,10 +116,7 @@ module.exports = {
 
 
          app.locals.hoses  = db.find(hoses);
-<<<<<<< HEAD
 
-=======
->>>>>>> a7196cb80a7ce665b9901a68662e4f18936fa9ae
         // app.locals.brooms       = db.find(brooms);
 
         // app.locals.ladders          = db.find(ladders);
