@@ -68,12 +68,6 @@
         "numberOfVehicles": 1,
         "milesPerDrive": 170,
         "dollarsPerMile": 0.50
-      },
-      {
-        "description": "Med",
-        "numberOfVehicles": 2,
-        "milesPerDrive": 177,
-        "dollarsPerMile": 0.50
       }
     ],
     "miscellaneousEntries": [
