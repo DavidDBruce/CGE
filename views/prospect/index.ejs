@@ -7,33 +7,22 @@
     <p>There are
       <%= prospects.query.length %> prospects. <br/>
         <a href="prospect/create"class="btn btn-info" role="button">Add a new prospect</a></p>
-        <input style="margin-bottom: 10px;" class= "form-control" type="text" id="prospectSearch" name="prospectSearch" onkeyup="nameSearch()" placeholder="Search for a customer">
+        <input style="margin-bottom: 10px;" class= "form-control" type="text" id="prospectSearch" name="prospectSearch" onkeyup="nameSearch()" placeholder="Search by City">
     <table id ="prospectTable"class="table" border="1">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Customer Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th >State</th>
-          <th>Zip</th>
-          <th>Sq.Ft</th>
-          <th>Type</th>
-          <th>Contact</th>
+          <th onclick="sortTable(1)">City</th>
+          <th onclick="sortTable(2)">State</th>
+          <th onclick="sortTable(3)">Sq.Ft</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <% for (var i = 0; i < prospects.query.length; i++) { %>
+        <% for (var i = 0; i < 50; i++) { %>
           <tr>
             <td>
               <%=  prospects.query[i]._id %>
-            </td>
-            <td>
-              <%= prospects.query[i].customerName%>
-            </td>
-            <td>
-              <%=  prospects.query[i].address %>
             </td>
             <td>
               <%= prospects.query[i].city %>
@@ -42,16 +31,7 @@
               <%= prospects.query[i].state %>
             </td>
             <td>
-              <%= prospects.query[i].zip %>
-            </td>
-            <td>
               <%= prospects.query[i].sqft %>
-            </td>
-            <td>
-              <%= prospects.query[i].customerType %>
-            </td>
-            <td>
-              <%= prospects.query[i].contact %>
             </td>
             <td>
               <a href="prospect/delete/<%=  prospects.query[i]._id %>" class="btn btn-danger"> Delete </a>
@@ -87,8 +67,7 @@ function nameSearch() {
   }
 }
 </script>
-  <!--
-    This function was previously included as a way to sort each column of the table. Taken from w3 schools
+  
 
 
   <script>
@@ -116,17 +95,31 @@ function nameSearch() {
                            /*check if the two rows should switch place,
                            based on the direction, asc or desc:*/
                            if (dir == "asc") {
-                             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                             if(n==3){
+                               if (parseInt(x.innerHTML)> parseInt(y.innerHTML)) {
                                //if so, mark as a switch and break the loop:
                                shouldSwitch = true;
                                break;
                              }
+                            }
+                            else{
+                             if (x.innerHTML.toLowerCase()>y.innerHTML.toLowerCase()) {
+                               //if so, mark as a switch and break the loop:
+                               shouldSwitch = true;
+                               break;
+                             }}
                            } else if (dir == "desc") {
-                             if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                             if(n==3){
+                               if (parseInt(x.innerHTML)< parseInt(y.innerHTML)) {
                                //if so, mark as a switch and break the loop:
                                shouldSwitch = true;
                                break;
                              }
+                             }else{ if (x.innerHTML.toLowerCase()< y.innerHTML.toLowerCase()) {
+                               //if so, mark as a switch and break the loop:
+                               shouldSwitch = true;
+                               break;
+                             }}
                            }
                          }
                          if (shouldSwitch) {
@@ -147,4 +140,4 @@ function nameSearch() {
                        }
                      }
 
-  </script> -->
+  </script>

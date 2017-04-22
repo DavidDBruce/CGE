@@ -78,11 +78,11 @@
     ],
     "miscellaneousEntries": [
       {
-        "description": "ABC",
+        "miscdescription": "ABC",
         "cost": 25
       },
       {
-        "description": "DEF",
+        "miscdescription": "DEF",
         "cost": 50
       }
     ],

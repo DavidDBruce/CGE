@@ -1,0 +1,45 @@
+<!-- P2-8
+ Caleb Bertels -->
+<br/>
+<br/>
+<h2>Confirm deletion of rollers</h2>
+<br/>
+<br/>
+<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Price per Roller</th>
+					
+				</tr>
+			</thead>
+ <tbody>	
+	<tr>
+		<td>
+			<p>
+				Item <%=  rollers._id %>
+			</p>
+		</td>
+		<td>
+			<p>
+				Name <%=  rollers.name %>
+			</p>
+		</td>		
+		<td>
+			<p>
+				<%=  rollers.price %> per
+					<%=  rollers.unit %>
+			</p>
+		</td>	
+	</tr>	
+	</tbody>
+</table>
+<br/>
+<form method="get" action="/rollers">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/rollers/delete/<%= rollers._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger" />
+</form>

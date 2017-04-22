@@ -1,0 +1,20 @@
+<!--Team Tapes-->
+<br/>
+<br/>
+<h2>Details for Tapes</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  tapes._id %>
+</p>
+<p>
+	<%=  tapes.name %>
+</p>
+<p>
+	<%=  tapes.price %> per
+		<%=  tapes.unit %>
+</p>
+<br/>
+<form method="get" action="/tapes">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

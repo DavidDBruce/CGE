@@ -4,7 +4,7 @@ Bhavishya Arelli
 -->
 <% console.log(waterproofingBasecoats.query); %>
   <div class="container">
-    <h2>Material Waterproofing Basecoat costs</h2>
+    <h2>Material Waterproofing Basecoat</h2>
 
     <p>There are
       <%= waterproofingBasecoats.query.length %> waterproofing basecoats. <br/>
@@ -17,6 +17,7 @@ Bhavishya Arelli
           <th>Display Order</th>
           <th>Price</th>
           <th>Unit</th>
+            <th>Status</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -38,8 +39,9 @@ Bhavishya Arelli
             <td>
               <%=  waterproofingBasecoats.query[i].unit %>
             </td>
+              <td id="stat"><%=  waterproofingBasecoats.query[i].isactive?"Active":"Inactive" %></td>
             <td>
-                
+               <a href="waterproofingBasecoat/active/<%=  waterproofingBasecoats.query[i]._id %>/<%=  waterproofingBasecoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  waterproofingBasecoats.query[i].isactive?'btn-danger':'btn-success' %> modd"> <%=  waterproofingBasecoats.query[i].isactive?"Deactivate":"Activate" %></button></a> 
               <a href="waterproofingBasecoat/delete/<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-danger">  Delete </a>
               <a href="waterproofingBasecoat/details/<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-info">  Details </a>
               <a href="waterproofingBasecoat/edit/<%=  waterproofingBasecoats.query[i]._id %>" class="btn btn-warning">  Edit </a>

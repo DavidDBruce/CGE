@@ -14,6 +14,7 @@
 					<th>Display Order</th>
 					<th>Price</th>
 					<th>Unit</th>
+                    <th>Status</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -35,8 +36,10 @@
 						<td>
 							<%=  waterproofingPrimers.query[i].unit %>
 						</td>
+                        <td id="stat"><%=  waterproofingPrimers.query[i].isactive?"Active":"Inactive" %></td>
 						<td>
-							<a href="waterproofingPrimer/delete/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-danger" >	 Delete </a>
+           <a href="waterproofingPrimer/active/<%=  waterproofingPrimers.query[i]._id %>/<%=  waterproofingPrimers.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  waterproofingPrimers.query[i].isactive?'btn-danger':'btn-success' %> modd"> <%= waterproofingPrimers.query[i].isactive?"Deactivate":"Activate" %></button></a>
+			<a href="waterproofingPrimer/delete/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-danger" >	 Delete </a>
             <a href="waterproofingPrimer/details/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-info">	   Details </a>
 			      <a href="waterproofingPrimer/edit/<%=  waterproofingPrimers.query[i]._id %>" class="btn btn-warning">  Edit </a>
 							
