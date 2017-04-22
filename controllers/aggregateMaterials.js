@@ -58,10 +58,22 @@ api.get('/delete/:id', function(req, res) {
         {
             title: "Aggregate Materials",
             layout: "layout.ejs",
-            waterproofingTopcoat: item
+            aggregateMaterial: item
         });
 });
+//Active-Deactive button aggregate
 
+api.get('/active/:id/:ison', function(req,res){
+    console.log("Handling POST /active/:id/:ison " + req);
+    var id = parseInt(req.params.id);
+    var ison = req.params.ison=="true"?true:false;
+    var data = req.app.locals.aggregateMaterials.query;
+    var item = find(data, { '_id': id });
+    if (!item) { return res.end(notfoundstring); }
+    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
+    item.isactive = ison;
+    res.redirect("/aggregate");
+});
 // GET /details/:id
 api.get('/details/:id', function(req, res) {
     console.log("Handling GET /details/:id " + req);
@@ -93,19 +105,7 @@ api.get('/edit/:id', function(req, res) {
             aggregateMaterial: item
         });
 });
-//Active-Deactive button aggregate
 
-api.get('/active/:id/:ison', function(req,res){
-    console.log("Handling POST /active/:id/:ison " + req);
-    var id = parseInt(req.params.id);
-    var ison = req.params.ison=="true"?true:false;
-    var data = req.app.locals.roofingBasecoats.query;
-    var item = find(data, { '_id': id });
-    if (!item) { return res.end(notfoundstring); }
-    console.log("RETURNING VIEW FOR" + JSON.stringify(item));
-    item.isactive = ison;
-    res.redirect("/aggregate");
-});
 // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
 // POST new
